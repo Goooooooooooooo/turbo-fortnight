@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 预留网站标题的位置 -->
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- 引入bootstrap的css文件 -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <!-- 预留具体页面的位置 -->
+    {% block content %}{% endblock content %}
+
+    {% include 'footer.html' %}
+
+    <script src="{% static 'jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'popper/popper-1.15.0.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+</body>
+</html>

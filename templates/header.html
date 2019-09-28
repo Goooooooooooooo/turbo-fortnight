@@ -1,0 +1,33 @@
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container">
+  <!-- Brand/logo -->
+<!--  <a class="navbar-brand" href="#">-->
+<!--    <img src="http://static.runoob.com/images/mix/bird.jpg" alt="logo" style="width:40px;">-->
+<!--  </a>-->
+     <a class="navbar-brand" href="#"> My Blog </a>
+
+      <form class="form-inline">
+        <input class="form-control" type="text" placeholder="Search">
+        <button class="btn btn-success" type="button">Search</button>
+      </form>
+
+
+     <!-- Dropdown -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="{% url 'article:article-list' %}">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </div>
+    </div>
+</nav>
+
+<!--<div class="container-fluid">-->
+<!--  <h3>品牌 / Logo</h3>-->
+<!--  <p>果使用图片，可以使用 .navbar-brand 类来设置图片自适应导航栏。</p>-->
+<!--</div>-->
