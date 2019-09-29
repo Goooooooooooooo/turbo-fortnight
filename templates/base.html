@@ -9,6 +9,11 @@
     <title>{% block title %}{% endblock title %}</title>
     <!-- 引入bootstrap的css文件 -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
+<!--    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/color-1.css' %}">
+
 </head>
 <body>
     {% include 'header.html' %}
@@ -21,5 +26,6 @@
     <script src="{% static 'jquery/jquery-3.4.1.js' %}"></script>
     <script src="{% static 'popper/popper-1.15.0.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+
 </body>
 </html>
