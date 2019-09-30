@@ -1,49 +1,102 @@
-# turo-fortnight 
 
 Git Memo
+==========
 
-git init						# git 初始化，会生成隐藏文件.git
+git 初始化，会生成隐藏文件.git
+```Bash
+git init
 git remote add origin [url]
 git add .
 git commit -m "init project"
 git push -u origin master
+```
+获取最新代码
+```Bash
+git fetch origin master
+```
+合并
+```Bash
+git merge origin/master
+```
 
-
-git fetch origin master			# 获取最新代码
-git merge origin/master			# 合并
-
-
-git remote -v					# 查看远程主机网址
+查看远程主机网址
+```Bash
+git remote -v
 origin  git@github.com:test/test.git (fetch)
 origin  git@github.com:test/test.git (push)
+```
 
-git remote add origin https://github.com/test/test.git		# 关联远程仓库
+关联远程仓库
+```Bash
+git remote add origin https://github.com/test/test.git
+```
 
-git pull origin master			# 同步远程仓库和本地仓库
+同步远程仓库和本地仓库
+```Bash
+git pull origin master
+```
+			
+新建一个md格式的markdown > 文件
+```Bash
+touch README.md
+```
 
+从现有URL获取仓库 ，下载项目及其整个版本历史记录
+```Bash
+git clone [url]
+```
 
-touch README.md					# 新建一个md格式的markdown > 文件
+列出所有改动状态
+```Bash
+git status
+```
 
-git clone [url]					# 从现有URL获取仓库 ，下载项目及其整个版本历史记录
+版本比较
+```Bash
+git diff --staged
+```
 
-git status						# 列出所有改动状态
+文件取消版本控制
+```Bash
+git reset [file]
+```
 
-git diff --staged				# 版本比较
+列出分支
+```Bash
+git branch
+```
 
-git reset [file]				# 文件取消版本控制
+创建新分支
+```Bash
+git branch [branch-name]
+```
 
-git branch						# 列出分支
+切换到指定的分支并更新工作目录
+```Bash
+git checkout [branch-name]
+```
 
-git branch [branch-name]		# 创建新分支
+将指定分支的历史记录合并到当前分支中
+```Bash
+git merge [branch]
+```
 
-git checkout [branch-name]		# 切换到指定的分支并更新工作目录
+删除指定的分支
+```Bash
+git branch -d [branch-name]
+```
 
-git merge [branch]				# 将指定分支的历史记录合并到当前分支中
+显示两个分支之间的内容差异
+```Bash
+git diff [first-branch]...[second-branch]
+```
 
-git branch -d [branch-name]		# 删除指定的分支
+在[commit]之后撤消所有提交，在本地保留更改
+```Bash
+git reset [commit]
+```
 
-git diff [first-branch]...[second-branch]	# 显示两个分支之间的内容差异
-
-git reset [commit]				# 在[commit]之后撤消所有提交，在本地保留更改
-
-git reset --hard [commit]		# 丢弃所有历史记录并更改回指定的提交
+丢弃所有历史记录并更改回指定的提交
+```Bash
+git reset --hard [commit]
+```
