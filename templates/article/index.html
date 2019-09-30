@@ -6,29 +6,26 @@
 <!-- 测试Pycharm Git -->
 {% block content %}
     <div class="container">
-            <div class="row mt-5">
-                        {% for article in article_list %}
-                            <div class="card" style="width:400px">
-                                <img class="card-img-top" src="{% static 'Img/001.jpg' %}" alt="Card image" style="width:100%">
-                                <div class="card-body">
-                                  <h4 class="card-title">{{ article.title }}</h4>
-                                  <p>{{ article.created }} - {{ article.updated }}</p>
-                                  <p class="card-text">{{ article.body }}</p>
-                                  <a href="{% url 'article:article-detail' article.id %}" class="btn btn-primary"> 阅读本文 </a>
-                                </div>
-                            </div>
-                        {% endfor %}
+        {% for article in article_list %}
+        <div class="card" style="width:100%;">
+              <div class="card-header">
+                  {{ article.category }} - {{ article.tags }}
+              </div>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img class="card-img-top" src="{% static 'img/001.jpg' %}" alt="Card image" style="width:100%;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body d-flex flex-column" style="width:100%;">
+                      <h4 class="card-title">{{ article.title }}</h4>
+                      <p class="card-text"><small class="text-muted">{{ article.created }} - {{ article.updated }}</small></p>
+                      <a href="{% url 'article:article-detail' article.id %}"><p class="card-text">{{ article.body|slice:'200' }}</p></a>
+<!--                      <a href="{% url 'article:article-detail' article.id %}" class="btn btn-primary btn-lg btn-block mt-auto"> 阅读本文 </a>-->
+                    </div>
+                </div>
             </div>
-
-    <!--  <p>图片在底部(card-img-bottom):</p>-->
-    <!--  <div class="card" style="width:400px">-->
-    <!--    <div class="card-body">-->
-    <!--      <h4 class="card-title">Jane Doe</h4>-->
-    <!--      <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>-->
-    <!--      <a href="#" class="btn btn-primary">See Profile</a>-->
-    <!--    </div>-->
-    <!--    <img class="card-img-bottom" src="http://static.runoob.com/images/mix/img_avatar.png" alt="Card image" style="width:100%">-->
-    <!--  </div>-->
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}
 

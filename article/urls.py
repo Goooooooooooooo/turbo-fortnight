@@ -20,7 +20,9 @@ from . import views
 app_name = 'article'
 
 urlpatterns = [
+    path('article-login/', views.ArticleCreateView.as_view(), name='article-login'),
     path('article-list/', views.ArticleListView.as_view(), name='article-list'),
     # path('article/<int:id>/', views.article_detail, name='article-detail'),
-    path('article/<int:pk>/', views.ArticleDetailView.as_view(), name='article-detail')
+    path('article-detail/<int:pk>/', views.ArticleDetailView.as_view(), name='article-detail'),
+    path('article-create/', views.ArticleCreateView.as_view(), name='article-create')
 ]

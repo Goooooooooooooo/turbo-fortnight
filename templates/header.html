@@ -40,7 +40,7 @@
 		<div class="container">
 			<!-- Header Date Start -->
 			<div class="header--date">
-			<p>Thursday <span class="text-primary">10 March</span>2017</p>
+			<p>Thursday <span class="text-primary">10 March</span> 2019</p>
 			</div>
 			<!-- Header Date End -->
 			<!-- Header Search Bar Start -->
@@ -60,21 +60,14 @@
 
 			<!-- Header Search Bar End -->
 			<!-- Header Social Start -->
-			<div class="header--social">
-			<span>Follow Me:</span>
-				<ul class="nav">
-					<li>
-						<a href="#"><i class="fa fa-facebook"></i></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-linkedin"></i></a>
-					</li>
-					<li>
-						<a href="#"><i class="fa fa-behance"></i></a>
-					</li>
+			<div class="navbar navbar-expand-sm header--social">
+				<ul class="nav nav-pills">
+				  <li class="nav-item">
+					<a class="nav-link" href="#"> Login </a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#"> Signup </a>
+				  </li>
 				</ul>
 			</div>
 			<!-- Header Social End -->
@@ -85,13 +78,14 @@
 	<div class="clearfix" style="margin-bottom: 50px;"></div><!-- 清除浮动 -->
 
 	<!-- Header Navbar Start -->
-	<nav class="navbar">
+	<nav class="navbar text-primary">
 		<div class="container">
 			<div class="row mx-0 justify-content-center align-items-center w-100">
 				<div class="text-center w-80">
 					<!-- Header Logo Start -->
 					<div>
-						<a href="index.html"><img src="{% static 'Img/logo.png' %}" alt="" data-rjs="2"></a>
+<!--						<a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" data-rjs="2"></a>-->
+                        <a class="navbar-brand" href="{% url 'article:article-list' %}"><p class="fs--100"> Blog </p></a>
 					</div>
 					<!-- Header Logo End -->
 					<div class="clearfix" style="margin-bottom: 50px;"></div><!-- 清除浮动 -->
@@ -99,7 +93,7 @@
 					<div>
 						<ul class="header--nav-links nav mx-auto d-block">
 							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Home <i class="fa fa-caret-down"></i></a>
+								<a href="#" data-toggle="dropdown"> Home <i class="fa fa-caret-down"></i></a>
 								<ul class="dropdown-menu">
 									<li><a href="index.html">Home Version 1</a></li>
 									<li><a href="index-2.html">Home Version 2</a></li>
@@ -108,9 +102,9 @@
 							</li>
 <!--							<li><a href="about.html">About</a></li>-->
 							<li class="dropdown active">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> Pages <i class="fa fa-caret-down"></i></a>
+								<a href="#" data-toggle="dropdown"> Pages <i class="fa fa-caret-down"></i></a>
 								<ul class="dropdown-menu">
-									<li><a href="blog-details.html">Blog Details</a></li>
+									<li><a href="{% url 'article:article-create' %}"> Create </a></li>
 									<li class="active"><a href="blog-details-right.html">Blog Details Right</a></li>
 									<li><a href="blog-details-left.html">Blog Details Left</a></li>
 									<li><a href="author.html">Author</a></li>
