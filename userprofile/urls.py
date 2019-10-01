@@ -17,11 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 
-app_name = 'article'
+app_name = 'userprofile'
 
 urlpatterns = [
-    path('article-list/', views.ArticleListView.as_view(), name='article-list'),
-    # path('article/<int:id>/', views.article_detail, name='article-detail'),
-    path('article-detail/<int:pk>/', views.ArticleDetailView.as_view(), name='article-detail'),
-    path('article-create/', views.ArticleCreateView.as_view(), name='article-create')
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout')
 ]

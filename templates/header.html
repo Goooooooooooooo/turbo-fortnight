@@ -1,40 +1,5 @@
 
 {% load staticfiles %}
-<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
-<!--    <div class="container">-->
-<!--  &lt;!&ndash; Brand/logo &ndash;&gt;-->
-<!--&lt;!&ndash;  <a class="navbar-brand" href="#">&ndash;&gt;-->
-<!--&lt;!&ndash;    <img src="http://static.runoob.com/images/mix/bird.jpg" alt="logo" style="width:40px;">&ndash;&gt;-->
-<!--&lt;!&ndash;  </a>&ndash;&gt;-->
-<!--     <a class="navbar-brand" href="#"> My Blog </a>-->
-
-<!--      <form class="form-inline">-->
-<!--        <input class="form-control" type="text" placeholder="Search">-->
-<!--        <button class="btn btn-success" type="button">Search</button>-->
-<!--      </form>-->
-
-
-<!--     &lt;!&ndash; Dropdown &ndash;&gt;-->
-<!--        <div class="nav-item dropdown">-->
-<!--          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">-->
-<!--            Dropdown link-->
-<!--          </a>-->
-<!--          <div class="dropdown-menu">-->
-<!--            <a class="dropdown-item" href="{% url 'article:article-list' %}">Link 1</a>-->
-<!--            <a class="dropdown-item" href="#">Link 2</a>-->
-<!--            <a class="dropdown-item" href="#">Link 3</a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</nav>-->
-
-<!--<div class="container-fluid">-->
-<!--  <h3>品牌 / Logo</h3>-->
-<!--  <p>果使用图片，可以使用 .navbar-brand 类来设置图片自适应导航栏。</p>-->
-<!--</div>-->
-
-
-
 	<!-- Header Topbar Start -->
 	<div class="text-center text-white bg-dark fs--14">
 		<div class="container">
@@ -48,7 +13,7 @@
 				<form action="#" data-form="validate" novalidate="novalidate">
 					<input type="search" name="search" placeholder="Search..." class="form-control" required="">
 					<button type="submit" class="btn-link">
-						<i class="fa fa-search"></i>
+						<i class="fas fa-search"></i>
 					</button>
 				</form>
 			</div>
@@ -60,24 +25,37 @@
 
 			<!-- Header Search Bar End -->
 			<!-- Header Social Start -->
-			<div class="navbar navbar-expand-sm header--social">
-				<ul class="nav nav-pills">
-				  <li class="nav-item">
-					<a class="nav-link" href="#"> Login </a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="#"> Signup </a>
-				  </li>
-				</ul>
-			</div>
+			{% if user.is_authenticated %}
+			<!-- 如果用户已经登录，则显示用户名下拉框 -->
+				<div class="navbar navbar-expand-sm header--social">
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a class="nav-link" href="#"> {{ user.username }} </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'userprofile:logout' %}"> logout </a>
+						</li>
+					</ul>
+				</div>
+			{% else %}
+					<div class="navbar navbar-expand-sm header--social">
+						<ul class="nav nav-pills">
+							<li class="nav-item">
+								<a class="nav-link" href="{% url 'userprofile:login' %}"> Login </a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#"> Signup </a>
+							</li>
+						</ul>
+					</div>
+			{% endif %}
 			<!-- Header Social End -->
 		</div>
 	</div>
 	<!-- Header Topbar End -->
 
-	<div class="clearfix" style="margin-bottom: 50px;"></div><!-- 清除浮动 -->
+	<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
 
-	<!-- Header Navbar Start -->
 	<nav class="navbar text-primary">
 		<div class="container">
 			<div class="row mx-0 justify-content-center align-items-center w-100">
@@ -87,38 +65,7 @@
 <!--						<a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" data-rjs="2"></a>-->
                         <a class="navbar-brand" href="{% url 'article:article-list' %}"><p class="fs--100"> Blog </p></a>
 					</div>
-					<!-- Header Logo End -->
-					<div class="clearfix" style="margin-bottom: 50px;"></div><!-- 清除浮动 -->
-					<!-- Header nav Links Start -->
-					<div>
-						<ul class="header--nav-links nav mx-auto d-block">
-							<li class="dropdown">
-								<a href="#" data-toggle="dropdown"> Home <i class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="index.html">Home Version 1</a></li>
-									<li><a href="index-2.html">Home Version 2</a></li>
-									<li><a href="index-3.html">Home Version 3</a></li>
-								</ul>
-							</li>
-<!--							<li><a href="about.html">About</a></li>-->
-							<li class="dropdown active">
-								<a href="#" data-toggle="dropdown"> Pages <i class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="{% url 'article:article-create' %}"> Create </a></li>
-									<li class="active"><a href="blog-details-right.html">Blog Details Right</a></li>
-									<li><a href="blog-details-left.html">Blog Details Left</a></li>
-									<li><a href="author.html">Author</a></li>
-									<li><a href="category.html">Category</a></li>
-								</ul>
-							</li>
-							<li><a href="contact.html"> Contact </a></li>
-							<li><a href="#"> Purchase </a></li>
-		<!--					<li><a href="404.html">404</a></li>-->
-						</ul>
-					</div>
-					<!-- Header nav Links End -->
 				</div>
-
 			</div>
 		</div>
 	</nav>
