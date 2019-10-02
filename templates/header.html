@@ -1,72 +1,73 @@
 
 {% load staticfiles %}
-	<!-- Header Topbar Start -->
-	<div class="text-center text-white bg-dark fs--14">
-		<div class="container">
+
+<div class="bg-dark clearfix">
+	<div class="container-fluid fs--14">
+	<!-- Header Date Start -->
+		<div class="row">
 			<!-- Header Date Start -->
-			<div class="header--date">
-			<p>Thursday <span class="text-primary">10 March</span> 2019</p>
+			<div class="col">
+				<div class="header--date">
+					<p>Thursday <span class="text-primary">10 March</span> 2019</p>
+				</div>
 			</div>
 			<!-- Header Date End -->
 			<!-- Header Search Bar Start -->
-			<div class="header--search-bar">
-				<form action="#" data-form="validate" novalidate="novalidate">
-					<input type="search" name="search" placeholder="Search..." class="form-control" required="">
-					<button type="submit" class="btn-link">
-						<i class="fas fa-search"></i>
-					</button>
-				</form>
+			<div class="col-6">
+                <div class="search">
+                    <form data-form="validate" novalidate="novalidate">
+                        <input class="search-box" type="search" placeholder="Type to search" />
+                        <a class="search-button" href="#">
+                            <i class="search-icon"></i>
+<!--                            fas fa-search-->
+                        </a>
+					</form>
+                </div>
 			</div>
-
-<!--			      <form class="form-inline">-->
-<!--					<input class="form-control" type="text" placeholder="Search">-->
-<!--					<button class="btn btn-success" type="button">Search</button>-->
-<!--				  </form>-->
-
 			<!-- Header Search Bar End -->
-			<!-- Header Social Start -->
-			{% if user.is_authenticated %}
-			<!-- 如果用户已经登录，则显示用户名下拉框 -->
+			<div class="col">
+				{% if user.is_authenticated %}
+				<!-- 如果用户已经登录，则显示用户名下拉框 -->
 				<div class="navbar navbar-expand-sm header--social">
 					<ul class="nav nav-pills">
-						<li class="nav-item">
-							<a class="nav-link" href="#"> {{ user.username }} </a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="{% url 'userprofile:logout' %}"> logout </a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							  {{ user.username }}
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">{{ user.username }}</a>
+								<a class="dropdown-item" href="{% url 'userprofile:logout' %}"> Logout </a>
+								<a class="dropdown-item" href="#">My Page</a>
+							</div>
 						</li>
 					</ul>
 				</div>
-			{% else %}
-					<div class="navbar navbar-expand-sm header--social">
-						<ul class="nav nav-pills">
-							<li class="nav-item">
-								<a class="nav-link" href="{% url 'userprofile:login' %}"> Login </a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#"> Signup </a>
-							</li>
-						</ul>
-					</div>
-			{% endif %}
-			<!-- Header Social End -->
-		</div>
-	</div>
-	<!-- Header Topbar End -->
-
-	<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
-
-	<nav class="navbar text-primary">
-		<div class="container">
-			<div class="row mx-0 justify-content-center align-items-center w-100">
-				<div class="text-center w-80">
-					<!-- Header Logo Start -->
-					<div>
-<!--						<a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" data-rjs="2"></a>-->
-                        <a class="navbar-brand" href="{% url 'article:article-list' %}"><p class="fs--100"> Blog </p></a>
-					</div>
+				{% else %}
+				<div class="navbar navbar-expand-sm header--social">
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'userprofile:login' %}"> Login </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"> Signup</a>
+						</li>
+					</ul>
 				</div>
+				{% endif %}
 			</div>
 		</div>
-	</nav>
+	</div>
+</div>
+
+<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
+<div class="container text-center mx-auto text-primary">
+<!--		<a href="index.html"><img src="{% static 'img/logo.png' %}" alt="" data-rjs="2"></a>-->
+		<a href="{% url 'article:article-list' %}"><p class="fs--100"> Blog </p></a>
+</div>
+
+<script>
+    $('.search-button').click(function(){
+      $(this).parent().toggleClass('open');
+    });
+</script>
 

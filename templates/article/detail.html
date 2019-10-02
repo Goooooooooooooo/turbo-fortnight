@@ -11,11 +11,48 @@
     <div class="row">
         <!-- 标题及作者 -->
         <h1 class="col-12 mt-4 mb-4">{{ article_detail.title }}</h1>
-        <div class="col-12 alert alert-success">作者：{{ article_detail.author }}</div>
+        <div class="col-12 alert alert-success">
+            作者：{{ article_detail.author }}
+            {% if user.username == article_detail.author %}
+             /  <a href="#" data-toggle="modal" data-target="#deleteModalCenter"> 删除文章 </a>
+            {% endif %}
+        </div>
         <!-- 文章正文 -->
         <div class="col-12">
             <p>{{ article_detail.body }}</p>
         </div>
     </div>
+
+<!-- Modal -->
+    <div class="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalCenterTitle"> Remove </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure remove this article ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="confirm_safe_delete()"> Remove </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"> Cancle </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新增一个隐藏的表单 -->
+    <form style="display:none;" id="safe_delete" action="{% url 'article:article-safe-delete' article_detail.id %}" method="POST">
+        {% csrf_token %}
+        <button type="submit"> Submit </button>
+    </form>
+
+    <script>
+    function confirm_safe_delete() {
+        $('form#safe_delete button').click();
+    }
+    </script>
 </div>
 {% endblock content %}

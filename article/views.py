@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404
 from django.views import generic
 from .models import ArticlePost
@@ -7,6 +8,16 @@ from .forms import ArticlePostForm
 from django.core.paginator import Paginator
 
 # Create your views here.
+
+
+@login_required(login_url='/userprofile/login/')
+def article_safe_delete(request, pk):
+    if request.method == 'POST':
+        article = ArticlePost.objects.get(id=pk)
+        article.delete()
+        return redirect("article:article-list")
+    else:
+        return HttpResponse("仅允许post请求")
 
 
 class ArticleListView(generic.ListView):
@@ -69,4 +80,8 @@ class ArticleCreateView(generic.CreateView):
 class ArticleUpdateView(generic.UpdateView):
     model = ArticlePost
     template_name = 'article/update.html'
+    pass
+
+
+
 

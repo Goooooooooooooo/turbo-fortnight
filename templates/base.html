@@ -9,11 +9,8 @@
     <title>{% block title %}{% endblock title %}</title>
     <!-- 引入bootstrap的css文件 -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
-<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}">-->
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
-<!--    <link rel="stylesheet" href="{% static 'css/color-1.css' %}">-->
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
 </head>
 <body>
     {% include 'header.html' %}
@@ -37,12 +34,13 @@
 
         #wrapper {
             min-height: 100%;
-            margin-bottom: -60px;
+            margin-bottom: -100px;
         }
-
-        #footer,
-        #push {
-            height: 100px;
+        #push{
+            height: 150px;
+        }
+        #footer{
+            height: 300px;
         }
     </style>
 
