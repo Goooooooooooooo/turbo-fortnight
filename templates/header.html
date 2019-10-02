@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 <div class="bg-dark clearfix">
-	<div class="container-fluid fs--14">
+	<div class="container-fluid">
 	<!-- Header Date Start -->
 		<div class="row">
 			<!-- Header Date Start -->
@@ -14,15 +14,16 @@
 			<!-- Header Date End -->
 			<!-- Header Search Bar Start -->
 			<div class="col-6">
-                <div class="search">
-                    <form data-form="validate" novalidate="novalidate">
-                        <input class="search-box" type="search" placeholder="Type to search" />
-                        <a class="search-button" href="#">
-                            <i class="search-icon"></i>
-<!--                            fas fa-search-->
-                        </a>
-					</form>
+                <form data-form="validate" novalidate="novalidate">
+                <div class="container h-100 py-2">
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+                        </div>
+                    </div>
                 </div>
+                </form>
 			</div>
 			<!-- Header Search Bar End -->
 			<div class="col">
