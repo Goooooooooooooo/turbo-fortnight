@@ -100,3 +100,8 @@ git reset [commit]
 ```Bash
 git reset --hard [commit]
 ```
+
+强制覆盖远程分支
+```Bash
+git push origin master --force
+```

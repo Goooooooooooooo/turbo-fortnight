@@ -5,43 +5,8 @@
 
 <!-- 测试Pycharm Git -->
 {% block content %}
-<div>
-    <div class="container text-primary">
-        <div class="row mx-0 justify-content-center align-items-center w-100">
-            <div class="text-center">
-                <!-- Header nav Links Start -->
-                <div>
-                    <ul class="header--nav-links nav mx-auto d-block">
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown"> Home <i class="fa fa-caret-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.html">Home Version 1</a></li>
-                                <li><a href="index-2.html">Home Version 2</a></li>
-                                <li><a href="index-3.html">Home Version 3</a></li>
-                            </ul>
-                        </li>
-<!--							<li><a href="about.html">About</a></li>-->
-                        <li class="dropdown active">
-                            <a href="#" data-toggle="dropdown"> Pages <i class="fa fa-caret-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="{% url 'article:article-create' %}"> Create </a></li>
-                                <li class="active"><a href="blog-details-right.html">Blog Details Right</a></li>
-                                <li><a href="blog-details-left.html">Blog Details Left</a></li>
-                                <li><a href="author.html">Author</a></li>
-                                <li><a href="category.html">Category</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html"> Contact </a></li>
-                        <li><a href="#"> Purchase </a></li>
-    <!--					<li><a href="404.html">404</a></li>-->
-                    </ul>
-                </div>
-                <!-- Header nav Links End -->
-            </div>
-        </div>
-    </div>
-</div>
-
+<br>
+<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
 
 <div class="container">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -118,6 +83,12 @@
                             {{ article.category }}
                         </button>
                     {% endif %}
+                    <!-- 标签 -->
+                    {% for tag in article.tags.all %}
+                        <span>
+                            <a class="badge badge-secondary">{{ tag }}</a>
+                        </span>
+                    {% endfor %}
                     <!-- 标题 -->
                     <h4>
                         <b><a href="{% url 'article:article-detail' article.id %}" style="color: black;">{{ article.title }}</a></b>
