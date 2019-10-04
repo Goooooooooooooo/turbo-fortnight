@@ -13,7 +13,7 @@
         <h1 class="col-12 mt-4 mb-4">{{ article_detail.title }}</h1>
         <div class="col-12 alert alert-success">
             作者：{{ article_detail.author }}
-            {% if user.username == article_detail.author %}
+            {% if user == article_detail.author %}
              /  <a href="#" data-toggle="modal" data-target="#deleteModalCenter"> 删除文章 </a>
             {% endif %}
         </div>

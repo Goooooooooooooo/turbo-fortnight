@@ -1,0 +1,72 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <!-- portfolio -->
+    <div class="portfolio">
+        <h1 class="text-center">Portfolio</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 img-item">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid" alt="Image">
+                    <div class="img-cover">
+                        Image
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <img src="{% static 'img/002.jpg' %}" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .portfolio{
+        margin: 4em 0;
+        position: relative;
+    }
+    .portfolio h1{
+        color:#F97300;
+        margin: 2em;
+    }
+    .portfolio img{
+        height: 15rem;
+        width: 100%;
+        margin: 1em;
+    }
+
+    .portfolio .img-item:hover .img-cover{
+         height: 100%;
+         background:#f973007d;
+         position: absolute;
+         width: 100%;
+         padding: 5em;
+         top: 0;
+         border-bottom-left-radius: 0;
+    }
+
+</style>
+
+{% endblock content %}

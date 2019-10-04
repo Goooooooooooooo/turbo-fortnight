@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'article',
     'taggit',
     'userprofile',
+    'article.templatetags',
 ]
 
 MIDDLEWARE = [
