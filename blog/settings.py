@@ -39,8 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'taggit',
+    # user 扩展对象
     'userprofile',
+    # 自定义过滤器
     'article.templatetags',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +130,29 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# 媒体文件保存地址
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+CKEDITOR_UPLOAD_PATH = 'upload/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+# 富文本编辑器 Config
+CKEDITOR_CONFIGS = {
+    # django-ckeditor 默认使用 default 配置
+    'default':{
+        'width':'auto',
+        'height':'250px',
+        'tabSpace':4,
+        'toolbar':'Custom',
+        'toolbar_Custom':[
+            ['Smiley', 'CodeSnippet'],
+            ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blckquote'],
+            ['TextColor', 'BGColor'],
+            ['Link', 'Unlink'],
+            ['NumberedList', 'BulletedList'],
+            ['Maxmize']
+        ],
+        'extraPlugins': ','.join(['codesnippet', 'uploadimage']),
+    }
+}

@@ -50,7 +50,7 @@
 								</a>
 								<div id="dropmenu" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 									<a class="dropdown-item" href="#">{{ user.username }}</a>
-									<a class="dropdown-item" href="#">Signup</a>
+									<a class="dropdown-item" href="{% url 'userprofile:edit-profile' %}">Edit Profile</a>
 									<a class="dropdown-item" href="{% url 'userprofile:logout' %}">Logout</a>
 								</div>
 							</li>
@@ -61,15 +61,12 @@
 								<a class="nav-link" href="{% url 'userprofile:login' %}"> Login </a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#"> Signup</a>
+								<a class="nav-link" href="{% url 'userprofile:register' %}">Register</a>
 							</li>
 						</ul>
 					{% endif %}
-
-
 		  </div>
 		  <!-- Collapsible content -->
-
 	</nav>
 	<!--/.Navbar-->
 </div>

@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
-# Create your models here.
 
 
+# 扩展 django 自带 User 模型
 class Profile(models.Model):
     # 与 User 模型构成一对一的关系
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')

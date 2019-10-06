@@ -6,14 +6,16 @@ from .models import ArticlePost
 from django.utils import timezone
 from .forms import ArticlePostForm
 from django.core.paginator import Paginator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-# Create your views here.
 
 
+# 单纯的迁移画面，不做额外的处理
 def portfolio(request):
     return render(request, 'article/portfolio.html')
 
 
+# [@login_required] 修饰器，不改动View的情况下，额外添加功能
 @login_required(login_url='/userprofile/login/')
 def article_safe_delete(request, pk):
     if request.method == 'POST':
@@ -23,12 +25,12 @@ def article_safe_delete(request, pk):
     else:
         return HttpResponse("仅允许post请求")
 
-
+# 主页显示View
 class ArticleListView(generic.ListView):
     model = ArticlePost
     template_name = 'article/index.html'
     context_object_name = 'article_list'
-    paginate_by = 5
+    paginate_by = 10
 
     class Meta:
         pass
@@ -41,7 +43,7 @@ class ArticleListView(generic.ListView):
         context['now'] = timezone.now
         return context
 
-
+# 单篇文章详细
 class ArticleDetailView(generic.DeleteView):
     model = ArticlePost
     # 指定渲染的模板
@@ -52,9 +54,14 @@ class ArticleDetailView(generic.DeleteView):
 
     # get_object方法默认情况下获取 id 为pk_url_kwarg 的对象
     # 需要在获取过程中对获取对象做一些处理，可以通过复写 get_object 实现
-    # def get_object(self, queryset=None):
-    #     obj = super(ArticleDetailView, self).get_object()
-    #     return obj
+    def get_object(self, queryset=None):
+        article = super(ArticleDetailView, self).get_object()
+        # 浏览数增加 除了作者本人
+        if self.request.user != article.author:
+            article.total_views += 1
+            # 只更新浏览数字段
+            article.save(update_fields=['total_views'])
+        return article
 
     '''
     # 复写 get_context_data 方法为上下文对象添加额外的变量，以便在模板中访问
@@ -73,27 +80,57 @@ class ArticleDetailView(generic.DeleteView):
         return render(request, 'article/detail.html', context)
     '''
 
+# 创建新文章
+class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
+    # 如果用户未登录 跳转到登录页面
+    login_url = '/userprofile/login/'
 
-class ArticleCreateView(generic.CreateView):
     model = ArticlePost
     form_class = ArticlePostForm
-    # fields = ['author', 'title', 'category', 'tags', 'body']
     template_name = 'article/create.html'
 
+    # 确认 form 的值是不是有效，可以设置默认值
     def form_valid(self, form):
         # 从url中获取pk值，根据pk值找到对应的数据
         pk = self.kwargs.get(self.pk_url_kwarg)
+
         # 设置默认值
         # form.instance.project = get_object_or_404(ArticlePost, pk=pk)
         # 文章作者默认为当前登录用户
-        form.instance.author = self.request.user.username
+        form.instance.author = self.request.user
+        form.instance.avatar = self.request.FILES.get('file_img')
         return super().form_valid(form)
 
+    # # 定义表对象没有添加失败后跳转到的页面。
+    # def form_invalid(self, form):
+    #     # 取出验证失败的信息,方便定位问题,给用用户提示
+    #     Error_Dict = ArticlePostForm.errors
+    #     # for value in  Error_Dict.values():
+    #     #     logger.debug(value)
+    #     # return HttpResponse(ErrorDict.__repr__())
+    #     return HttpResponse('Error {}'.format(Error_Dict))
 
-class ArticleUpdateView(generic.UpdateView):
+
+
+class ArticleUpdateView(LoginRequiredMixin, generic.UpdateView):
+    login_url = '/userprofile/login/'
     model = ArticlePost
+    context_object_name = 'article'
     template_name = 'article/update.html'
-    pass
+    form_class = ArticlePostForm
+    pk_url_kwarg = 'pk'
+
+    def get_object(self, queryset=None):
+        article = super(ArticleUpdateView, self).get_object()
+        if article.author == self.request.user:
+            return article
+        else:
+            return HttpResponse('无权修改此文章！！！')
+
+    def form_valid(self, form):
+        form.instance.avatar = self.request.FILES.get('file_img')
+        return super().form_valid(form)
+
 
 
 

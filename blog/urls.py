@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('article/', include('article.urls'), name='article'),
-    path('userprofile/', include('userprofile.urls'), name='userprofile')
+    path('userprofile/', include('userprofile.urls'), name='userprofile'),
+    path('ckeditor/', include('ckeditor_uploader.urls'))
 ]
+
+# settings.py 中添加了 MEDIA_URL MEDIA_ROOT，在这里配置媒体文件的 URL
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

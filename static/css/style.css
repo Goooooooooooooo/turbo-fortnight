@@ -1,0 +1,332 @@
+/* Login Form CSS-Start */
+
+#login .text-color{
+    color: #ED6C19;
+}
+
+#login .btn-color{
+    color: white;
+    background: #ED6C19;
+}
+
+#login .container
+{
+    margin: 20px auto;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 500px;
+	border: 1px solid #9C9C9C;
+	background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+    margin-top: -85px;
+}
+
+/* Login Form CSS-End */
+
+
+/* Register Form CSS-Start */
+
+#register .container
+{
+    width: 600px;
+    margin: 20px auto;
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+#register .container #register-box{
+    border: 1px solid #9C9C9C;
+	background-color: #EAEAEA;
+}
+
+#register .container #register-box #register-form{
+    padding: 20px;
+}
+
+#register .preview
+{
+    padding: 10px;
+    position: relative;
+}
+
+#register .preview i
+{
+    color: white;
+    font-size: 5px;
+    transform: translate(40px,70px);
+}
+
+#register .preview-img
+{
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 2px #ED6C19;
+}
+
+#register .browse-button
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    position: absolute; /* Tweak the position property if the element seems to be unfit */
+    top: 26px;
+    left: 26px;
+    background: linear-gradient(180deg, transparent, #ED6C19);
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+#register .browse-button:hover
+{
+    opacity: 1;
+}
+
+#register .browse-input
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    transform: translate(-1px,-26px);
+    opacity: 0;
+}
+
+#register .text-color{
+    color: #ED6C19;
+}
+
+#register .btn-color{
+    color: white;
+    background: #ED6C19;
+}
+
+#register .form-group
+{
+    width:  250px;
+    margin: 10px auto;
+}
+
+#register .form-group input
+{
+    transition: 0.3s linear;
+}
+
+#register .form-group input:focus
+{
+    border: 1px solid crimson;
+    box-shadow: 0 0 0 0;
+}
+
+#register .Error
+{
+    color: crimson;
+    font-size: 13px;
+}
+
+/* Register Form CSS-End */
+
+
+/* Header CSS-Start */
+
+.header--date {
+    float: left;
+    padding: 13px 0;
+}
+
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #007bff;
+    /* 圆角 */
+    border-radius: 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+.search_input{
+    color: #fff;
+    border: 0;
+    outline: 0;
+    background: none;
+    /* 搜索输入框初始大小设为0 */
+    width: 0;
+    line-height: 40px;
+    /* 过渡:搜索输入框展开 */
+    transition: width 0.4s linear;
+}
+
+/* 搜索图标样式 */
+.search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+}
+
+/* 鼠标悬浮，搜索栏样式设置 */
+.searchbar:hover > .search_input{
+    padding: 0 10px;
+    /* 搜索输入框大小 */
+    width: 400px;
+    /* 光标颜色 */
+    caret-color:red;
+    transition: width 0.4s linear;
+}
+/* 鼠标悬浮，搜索图标样式设置 */
+.searchbar:hover > .search_icon{
+    background:white;
+    color: #e74c3c;
+}
+
+/* 关键字字体颜色 */
+.searchbar ::-webkit-input-placeholder {
+	color: #fff;
+}
+
+.searchbar ::-moz-placeholder {
+	color: #fff;
+}
+
+.searchbar :-ms-input-placeholder {
+	color: #fff;
+}
+
+.searchbar :-moz-placeholder {
+	color: #fff;
+}
+
+/*
+ 导航栏下拉菜单 鼠标悬浮
+ 背景字体颜色设置
+ */
+#dropmenu > a:hover{
+    background: #3A93FF;
+    color: white;
+}
+
+a,a:focus,a:hover {
+	color: #45c6a6;
+}
+
+.nav-link{
+	font-size:18px;
+	padding: 0 10px;
+}
+
+
+.text-primary {
+	color: #343a40;
+}
+
+.text-white {
+    color: #fff;
+}
+
+/* Header CSS-End */
+
+/* Font Size CSS-Start */
+
+
+.ff--default {
+	font-family: Open Sans,sans-serif;
+}
+
+.ff--primary {
+	font-family: Playfair Display,serif;
+}
+
+.fs--12 {
+	font-size: 9pt;
+	line-height: 22px;
+}
+
+.fs--14 {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.fs--16 {
+	font-size: 1pc;
+	line-height: 26px;
+}
+
+.fs--18 {
+	font-size: 18px;
+	line-height: 28px;
+}
+
+.fs--20 {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.fs--22 {
+	font-size: 22px;
+	line-height: 2pc;
+}
+
+.fs--24 {
+	font-size: 24px;
+	line-height: 34px;
+}
+
+.fs--26 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.fs--28 {
+	font-size: 28px;
+	line-height: 38px;
+}
+
+.fs--30 {
+	font-size: 30px;
+	line-height: 40px;
+}
+
+.fs--100 {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 50px;
+    margin-bottom: 0;
+    padding: 0 0 20px 0;
+    display: inline-block;
+    color: white;
+}
+
+/* Font Size CSS-End */
+
+
+
+
+.btn-link,a {
+	transition-timing-function: ease,ease,ease-in-out,ease-in-out;
+	transition-duration: .35s;
+	transition-property: color,border-color,background-color,box-shadow;
+}
+
+.btn-link,.btn-link:active,.btn-link:focus,.btn-link:hover,.btn-link:link,.btn-link:visited,a,a:active,a:focus,a:hover,a:link,a:visited {
+	outline: 0;
+	text-decoration: none;
+}
+
+.btn-link {
+	display: inline-block;
+	color: inherit;
+	font-weight: inherit;
+}
+
+.btn-link.active,.btn-link:focus,.btn-link:hover {
+	color: #45c6a6;
+}
