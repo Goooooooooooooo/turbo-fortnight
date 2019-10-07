@@ -8,236 +8,96 @@
 <br>
 <div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
 
-<!--<div class="container-fluid">-->
-<!--    <div class="row py-3">-->
-<!--        <div class="col-2 jumbotron">-->
-<!--&lt;!&ndash;            <div class="sticky-top text-center">&ndash;&gt;-->
-<!--&lt;!&ndash;                <ul class="navbar-nav">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <li><a href="#">Link1</a></li><br>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <li><a href="#">Link1</a></li><br>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <li><a href="#">Link1</a></li><br>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <li><a href="#">Link1</a></li><br>&ndash;&gt;-->
-<!--&lt;!&ndash;                </ul>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--        </div>-->
-<!--        <div class="col" id="main">-->
-<!--            <div class="container-fluid">-->
-<!--                <div id="myCarousel" class="carousel slide" data-ride="carousel">-->
-<!--                    <ol class="carousel-indicators">-->
-<!--                        <li data-target="#myCarousel" data-slide-to="0" class=""></li>-->
-<!--                        <li data-target="#myCarousel" data-slide-to="1" class="active"></li>-->
-<!--                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>-->
-<!--                    </ol>-->
-<!--                    <div class="carousel-inner">-->
-<!--                        <div class="carousel-item">-->
-<!--                            <img class="d-block w-100" src="{% static 'img/002.jpg' %}" alt="First slide">-->
-<!--                            <div class="container">-->
-<!--                                <div class="carousel-caption text-center">-->
-<!--                                  <h1>Example headline.</h1>-->
-<!--                                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-<!--                                  <p>-->
-<!--                                    <a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a>-->
-<!--                                  </p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item active">-->
-<!--                            <img class="d-block w-100 h-80" src="{% static 'img/002.jpg' %}" alt="Second slide">-->
-<!--                            <div class="container">-->
-<!--                                <div class="carousel-caption">-->
-<!--                                  <h1>Another example headline.</h1>-->
-<!--                                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-<!--                                  <p>-->
-<!--                                      <a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a>-->
-<!--                                  </p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="carousel-item">-->
-<!--                            <img style="width:100%" src="{% static 'img/002.jpg' %}" alt="Third slide">-->
-<!--                            <div class="container">-->
-<!--                                <div class="carousel-caption text-center">-->
-<!--                                  <h1>One more for good measure.</h1>-->
-<!--                                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>-->
-<!--                                  <p>-->
-<!--                                      <a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a>-->
-<!--                                  </p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                        &lt;!&ndash; 轮播（Carousel）导航 &ndash;&gt;-->
-<!--                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">-->
-<!--                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-<!--                        <span class="sr-only">Previous</span>-->
-<!--                    </a>-->
-<!--                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">-->
-<!--                        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-<!--                        <span class="sr-only">Next</span>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--                <br>-->
-<!--                {% for article in article_list %}-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-md-2 mr-0">-->
-<!--                            {% if article.avatar %}-->
-<!--                                <img src="{{ article.avatar.url }}" alt="Card image" style="max-width:100%; border-radius: 20px">-->
-<!--                            {% endif %}-->
-<!--                        </div>-->
-<!--                        <div class="col" id="father">-->
-<!--                            &lt;!&ndash; 栏目 &ndash;&gt;-->
-<!--                            {% if article.category %}-->
-<!--                                <button type="button" class="btn btn-sm mb-2-->
-<!--                                        {% if article.category.name == 'Django' %}-->
-<!--                                            btn-success-->
-<!--                                        {% elif article.category.name == 'Java' %}-->
-<!--                                            btn-danger-->
-<!--                                        {% elif article.category.name == 'HTML' %}-->
-<!--                                            btn-warning-->
-<!--                                        {% elif article.category.name == 'CSS' %}-->
-<!--                                            btn-danger-->
-<!--                                        {% elif article.category.name == 'Python' %}-->
-<!--                                            btn-info-->
-<!--                                        {% endif %}">-->
-<!--                                    {{ article.category }}-->
-<!--                                </button>-->
-<!--                            {% endif %}-->
-<!--                            &lt;!&ndash; 标签 &ndash;&gt;-->
-<!--                            {% for tag in article.tags.all %}-->
-<!--                                <span>-->
-<!--                                    <a class="badge badge-secondary">{{ tag }}</a>-->
-<!--                                </span>-->
-<!--                            {% endfor %}-->
-<!--                            &lt;!&ndash; 标题 &ndash;&gt;-->
-<!--                            <h4>-->
-<!--                                <b><a href="{% url 'article:article-detail' article.id %}" style="color: black;">{{ article.title }}</a></b>-->
-<!--                            </h4>-->
-<!--                            <div>-->
-<!--                                <a href="{% url 'article:article-detail' article.id %}" style="color: black;"><p>{{ article.body|slice:'200'|safe }}</p></a>-->
-<!--                            </div>-->
-<!--                            <div class="pt-3">-->
-<!--                                <p id="child" class="mb-0">-->
-<!--                                    <span style="color: green;">-->
-<!--                                        {{ article.total_views }} 浏览&nbsp;&nbsp;&nbsp;-->
-<!--                                    </span>-->
-<!--                                    <span style="color: blue;">-->
-<!--                                        {{ article.created|date:'Y-m-d' }} 发布&nbsp;&nbsp;&nbsp;-->
-<!--                                    </span>-->
-<!--                                    <span style="color: darkred;">-->
-<!--                                        {{ article.updated|date:'Y-m-d' }} 更新-->
-<!--                                    </span>-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <hr style="width:100%">-->
-<!--                    </div>-->
-<!--                {% endfor %}-->
-<!--                &lt;!&ndash; 翻页按钮 start &ndash;&gt;-->
-<!--                <div class="pagination row">-->
-<!--                    <div class="m-auto">-->
-<!--                        <span class="step-links">-->
-<!--                            &lt;!&ndash; 如果不是第一页，则显示上翻按钮 &ndash;&gt;-->
-<!--                            {% if page_obj.has_previous %}-->
-<!--                                <a href="?page=1" class="btn btn-success"> &laquo; </a>-->
-<!--                                <span>...</span>-->
-<!--                                <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">-->
-<!--                                    {{ page_obj.previous_page_number }}-->
-<!--                                </a>-->
-<!--                            {% else %}-->
-<!--                                <a href="#" class="btn btn-success disabled"> &laquo; </a>-->
-<!--                                <span>...</span>-->
-<!--                            {% endif %}-->
-
-<!--                            &lt;!&ndash; 当前页面 &ndash;&gt;-->
-<!--                            <span class="current btn btn-danger btn-lg">{{ page_obj.number }}</span>-->
-
-<!--                            &lt;!&ndash; 如果不是最末页，则显示下翻按钮 &ndash;&gt;-->
-<!--                            {% if page_obj.has_next %}-->
-<!--                                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">-->
-<!--                                    {{ page_obj.next_page_number }}-->
-<!--                                </a>-->
-<!--                                <span>...</span>-->
-<!--                                <a href="?page={{ page_obj.next_page_number }}" class="btn btn-success">-->
-<!--                                    &raquo;-->
-<!--                                </a>-->
-<!--                            {% else %}-->
-<!--                                <span>...</span>-->
-<!--                                <a href="#" class="btn btn-success disabled">-->
-<!--                                    &raquo;-->
-<!--                                </a>-->
-<!--                            {% endif %}-->
-<!--                        </span>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                &lt;!&ndash; 翻页按钮 End &ndash;&gt;-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="col-2">-->
-
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
 	<section class="main wrapper">
-		<article>
+
+		{% if search %}
+			{% if article_list %}
+				<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+				<hr>
+			{% else %}
+				<h4>暂无<span style="color: red">"{{ search }}"</span>有关的文章。</h4>
+				<hr>
+			{% endif %}
+    	{% endif %}
+
+		{% for article in article_list %}
+		<article id="father">
 			<div class="article_image">
-				<a href="#">
-					<img src="{% static 'img/pic1.jpg' %}" alt="" title="">
+				<a href="{% url 'article:article-detail' article.id %}">
+					{% if article.avatar %}
+					<img src="{{ article.avatar.url }}" alt="" title="">
+					{% else %}
+					<img src="{% static 'img/no_img.jpg' %}" alt="" title="">
+					{% endif %}
 				</a>
 			</div>
 			<div class="post">
 				<h1 class="title">
-					<a href="#">Duis aute irure dolor in henderit in voluptate.</a>
+					<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
 				</h1>
-
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-
-				<a class="read_more" href="#">Continue Reading <i class="read_more_arrow"></i> </a>
+				<div class="pb-3">
+					{% if article.category %}
+					<button type="button" name="category" class="btn btn-sm mb-2
+							{% if article.category.name == 'Django' %}
+								btn-success
+							{% elif article.category.name == 'Java' %}
+								btn-danger
+							{% elif article.category.name == 'HTML' %}
+								btn-warning
+							{% elif article.category.name == 'CSS' %}
+								btn-danger
+							{% elif article.category.name == 'Python' %}
+								btn-info
+							{% endif %}">
+						{{ article.category }}
+					</button>
+					{% endif %}
+					<!-- 标签 -->
+					{% for tag in article.tags.all %}
+						<span><a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></span>
+					{% endfor %}
+				</div>
+				<div class="pb-3">
+					<p>{{ article.body|slice:'200'|safe }}</p>
+				</div>
+				<div id="child">
+					<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
+						{{ article.total_views }}
+					</span>
+					<span style="color:#328CF2;padding-right:5px;"><i class="fa fa-calendar"></i>
+						{{ article.created|date:'Y-m-d' }}
+					</span>
+					<span style="color:#F23263;padding-right:5px;"><i class="fas fa-redo-alt"></i>
+						{{ article.updated|date:'Y-m-d' }}
+					</span>
+					<a class="read_more" href="{% url 'article:article-detail' article.id %}">   Read  More...   <i class="read_more_arrow"></i> </a>
+				</div>
 			</div>
 		</article>
+		{% endfor %}
 
-		<article>
-			<div class="article_image">
-				<a href="#">
-					<img src="{% static 'img/pic2.jpg' %}" alt="" title="">
-				</a>
-			</div>
-			<div class="post">
-				<h1 class="title">
-					<a href="#">Duis aute irure dolor in henderit in voluptate.</a>
-				</h1>
-
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-
-				<a class="read_more" href="#">Continue Reading <i class="read_more_arrow"></i> </a>
-			</div>
-		</article>
-
-		<article>
-			<div class="article_image">
-				<a href="#">
-					<img src="{% static 'img/pic3.jpg' %}" alt="" title="">
-				</a>
-			</div>
-			<div class="post">
-				<h1 class="title">
-					<a href="#">Duis aute irure dolor in henderit in voluptate.</a>
-				</h1>
-
-				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-				<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-
-				<a class="read_more" href="#">Continue Reading <i class="read_more_arrow"></i> </a>
-			</div>
-		</article>
+		<!-- 翻页 -->
 		<nav class="pagination">
-			<a href="#" class="previous"><i></i>Previous</a>
-			<a href="#" class="next">Next<i></i></a>
+			<div class="row">
+				<div class="col-3">
+					{% if page_obj.has_previous %}
+						<a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
+					{% else %}
+						<a href="javascript:volid(0);" title="first page" class="previous"><i></i>Previous</a>
+					{% endif %}
+				</div>
+				<div class="col text-center">
+					<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
+					<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
+				</div>
+				<div class="col-3">
+					{% if page_obj.has_next %}
+						<a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
+					{% else %}
+						<a href="javascript:volid(0);" title="Last Page" class="next" style="opacity: 0.2">Next<i></i></a>
+					{% endif %}
+				</div>
+			</div>
 		</nav>
 	</section>
 
@@ -248,8 +108,11 @@
         }
     #child {
         position: absolute;
-        bottom: 0;
+        bottom: 20px;
         }
+    #child p {
+    	margin-bottom: 5px;
+    }
 </style>
 
 

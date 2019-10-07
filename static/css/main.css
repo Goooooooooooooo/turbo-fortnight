@@ -5,11 +5,11 @@
 /*  Fonts  */
 @font-face {
     font-family: 'LatoRegular';
-    src: url('../fonts/Lato-Regular.eot');
-    src: url('../fonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Lato-Regular.woff') format('woff'),
-         url('../fonts/Lato-Regular.ttf') format('truetype'),
-         url('../fonts/Lato-Regular.svg#LatoRegular') format('svg');
+    src: url('../webfonts/Lato-Regular.eot');
+    src: url('../webfonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/Lato-Regular.woff') format('woff'),
+         url('../webfonts/Lato-Regular.ttf') format('truetype'),
+         url('../webfonts/Lato-Regular.svg#LatoRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -17,78 +17,16 @@
 
 @font-face {
     font-family: 'LatoBold';
-    src: url('../fonts/Lato-Bold.eot');
-    src: url('../fonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/Lato-Bold.woff') format('woff'),
-         url('../fonts/Lato-Bold.ttf') format('truetype'),
-         url('../fonts/Lato-Bold.svg#LatoBold') format('svg');
+    src: url('../webfonts/Lato-Bold.eot');
+    src: url('../webfonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/Lato-Bold.woff') format('woff'),
+         url('../webfonts/Lato-Bold.ttf') format('truetype'),
+         url('../webfonts/Lato-Bold.svg#LatoBold') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
-
-
-
-
-
-
-/*  Header  */
-header{
-	width: 100%;
-	height: 126px;
-	background-color: #292929; 
-	border-bottom: 4px #1e1e1e solid;
-}
-
-header img.h_logo{
-	display: block;
-	float: left;
-	margin-top: 49px;
-}
-
-header nav{
-	float: right;
-}
-
-ul.main_nav{	
-	font-family: 'LatoBold', 'Helvetica', arial;
-	margin-right: -1px;
-	font-weight: bold;
-}
-
-ul.main_nav li{
-	float: left;
-	letter-spacing: 2px;
-	font-size: 16px;
-	padding: 0;
-	margin: 0;
-}
-
-ul.main_nav li a{
-	display: block;
-	width: 130px;
-	height: 71px;
-	padding-top: 55px;
-	border-right: 1px #1e1e1e solid;
-	vertical-align: middle;
-	text-decoration: none;
-	text-shadow: 0px 1px 0 #1e1e1e;
-	text-align: center;
-}
-
-ul.main_nav li:first-child a{
-	border-left: 1px #1e1e1e solid; 
-}
-
-ul.main_nav li.current a{
-	color: #58c93a;
-	box-shadow: 0 4px 0 #58c93a; 
-}
-
-ul.main_nav li a:hover{
-	background: #242424;
-}
 
 /*  Main section  */
 .main{
@@ -100,7 +38,7 @@ ul.main_nav li a:hover{
 }
 
 .main article{
-	margin: 80px 0;
+	margin: 60px 0;
 	overflow: hidden;
 }
 
@@ -111,7 +49,7 @@ ul.main_nav li a:hover{
 }
 
 .main .article_image{
-	width: 470px;
+	width: 400px;
 	margin-right: 40px;
 }
 
@@ -128,7 +66,7 @@ ul.main_nav li a:hover{
 	font-size: 28px;
 	text-transform: uppercase;
 	line-height: 30px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 
 .main .title a,
@@ -139,7 +77,7 @@ ul.main_nav li a:hover{
 
 .main .title a:hover,
 .main2 .title a:hover{
-	color: #58c93a;
+	color: #007bff;
 }
 
 .main .post p,	
@@ -171,8 +109,8 @@ ul.main_nav li a:hover{
 
 .main a.read_more:hover,
 .main2 a.read_more:hover{
-	border: 2px #58c93a solid;
-	color: #58c93a;
+	border: 2px #007bff solid;
+	color: #007bff;
 }
 
 .main a.read_more i.read_more_arrow,
@@ -212,78 +150,6 @@ ul.main_nav li a:hover{
 	margin-bottom: 80px;
 }
 
-
-
-/*  Sidebar & widgets  */
-aside{
-	width: 280px;
-	height: 1000px;
-	float: right;
-}
-
-aside .widget{
-	margin-bottom: 80px;
-}
-
-aside h3.widget-title{
-	width: 240px;
-	padding: 17px 20px;
-	border-left: 3px #58c93a solid;
-	background: #f8f8f8;
-	margin-bottom: 20px;
-	font-family: 'LatoBold', 'Helvetica', arial;
-	font-weight: bold;
-	font-size: 16px;
-	color: #6c6969;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-}
-
-aside .textwidget p{
-	width: 240px;
-	padding: 0 20px;
-	font-family: 'LatoRegular', 'Helvetica', arial;
-	font-size: 16px;
-	color: #737373;
-	margin-bottom: 10px;
-	line-height: 20px;
-}
-
-.search_widget .search-field{
-	width: 240px;
-	height: 50px;
-	padding: 0 20px;
-	color: #828282;
-	font-family: 'LatoRegular', 'Helvetica', arial;
-	font-size: 12px;
-	letter-spacing: .5px;
-	outline: none;
-	border: 1px #e1e0e0 solid;
-}
-
-
-.search_widget .search-field:focus{
-	border: 1px #b9b9b9 solid;
-}
-
-
-
-::-webkit-input-placeholder {
-   color: #b9b9b9;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: #b9b9b9;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: #b9b9b9;  
-}
-
-:-ms-input-placeholder {  
-   color: #b9b9b9;  
-}
-
 /*  pagination  */
 .pagination{
 	display: block;
@@ -299,7 +165,7 @@ aside .textwidget p{
 }
 
 .previous,
-.next{
+.next,.p_number{
 	text-decoration: none;
 	margin: 0 30px;
 	font-family: 'LatoBold', 'Helvetica', arial;
@@ -307,6 +173,7 @@ aside .textwidget p{
 	font-size: 18px;
 	text-transform: uppercase;
 }
+
 
 .previous{
 	float: left;
@@ -337,7 +204,7 @@ aside .textwidget p{
 
 .previous:hover,
 .next:hover{
-	color: #58c93a;
+	color: #007bff;
 }
 .previous:hover i,
 .next:hover i{
@@ -350,93 +217,6 @@ aside .textwidget p{
 
 .next:hover i{
 	background-position: -16px 0;
-}
-
-
-/*  footer  */
-footer{
-	width: 100%;
-	height: auto;
-	background: #f8f8f8;
-	border-top: 1px #e1e0e0 solid;
-	margin-top: -1px;
-	padding: 80px 0;
-	text-align: center;
-}
-
-footer .logo_footer,
-footer p.rights{
-	margin-bottom: 30px;
-}
-
-footer p.rights{
-	font-family: 'LatoRegular', 'Helvetica', arial;
-	color: #a6a6a6;
-	font-size: 13px;
-}
-
-
-footer p.rights a{
-	font-family: 'LatoBold', 'Helvetica', arial;
-	font-weight: bold;
-	color: #939292;
-	text-decoration: none;
-}
-
-
-
-footer ul.social_profiles{
-	width: 100%;
-	text-align: center;
-}
-
-footer ul.social_profiles li{
-	display: inline-block;
-}
-
-footer ul.social_profiles li a{
-	width: 40px;
-	height: 40px;
-	margin-right: 16px; 
-	display: inline-block;
-	background: url('../img/sp.png') no-repeat;
-}
-
-footer ul.social_profiles li a:hover{
-	background: url('../img/sp_hover.png') no-repeat;
-}
-
-footer ul.social_profiles .f a{
-	background-position: 0 0;
-}
-	
-footer ul.social_profiles .t a{
-	background-position: -41px 0;
-}
-	
-footer ul.social_profiles .be a{
-	background-position: -82px 0;
-}
-	
-footer ul.social_profiles .d a{
-	background-position: -123px 0;
-}
-
-
-footer ul.social_profiles .f a:hover{
-	background-position: 0 0;
-}
-	
-footer ul.social_profiles .t a:hover{
-	background-position: -41px 0;
-}
-	
-footer ul.social_profiles .be a:hover{
-	background-position: -82px 0;
-}
-	
-footer ul.social_profiles .d a:hover{
-	background-position: -123px 0;
 }
 
 

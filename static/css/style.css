@@ -129,8 +129,6 @@
     font-size: 13px;
 }
 
-/* Register Form CSS-End */
-
 
 /* Header CSS-Start */
 
@@ -143,9 +141,8 @@
     margin-bottom: auto;
     margin-top: auto;
     height: 60px;
-    background-color: #007bff;
     /* 圆角 */
-    border-radius: 30px;
+    /*border-radius: 30px;*/
     padding: 10px;
     align-items: center;
 }
@@ -154,12 +151,12 @@
     color: #fff;
     border: 0;
     outline: 0;
-    background: none;
-    /* 搜索输入框初始大小设为0 */
-    width: 0;
+    caret-color:red;
+    /* 搜索输入框初始大小 */
+    width: 400px;
     line-height: 40px;
     /* 过渡:搜索输入框展开 */
-    transition: width 0.4s linear;
+    /*transition: width 0.4s linear;*/
 }
 
 /* 搜索图标样式 */
@@ -167,27 +164,26 @@
     height: 40px;
     width: 40px;
     float: right;
-    display: flex;
+    background:white;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    color:white;
+    color:#007bff;
 }
 
 /* 鼠标悬浮，搜索栏样式设置 */
+/*
 .searchbar:hover > .search_input{
-    padding: 0 10px;
     /* 搜索输入框大小 */
     width: 400px;
     /* 光标颜色 */
     caret-color:red;
-    transition: width 0.4s linear;
-}
+    /*transition: width 0.4s linear;*/
+}*/
 /* 鼠标悬浮，搜索图标样式设置 */
-.searchbar:hover > .search_icon{
+/*.searchbar:hover > .search_icon{
     background:white;
     color: #e74c3c;
-}
+}*/
 
 /* 关键字字体颜色 */
 .searchbar ::-webkit-input-placeholder {

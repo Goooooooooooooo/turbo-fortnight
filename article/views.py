@@ -5,9 +5,8 @@ from django.views import generic
 from .models import ArticlePost
 from django.utils import timezone
 from .forms import ArticlePostForm
-from django.core.paginator import Paginator
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.db.models import Q
 
 
 # 单纯的迁移画面，不做额外的处理
@@ -25,6 +24,8 @@ def article_safe_delete(request, pk):
     else:
         return HttpResponse("仅允许post请求")
 
+
+
 # 主页显示View
 class ArticleListView(generic.ListView):
     model = ArticlePost
@@ -35,13 +36,33 @@ class ArticleListView(generic.ListView):
     class Meta:
         pass
 
-    # def get_queryset(self):
-    #     return ArticlePost.objects.filter(title='')
+    def get_queryset(self):
+        search = self.request.GET.get('search')
+        category = self.request.GET.get('category')
+        tag = self.request.GET.get('tag')
+
+        article_list = ArticlePost.objects.all()
+        if search:
+            article_list = article_list.filter(Q(title__icontains=search) | Q(body__icontains=search))
+
+        if category is not None and category.isdigit():
+            article_list = article_list.filter(column=category)
+
+        if tag and tag != 'None':
+            article_list = article_list.filter(tags__name__in=[tag])
+
+        return article_list
+
 
     def get_context_data(self, **kwargs):
         context = super(ArticleListView, self).get_context_data(**kwargs)
         context['now'] = timezone.now
+        context['search'] = self.request.GET.get('search')
+        context['category'] = self.request.GET.get('category')
+        context['tag'] = self.request.GET.get('tag')
         return context
+
+
 
 # 单篇文章详细
 class ArticleDetailView(generic.DeleteView):
@@ -109,7 +130,6 @@ class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
     #     #     logger.debug(value)
     #     # return HttpResponse(ErrorDict.__repr__())
     #     return HttpResponse('Error {}'.format(Error_Dict))
-
 
 
 class ArticleUpdateView(LoginRequiredMixin, generic.UpdateView):
