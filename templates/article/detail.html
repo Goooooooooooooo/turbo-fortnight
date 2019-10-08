@@ -6,90 +6,69 @@
     文章详情
 {% endblock title %}
 
+
+
 {% block content %}
 
-<div class="container-fluid">
+
     <section id="wrapper">
         <div class="row">
             <div class="col-2">
 
             </div>
             <div class="col" style="border-left: 1px #e1e0e0 solid;border-right: 1px #e1e0e0 solid;">
-                <div class="py-4">
-                    <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
-                        <ul class="nav pull-right nav-pills block-center">
-                            <li class="py-2 pr-4 fs--20 text-info"><i class="fa fa-calendar"></i> {{ article_detail.updated|date:'Y-m-d' }}</li>
-                            <li class="py-2 pr-4 fs--20 text-info"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
-                            <li class="py-2 pr-4 fs--20 text-info"><i class="fa fa-comments"></i>24 Comments</li>
-                            <li class="py-2 pr-4 fs--20 text-info"><i class="fas fa-eye"></i>{{ article_detail.total_views }}</li>
-                        </ul>
-                    <hr style="width:100%">
-                </div>
-                <div class="article pb-5">
-                    <h1></h1>
-                    <div class="article-content">
+                <article style="width:100%;">
+                    <div class="py-4">
+                        <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
+                            <ul class="nav pull-right nav-pills block-center">
+                                <li class="py-2 pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|date:'Y-m-d' }}</li>
+                                <li class="py-2 pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
+                                <li class="py-2 pr-4 fc--18"><i class="fa fa-comments"></i>24 Comments</li>
+                                <li class="py-2 pr-4 fc--18"><i class="fas fa-eye"></i>{{ article_detail.total_views }}</li>
+                            </ul>
+                        <hr style="width:100%">
+                    </div>
+                    <div class="article pb-5">
+                    <div class="avatar">
+                        {% if article_detail.avatar %}
+                            <img src="{{ article_detail.avatar.url }}" style="width:80%; height:300px;" />
+                        {% endif %}
+                    </div>
+                    <div class="fs--22 ff-default">
                         <p>{{article_detail.body|safe}}</p>
                     </div>
                 </div>
+                </article>
             </div>
             <div class="col-2">
                 <div style="height:170px;">
-
                 </div>
-                <div class="m-auto">
+                <div id="tools" class="m-auto">
                     <h3 class="fs--30"> Tools </h3>
                     <div class="list-group p-2" id="list-group">
-                        {% if user == article_detail.author %}
-                            <a href="#" data-toggle="modal" data-target="#deleteModalCenter" class="list-group-item">
-                                <span class="fa-stack fa-lg">
-                                <i class="fa-stack-2x fa fa-circle "></i>
-                                <i class="fa-stack-1x text-primary fa fa-envelope "></i>
-                                </span>
-                                <span class="">删除文章</span>
-                            </a>
-                            <a href="{% url 'article:article-update' article_detail.id %}" class="list-group-item">
-                                <span class="fa-stack fa-lg">
-                                <i class="fa-stack-2x fa fa-circle "></i>
-                                <i class="fa-stack-1x text-primary fa fa-envelope "></i>
-                                </span>
-                                <span class="">Edit Article</span>
-                            </a>
-                        {% endif %}
+                            {% if user == article_detail.author %}
+                                <a href="#" data-toggle="modal" data-target="#deleteModalCenter" class="list-group-item">
+                                    <i class="fas fa-eraser"></i>
+                                        删除文章
+                                </a>
+                                <a href="{% url 'article:article-update' article_detail.id %}" class="list-group-item">
+                                    <i class="far fa-edit"></i>
+                                        编辑文章
+                                </a>
+                            {% endif %}
                             <a href="#" class="list-group-item">
-                                <span class="fa-stack fa-lg">
-                                <i class="fa-stack-2x fa fa-circle "></i>
-                                <i class="fa-stack-1x text-primary fa fa-envelope "></i>
-                                </span>
-                                <span class="">Email</span>
+                                <i class="far fa-thumbs-up"></i>
                             </a>
                             <a href="#" class="list-group-item">
-                                <span class="fa-stack fa-lg">
-                                <i class="fa-stack-2x fa fa-circle "></i>
-                                <i class="fa-stack-1x text-primary fa fa-envelope "></i>
-                                </span>
-                                <span class="">Email</span>
-                            </a>
-                            <a href="#" class="list-group-item">
-                                <span class="fa-stack fa-lg">
-                                <i class="fa-stack-2x fa fa-circle "></i>
-                                <i class="fa-stack-1x text-primary fa fa-envelope "></i>
-                                </span>
-                                <span class="">Email</span>
+                                <i class="far fa-comment-dots"></i>
                             </a>
                         </div>
                     <div class="fs--30"><h3>Tags</h3></div>
                     <div class="p-3">
                         <ul class="list-unstyled list-inline blog-tags">
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Business</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Music</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Internet</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Education</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> People</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Math</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Photos</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Electronics</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Apple</a></li>
-                        <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i> Canada</a></li>
+                            {% for tag in article_detail.tags.all %}
+                            <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></li>
+                            {% endfor %}
                     </ul>
                     </div>
                 </div>
@@ -97,7 +76,7 @@
         </div>
     </section>
 
-    <!-- Modal Delete -->
+    <!-- 删除弹窗 -->
     <div class="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -117,17 +96,21 @@
             </div>
         </div>
     </div>
-    <!-- 新增一个隐藏的表单 -->
+
+
+    <!-- 新增一个隐藏的删除表单 -->
     <form style="display:none;" id="safe_delete" action="{% url 'article:article-safe-delete' article_detail.id %}" method="POST">
         {% csrf_token %}
         <button type="submit"> Submit </button>
     </form>
 
     <script>
-    function confirm_safe_delete() {
-        $('form#safe_delete button').click();
-    }
+        function confirm_safe_delete() {
+            $('form#safe_delete button').click();
+        }
     </script>
 
-</div>
+<script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'prism/prism.css' %}">
+
 {% endblock %}

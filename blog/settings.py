@@ -147,12 +147,12 @@ CKEDITOR_CONFIGS = {
         'toolbar':'Custom',
         'toolbar_Custom':[
             ['Smiley', 'CodeSnippet'],
-            ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blckquote'],
+            ['Bold', 'Italic', 'Underline', 'RemoveFormat', 'Blockquote'],
             ['TextColor', 'BGColor'],
             ['Link', 'Unlink'],
             ['NumberedList', 'BulletedList'],
-            ['Maxmize']
+            ['Maximize']
         ],
-        'extraPlugins': ','.join(['codesnippet', 'uploadimage']),
+        'extraPlugins': ','.join(['codesnippet', 'prism', 'widget', 'lineutils', 'uploadimage',]),
     }
 }

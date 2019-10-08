@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserLoginForm, UserRegisterForm , ProfileForm
+from django.contrib.auth.models import User
+from .models import Profile
 
 
 # django 自带 logou 方法
@@ -66,12 +68,34 @@ def user_register(request):
 
 
 # 用户个人信息修改
-def user_edit_profile(request):
+def user_edit_profile(request,pk):
+    user = User.objects.get(id=pk)
+    # user_id 自动生成字段
+    profile = Profile.objects.get(user_id=pk)
+
     if request.method == 'POST':
+
+        if user != request.user:
+            return HttpResponse('')
+
+        profile_form = ProfileForm(data=request.POST)
+        if profile_form.is_valid():
+            cleaned_dt = profile_form.cleaned_data
+            profile.avatar = cleaned_dt['avatar']
+            profile.phone = cleaned_dt['phone']
+            profile.bio = cleaned_dt['bio']
+            profile.save()
+
+
+            return redirect('userprofile:edit-profilt', pk=pk)
+
+
         return render(request, 'userprofile/edit_profile.html')
     elif request.method == 'GET':
-        profile = UserRegisterForm()
+        profile = ProfileForm()
         context = {'profile': profile}
+
+
         return render(request, 'userprofile/edit_profile.html', context)
     else:
         return HttpResponse('请使用GET或POST请求数据')

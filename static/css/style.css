@@ -1,24 +1,51 @@
+/*  Fonts  */
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('../webfonts/Lato-Regular.eot');
+    src: url('../webfonts/Lato-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/Lato-Regular.woff') format('woff'),
+         url('../webfonts/Lato-Regular.ttf') format('truetype'),
+         url('../webfonts/Lato-Regular.svg#LatoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'LatoBold';
+    src: url('../webfonts/Lato-Bold.eot');
+    src: url('../webfonts/Lato-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../webfonts/Lato-Bold.woff') format('woff'),
+         url('../webfonts/Lato-Bold.ttf') format('truetype'),
+         url('../webfonts/Lato-Bold.svg#LatoBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 /* Login Form CSS-Start */
 
 #login .text-color{
-    color: #ED6C19;
+    color: #1B9BFF;
 }
 
 #login .btn-color{
     color: white;
-    background: #ED6C19;
+    background: #1B9BFF;
 }
-
+/*
 #login .container
 {
     margin: 20px auto;
     padding-top: 120px;
     padding-bottom: 40px;
 }
-
+*/
 #login .container #login-row #login-column #login-box {
 	margin-top: 120px;
-	max-width: 500px;
+	max-width: 600px;
+	height: 350px;
 	border: 1px solid #9C9C9C;
 	background-color: #EAEAEA;
 }
@@ -36,7 +63,6 @@
 
 #register .container
 {
-    width: 600px;
     margin: 20px auto;
     padding-top: 120px;
     padding-bottom: 40px;
@@ -98,12 +124,13 @@
 }
 
 #register .text-color{
-    color: #ED6C19;
+    color: #1B9BFF;
 }
+
 
 #register .btn-color{
     color: white;
-    background: #ED6C19;
+    background: #1B9BFF;
 }
 
 #register .form-group
@@ -131,11 +158,6 @@
 
 
 /* Header CSS-Start */
-
-.header--date {
-    float: left;
-    padding: 13px 0;
-}
 
 .searchbar {
     margin-bottom: auto;
@@ -178,9 +200,9 @@
     /* 光标颜色 */
     caret-color:red;
     /*transition: width 0.4s linear;*/
-}*/
+}
 /* 鼠标悬浮，搜索图标样式设置 */
-/*.searchbar:hover > .search_icon{
+.searchbar:hover > .search_icon{
     background:white;
     color: #e74c3c;
 }*/
@@ -211,8 +233,8 @@
     color: white;
 }
 
-a,a:focus,a:hover {
-	color: #45c6a6;
+#header-nav ul li a:hover{
+	color: #FF3F3F;
 }
 
 .nav-link{
@@ -235,7 +257,10 @@ a,a:focus,a:hover {
 
 
 .ff--default {
-	font-family: Open Sans,sans-serif;
+	font-family: 'LatoBold', 'Helvetica', arial, 
+				"lucida grande", "lucida sans unicode", 
+				lucida, helvetica, "Hiragino Sans GB", 
+				"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .ff--primary {
@@ -301,11 +326,33 @@ a,a:focus,a:hover {
     color: white;
 }
 
+.fc--18{
+	color: #898989;
+	font-size: 18px;
+	line-height: 28px;
+}
+
 /* Font Size CSS-End */
 
+#tools a{
+	color: #767676;
+	text-decoration:none;
+}
 
+#tools a:hover{
+	color: #298EFF;
+}
 
+.avatar img{
+	max-width: 678px!important;
+	height: auto!important;
+	width:expression(this.width > 678 ? "678px" :true)!important;
+	-webkit-max-width:678px; 
+	margin:0 auto;
+	display:block;
+}
 
+/*
 .btn-link,a {
 	transition-timing-function: ease,ease,ease-in-out,ease-in-out;
 	transition-duration: .35s;
@@ -325,4 +372,182 @@ a,a:focus,a:hover {
 
 .btn-link.active,.btn-link:focus,.btn-link:hover {
 	color: #45c6a6;
+}*/
+
+/* Index CSS */
+
+.main article{
+	margin: 60px 0;
+	overflow: hidden;
+}
+
+.main article:hover{
+	border: 1px solid #1B9BFF;
+	border-radius: 5px;
+}
+
+.main .post{
+	width: 100%;
+	float: left;
+}
+
+
+
+.main h1.title{
+	font-family: 'LatoBold', 'Helvetica', arial, 
+				"lucida grande", "lucida sans unicode", 
+				lucida, helvetica, "Hiragino Sans GB", 
+				"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-weight: bold;
+	font-size: 28px;
+	text-transform: uppercase;
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+.main .title a{
+	text-decoration: none;
+	color: #4f4e4e;
+}
+
+.main .title a:hover{
+	color: #007bff;
+}
+
+.main p{	
+	font-family: 'LatoRegular', 'Helvetica', arial;
+	color: #606060;
+	line-height: 30px;
+	margin-bottom: 20px;
+}
+
+.main a.read_more{
+	font-family: 'LatoRegular', 'Helvetica', arial;
+	display: inline-block;
+	padding: 10px 30px 13px 30px;
+	background: #ffffff;
+	border: 2px #c2c2c2 solid;
+	color: #c2c2c2;
+	text-decoration: none;
+	margin-top: 14px;
+
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-o-border-radius: 100px;
+	-ms-border-radius: 100px;
+}
+
+.main a.read_more:hover{
+	border: 2px #007bff solid;
+	color: #007bff;
+}
+
+.main a.read_more i.read_more_arrow{
+	width: 15px;
+	height: 7px;
+	background: url('../img/read_more_arrow.png') no-repeat;
+	display: inline-block;
+	opacity: 0;
+	margin-left: -5px;
+}
+
+.main a.read_more:hover i.read_more_arrow{
+	opacity: 1;
+	margin-left: 5px;
+}
+
+
+
+/*  pagination  */
+.pagination{
+	display: block;
+	width: 100%;
+	padding: 30px 0;
+	border: 1px #e1e0e0 solid;
+	overflow: hidden;
+}
+
+.pagination a{
+	color: #818181;
+}
+
+.previous,
+.next,.p_number{
+	text-decoration: none;
+	margin: 0 30px;
+	font-family: 'LatoBold', 'Helvetica', arial;
+	font-weight: bold;
+	font-size: 18px;
+	text-transform: uppercase;
+}
+
+
+.previous{
+	float: left;
+}
+
+.next{
+	float: right;
+}
+
+.previous i,
+.next i{
+	width: 15px;
+	height: 7px;
+	display: inline-block;
+	margin-bottom: 3px;
+	background: url('../img/pagination.png') no-repeat;
+}
+
+.previous i{
+	background-position: 0 0;
+	margin-right: 10px;
+}
+
+.next i{
+	background-position: -16px 0;
+	margin-left: 10px;
+}
+
+.previous:hover,
+.next:hover{
+	color: #007bff;
+}
+.previous:hover i,
+.next:hover i{
+	background: url('../img/pagination_hover.png') no-repeat; 
+}
+
+.previous:hover i{
+	background-position: 0px 0;
+}
+
+.next:hover i{
+	background-position: -16px 0;
+}
+
+
+
+/*  General CSS*/
+.wrapper{
+	width: 60%;
+	height: auto;
+	margin: 0 auto;
+}
+
+ul.main_nav li a,
+.main .title a,
+.main a.read_more,
+.main a.read_more i.read_more_arrow,
+.previous,
+.next,
+.previous i,
+.next i,
+footer ul.social_profiles li a,
+.search_widget .search-field{
+	transition: .2s linear;
+	-webkit-transition: .2s linear;
+	-moz-transition: .2s linear;
+	-o-transition: .2s linear;
 }

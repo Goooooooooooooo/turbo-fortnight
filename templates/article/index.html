@@ -21,46 +21,41 @@
     	{% endif %}
 
 		{% for article in article_list %}
-		<article id="father">
-			<div class="article_image">
-				<a href="{% url 'article:article-detail' article.id %}">
-					{% if article.avatar %}
-					<img src="{{ article.avatar.url }}" alt="" title="">
-					{% else %}
-					<img src="{% static 'img/no_img.jpg' %}" alt="" title="">
-					{% endif %}
-				</a>
-			</div>
-			<div class="post">
-				<h1 class="title">
-					<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
-				</h1>
+		<article>
+			<div class="card text-center" style="height: 430px;">
+			  <div class="card-header">
+				  <div class="pb-1">
+					  	{% if article.category %}
+						<span>
+							<a href="{% url 'article:article-list' %}?category={{ article.category.id }}" name="category" class="btn btn-sm mb-2 {% if article.category.name == 'Django' %}
+																	  btn-dark
+																  {% elif article.category.name == 'Java' %}
+																	  btn-danger
+																  {% elif article.category.name == 'HTML' %}
+																	  btn-warning
+																  {% elif article.category.name == 'CSS' %}
+																	  btn-danger
+																  {% elif article.category.name == 'Python' %}
+																	  btn-info
+																  {% endif %}">
+									{{ article.category.name }}
+							</a>
+							{% endif %}
+						</span>
+						<!-- 标签 -->
+						{% for tag in article.tags.all %}
+							<span><a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></span>
+						{% endfor %}
+				  </div>
+			  </div>
+			  <div class="card-body post">
+				<h1 class="title"><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a></h1>
+				<p class="ff--default fs--18 card-text">{{ article.body|slice:'200'|safe }}</p>
+			  </div>
 				<div class="pb-3">
-					{% if article.category %}
-					<button type="button" name="category" class="btn btn-sm mb-2
-							{% if article.category.name == 'Django' %}
-								btn-success
-							{% elif article.category.name == 'Java' %}
-								btn-danger
-							{% elif article.category.name == 'HTML' %}
-								btn-warning
-							{% elif article.category.name == 'CSS' %}
-								btn-danger
-							{% elif article.category.name == 'Python' %}
-								btn-info
-							{% endif %}">
-						{{ article.category }}
-					</button>
-					{% endif %}
-					<!-- 标签 -->
-					{% for tag in article.tags.all %}
-						<span><a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></span>
-					{% endfor %}
-				</div>
-				<div class="pb-3">
-					<p>{{ article.body|slice:'200'|safe }}</p>
-				</div>
-				<div id="child">
+					  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
+				  </div>
+			  <div class="card-footer text-muted">
 					<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
 						{{ article.total_views }}
 					</span>
@@ -70,13 +65,14 @@
 					<span style="color:#F23263;padding-right:5px;"><i class="fas fa-redo-alt"></i>
 						{{ article.updated|date:'Y-m-d' }}
 					</span>
-					<a class="read_more" href="{% url 'article:article-detail' article.id %}">   Read  More...   <i class="read_more_arrow"></i> </a>
-				</div>
+			  </div>
 			</div>
 		</article>
 		{% endfor %}
 
-		<!-- 翻页 -->
+
+
+		<!-- 翻页 start -->
 		<nav class="pagination">
 			<div class="row">
 				<div class="col-3">
@@ -99,6 +95,7 @@
 				</div>
 			</div>
 		</nav>
+		<!-- 翻页 end -->
 	</section>
 
 

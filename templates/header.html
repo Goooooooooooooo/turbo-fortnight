@@ -3,14 +3,10 @@
 <div class="bg-dark">
 	<div class="container">
 	<!--Navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark primary-color">
-
-		  <!-- Navbar brand -->
-
-		  <div class="collapse navbar-collapse" id="basicExampleNav">
-
-			  <ul id="home-btn" class="navbar-nav mr-auto">
-				  <li class="nav-item active">
+	<nav id="header-nav" class="navbar navbar-expand-lg navbar-dark primary-color">
+		  <div class="collapse navbar-collapse">
+			  <ul class="nav mr-auto">
+				  <li class="active nav-item">
 					<a class="nav-link" href="{% url 'article:article-list' %}">Home</a>
 				  </li>
 				  <li class="nav-item">
@@ -34,16 +30,21 @@
 			  <!-- User Menu Drop Start -->
 			  {% if user.is_authenticated %}
 			  <!-- Links -->
-			  	<ul class="navbar-nav">
+			  	<ul class="nav">
 						<!-- Dropdown -->
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img src="{% static 'img/001.jpg' %}" class="img-circle" alt="Cinque Terre" style="width:40px;height=40px;">
+								{% if user.avatar %}
+									<img src="{{ user.avatar.url }}" class="img-circle" alt="Cinque Terre" style="width:40px;height=40px;">
+								{% else %}
+									<img src="{% static 'img/001.jpg' %}" class="img-circle" alt="Cinque Terre" style="width:40px;height=40px;">
+								{% endif %}
 							</a>
 							<div id="dropmenu" class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="#">{{ user.username }}</a>
-								<a class="dropdown-item" href="{% url 'userprofile:edit-profile' %}">Edit Profile</a>
-								<a class="dropdown-item" href="{% url 'userprofile:logout' %}">Logout</a>
+								<a class="dropdown-item fs--16" href="#">{{ user.username }}</a>
+								<a class="dropdown-item fs--16" href="{% url 'userprofile:edit-profile' user.id %}">Edit Profile</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item fs--16" href="{% url 'userprofile:logout' %}">Logout</a>
 							</div>
 						</li>
 					</ul>
@@ -60,7 +61,7 @@
 			  <!-- User Menu Drop End -->
 		  </div>
 	</nav>
-	<!--/.Navbar-->
+
 </div>
 </div>
 

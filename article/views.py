@@ -46,7 +46,7 @@ class ArticleListView(generic.ListView):
             article_list = article_list.filter(Q(title__icontains=search) | Q(body__icontains=search))
 
         if category is not None and category.isdigit():
-            article_list = article_list.filter(column=category)
+            article_list = article_list.filter(category=category)
 
         if tag and tag != 'None':
             article_list = article_list.filter(tags__name__in=[tag])

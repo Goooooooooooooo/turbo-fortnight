@@ -17,7 +17,6 @@
 		                    <h4>Update Article</h4>
 		                    <hr>
 		                </div>
-
 		            </div>
 		            <div class="row">
 		                <div class="col-md-12">
@@ -30,20 +29,17 @@
                                       {{ form.title | add_class:'form-control here' }}
                                     </div>
                                   </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Avatar </label>
-                                    <div class="col-8">
-                                        {% if article.avatar %}
-                                            <img src="{{ article.avatar.url }}" style="max-width: 20%; border-radius: 15%;">
-                                        {% endif %}
-                                         <!--   {{ form.avatar }}-->
-                                        <!-- 用 input 的时候 后台view要在表单验证里面获取图片 self.request.FILES.get('file_img') -->
-                                        <input name="file_img" id="file_img" type="file" >
-<!--                                        {% if form.avatar != None %}-->
-
+<!--                                <div class="form-group row">-->
+<!--                                    <label class="col-4 col-form-label">Avatar </label>-->
+<!--                                    <div class="col-8">-->
+<!--                                        {% if article.avatar %}-->
+<!--                                            <img src="{{ article.avatar.url }}" style="max-width: 20%; border-radius: 15%;">-->
 <!--                                        {% endif %}-->
-                                    </div>
-                                  </div>
+<!--                                         &lt;!&ndash;   {{ form.avatar }}&ndash;&gt;-->
+<!--                                        &lt;!&ndash; 用 input 的时候 后台view要在表单验证里面获取图片 self.request.FILES.get('file_img') &ndash;&gt;-->
+<!--                                        <input name="file_img" id="file_img" type="file" >-->
+<!--                                    </div>-->
+<!--                                  </div>-->
                                 <div class="form-group row">
                                     <label class="col-4 col-form-label">Category </label>
                                     <div class="col-8">
@@ -99,5 +95,8 @@
 
 </script>
 {% endblock script %}
+
+<script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 {% endblock content %}
