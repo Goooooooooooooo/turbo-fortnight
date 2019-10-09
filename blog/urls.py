@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('article/', include('article.urls'), name='article'),
     path('userprofile/', include('userprofile.urls'), name='userprofile'),
-    path('ckeditor/', include('ckeditor_uploader.urls'))
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 # settings.py 中添加了 MEDIA_URL MEDIA_ROOT，在这里配置媒体文件的 URL

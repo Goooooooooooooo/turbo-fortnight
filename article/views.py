@@ -7,6 +7,7 @@ from django.utils import timezone
 from .forms import ArticlePostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+import markdown
 
 
 # 单纯的迁移画面，不做额外的处理
@@ -84,14 +85,24 @@ class ArticleDetailView(generic.DeleteView):
             article.save(update_fields=['total_views'])
         return article
 
-    '''
+
     # 复写 get_context_data 方法为上下文对象添加额外的变量，以便在模板中访问
     def get_context_data(self, **kwargs):
-        article = get_object_or_404(ArticlePost, id=self.kwargs.get('pk'))
-        # context = super(ArticleDetailView, self).get_context_data(**kwargs)
-        context = {'article_detail': article}
+        context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        md = markdown.Markdown(
+            extensions=[
+                # 空格 缩进等扩展
+                'markdown.extensions.extra',
+                # 代码语法高亮扩展
+                'markdown.extensions.codehilite',
+                # 目录扩展 TOC: Table of Contents
+                'markdown.extensions.toc',
+            ]
+        )
+        context['article_detail'].body = md.convert(context['article_detail'].body)
+        context['toc'] = md.toc
         return context
-    '''
+
 
     '''
     # 普通视图获取方法

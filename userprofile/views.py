@@ -71,31 +71,27 @@ def user_register(request):
 def user_edit_profile(request,pk):
     user = User.objects.get(id=pk)
     # user_id 自动生成字段
-    profile = Profile.objects.get(user_id=pk)
-
     if request.method == 'POST':
 
         if user != request.user:
-            return HttpResponse('')
+            return HttpResponse('qwer')
 
-        profile_form = ProfileForm(data=request.POST)
+        profile_form = ProfileForm(request.POST,request.FILES)
         if profile_form.is_valid():
             cleaned_dt = profile_form.cleaned_data
-            profile.avatar = cleaned_dt['avatar']
-            profile.phone = cleaned_dt['phone']
-            profile.bio = cleaned_dt['bio']
-            profile.save()
+            user.profile.phone = cleaned_dt['phone']
+            user.profile.bio = cleaned_dt['bio']
 
+            if 'avatar' in request.FILES:
+                user.profile.avatar = cleaned_dt['avatar']
+            user.save()
 
-            return redirect('userprofile:edit-profilt', pk=pk)
+            return redirect('userprofile:edit-profile', pk=pk)
 
 
         return render(request, 'userprofile/edit_profile.html')
     elif request.method == 'GET':
-        profile = ProfileForm()
-        context = {'profile': profile}
 
-
-        return render(request, 'userprofile/edit_profile.html', context)
+        return render(request, 'userprofile/edit_profile.html')
     else:
         return HttpResponse('请使用GET或POST请求数据')

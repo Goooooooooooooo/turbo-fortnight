@@ -228,13 +228,16 @@
  导航栏下拉菜单 鼠标悬浮
  背景字体颜色设置
  */
-#dropmenu > a:hover{
-    background: #3A93FF;
-    color: white;
-}
+
 
 #header-nav ul li a:hover{
 	color: #FF3F3F;
+}
+
+
+#header-drop > a:hover{
+	color: white;
+    background: #3A93FF;
 }
 
 .nav-link{
@@ -334,14 +337,18 @@
 
 /* Font Size CSS-End */
 
-#tools a{
+#tools a,
+#contents a{
 	color: #767676;
 	text-decoration:none;
 }
 
-#tools a:hover{
+#tools a:hover,
+#contents a:hover{
 	color: #298EFF;
 }
+
+
 
 .avatar img{
 	max-width: 678px!important;

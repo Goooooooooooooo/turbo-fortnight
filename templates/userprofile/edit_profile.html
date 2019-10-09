@@ -25,7 +25,7 @@
 		            </div>
 		            <div class="row">
 		                <div class="col-md-12">
-		                    <form method="post">
+		                    <form method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                               <div class="form-group row">
                                 <label for="username" class="col-4 col-form-label">User Name*</label>
@@ -33,6 +33,25 @@
                                   <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}">
                                 </div>
                               </div>
+                                <div class="form-group row">
+                                {% if user.profile.avatar %}
+                                    <div class="col-md-4">头像</div>
+                                    <div class="col-8">
+                                        <img src="{{ user.profile.avatar.url }}" style="max-width: 20%; border-radius: 15%;">
+                                    </div>
+                                {% else %}
+                                    <div class="col-4"></div>
+                                    <div class="col-8">
+                                      <h5>暂无头像</h5>
+                                    </div>
+                                {% endif %}
+                                </div>
+                                <div class="form-group row">
+                                    <label for="avatar" class="col-4 col-form-label">上传头像</label>
+                                    <div class="col-8">
+                                        <input type="file" class="form-control-file" name="avatar" id="avatar">
+                                    </div>
+                                </div>
                               <div class="form-group row">
                                 <label for="email" class="col-4 col-form-label">Email*</label>
                                 <div class="col-8">
@@ -42,14 +61,14 @@
                               <div class="form-group row">
                                 <label for="phone" class="col-4 col-form-label">Phone</label>
                                 <div class="col-8">
-                                  <input type="text" class="form-control" id="phone" name="phone" value="{{ profile.phone }}">
+                                  <input type="text" class="form-control" id="phone" name="phone" value="{{ user.profile.phone }}">
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label for="bio" class="col-4 col-form-label">Bio</label>
                                 <div class="col-8">
                                     {{ form.media }}
-                                    <input type="text" class="form-control" id="bio" name="bio" value="{{ profile.bio }}">
+                                    <input type="text" class="form-control" id="bio" name="bio" value="{{ user.profile.bio }}">
                                 </div>
                               </div>
                               <div class="form-group row">

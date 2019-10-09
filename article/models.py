@@ -22,7 +22,7 @@ class ArticlePost(models.Model):
     # 文章标题图
     avatar = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
     title = models.CharField(max_length=100)
-    body = RichTextUploadingField()
+    body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)

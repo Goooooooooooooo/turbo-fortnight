@@ -10,7 +10,7 @@ from .models import Profile
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
-    verbose_name_plural = 'UserProfile'
+    verbose_name_plural = 'Profile'
 
 
 # 将 Profile 关联到 User 中

@@ -31,7 +31,7 @@
 																	  btn-dark
 																  {% elif article.category.name == 'Java' %}
 																	  btn-danger
-																  {% elif article.category.name == 'HTML' %}
+																  {% elif article.category.name == 'Html' %}
 																	  btn-warning
 																  {% elif article.category.name == 'CSS' %}
 																	  btn-danger
@@ -48,9 +48,9 @@
 						{% endfor %}
 				  </div>
 			  </div>
-			  <div class="card-body post">
+			  <div class="card-body post" style="height:100%; overflow:hidden;">
 				<h1 class="title"><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a></h1>
-				<p class="ff--default fs--18 card-text">{{ article.body|slice:'200'|safe }}</p>
+				<p class="ff--default fs--18 card-text">{{ article.body|slice:'150'|safe }}</p>
 			  </div>
 				<div class="pb-3">
 					  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
