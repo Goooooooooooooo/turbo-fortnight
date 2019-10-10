@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 {% load staticfiles %}
-
+{% load extra_tags %}
 
 <!-- 测试Pycharm Git -->
 {% block content %}
@@ -50,7 +50,7 @@
 			  </div>
 			  <div class="card-body post" style="height:100%; overflow:hidden;">
 				<h1 class="title"><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a></h1>
-				<p class="ff--default fs--18 card-text">{{ article.body|slice:'150'|safe }}</p>
+				<p class="ff--default fs--18 card-text">{{ article.body |slice:'150' | convert_markdown | safe }}</p>
 			  </div>
 				<div class="pb-3">
 					  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>

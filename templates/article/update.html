@@ -77,6 +77,9 @@
 
 {% block script %}
 <script>
+    //Markdown Editor
+    var simplemde = new SimpleMDE();
+
     $(".django-ckeditor-widget").removeAttr('style');
 
     $('#submit_btn').click(function () {

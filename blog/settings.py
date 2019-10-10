@@ -37,12 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'password_reset',
     'article',
+    # 标签
     'taggit',
     # user 扩展对象
     'userprofile',
+    # 评论
+    'comment',
     # 自定义过滤器
     'article.templatetags',
+    # 富文本编辑器
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -156,3 +161,17 @@ CKEDITOR_CONFIGS = {
         'extraPlugins': ','.join(['codesnippet', 'prism', 'widget', 'lineutils', 'uploadimage',]),
     }
 }
+
+
+# SMTP服务器，改为你的邮箱的smtp!
+EMAIL_HOST = 'smtp.gmail.com'
+# 改为你自己的邮箱名！
+EMAIL_HOST_USER = 'your_email_account@xxx.com'
+# 你的邮箱密码
+EMAIL_HOST_PASSWORD = 'your_password'
+# 发送邮件的端口
+EMAIL_PORT = 25
+# 是否使用 TLS
+EMAIL_USE_TLS = True
+# 默认的发件人
+DEFAULT_FROM_EMAIL = 'your_email_account@xxx.com'

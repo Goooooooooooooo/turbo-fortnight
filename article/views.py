@@ -91,15 +91,9 @@ class ArticleDetailView(generic.DeleteView):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
         md = markdown.Markdown(
             extensions=[
-                # 空格 缩进等扩展
-                'markdown.extensions.extra',
-                # 代码语法高亮扩展
-                'markdown.extensions.codehilite',
-                # 目录扩展 TOC: Table of Contents
                 'markdown.extensions.toc',
             ]
         )
-        context['article_detail'].body = md.convert(context['article_detail'].body)
         context['toc'] = md.toc
         return context
 

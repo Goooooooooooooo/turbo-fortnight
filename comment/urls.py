@@ -14,18 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import path
+from . import views
+
+
+app_name = 'comment'
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('article/', include('article.urls', namespace='article')),
-    path('userprofile/', include('userprofile.urls', namespace='userprofile')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('password-reset/', include('password_reset.urls')),
-    path('comment/', include('comment.urls', namespace='comment')),
-]
+    path('login/', views.user_login, name='login'),
+    path('logout/', views.user_logout, name='logout'),
 
-# settings.py 中添加了 MEDIA_URL MEDIA_ROOT，在这里配置媒体文件的 URL
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]

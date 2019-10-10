@@ -18,8 +18,9 @@
 <!--                {{ toc | safe }}-->
             </div>
         </div>
-        <div class="col-9" style="border-left: 1px #e1e0e0 solid;border-right: 1px #e1e0e0 solid;">
-            <article>
+
+        <div class="col-8" style="border-left: 1px #e1e0e0 solid;border-right: 1px #e1e0e0 solid;">
+            <article class="px-3">
                 <div class="py-4">
                     <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
                         <ul class="nav pull-right nav-pills block-center">
@@ -36,12 +37,14 @@
                         <img src="{{ article_detail.avatar.url }}" style="width:80%; height:300px;" />
                     {% endif %}
                 </div>
-                <div class="fs--20 ff-default">
-                    <p>{{ article_detail.body|safe }}</p>
+                <div class="markdown fs--20 ff-default">
+                    <p>{{ article_detail.body|convert_markdown|safe }}</p>
                 </div>
                 </div>
             </article>
+
         </div>
+
         <div class="col pt-5 pl-3" id="sticky-sidebar">
         <div id="tools" class="sticky-top">
             <h3 class="fs--30"> Tools </h3>
@@ -75,6 +78,9 @@
     </div>
     </div>
 </div>
+
+
+
     <!-- 删除弹窗 -->
     <div class="modal fade" id="deleteModalCenter" tabindex="-1" role="dialog" aria-labelledby="ModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -102,14 +108,49 @@
         {% csrf_token %}
         <button type="submit"> Submit </button>
     </form>
-
+{% block script %}
     <script>
         function confirm_safe_delete() {
             $('form#safe_delete button').click();
         }
     </script>
-
+{% endblock script %}
 <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
 <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 {% endblock %}
+
+    {% block page %}
+    <div class="row pt-5 text-center">
+        <div class="col order-first"></div>
+        <div class="col-8">
+            <!-- 翻页 start -->
+            <nav class="pagination">
+                <div class="row">
+                    <div class="col-3">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
+                        {% else %}
+                            <a href="javascript:volid(0);" title="first page" class="previous"><i></i>Previous</a>
+                        {% endif %}
+                    </div>
+                    <div class="col text-center">
+                        <span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
+                        <span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
+                    </div>
+                    <div class="col-3">
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
+                        {% else %}
+                            <a href="javascript:volid(0);" title="Last Page" class="next" style="opacity: 0.2">Next<i></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+            <!-- 翻页 end -->
+        </div>
+        <div class="col order-last">
+
+        </div>
+    </div>
+    {% endblock page %}
