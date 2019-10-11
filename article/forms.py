@@ -12,7 +12,7 @@ class ArticlePostForm(forms.ModelForm):
         # 指明数据模型来源
         model = ArticlePost
         # 定义表单包含的字段
-        fields = ('title', 'avatar', 'category', 'tags', 'body')
+        fields = ('title', 'avatar', 'category', 'tags', 'summary', 'body')
         error_messages = {
             NON_FIELD_ERRORS: {
                 'unique_together': "%(model_name)s's %(field_labels)s are not unique.",

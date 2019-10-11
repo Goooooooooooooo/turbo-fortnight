@@ -22,7 +22,7 @@
 
 		{% for article in article_list %}
 		<article>
-			<div class="card text-center" style="height: 430px;">
+			<div class="card text-center" style="height: 350px;">
 			  <div class="card-header">
 				  <div class="pb-1">
 					  	{% if article.category %}
@@ -50,7 +50,11 @@
 			  </div>
 			  <div class="card-body post" style="height:100%; overflow:hidden;">
 				<h1 class="title"><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a></h1>
-				<p class="ff--default fs--18 card-text">{{ article.body |slice:'150' | convert_markdown | safe }}</p>
+                  {% if article.summary %}
+				    <p class="ff--default fs--24 card-text">{{ article.summary | convert_markdown | safe }}</p>
+                  {% else %}
+                    <p class="ff--default fs--24 card-text">{{ article.body |slice:'100' | convert_markdown | safe }}</p>
+                  {% endif %}
 			  </div>
 				<div class="pb-3">
 					  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>

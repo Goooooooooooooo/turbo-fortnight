@@ -235,7 +235,7 @@
 }
 
 
-#header-drop > a:hover{
+.header-drop a:hover{
 	color: white;
     background: #3A93FF;
 }
@@ -390,7 +390,7 @@
 
 .main article:hover{
 	border: 1px solid #1B9BFF;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 .main .post{
@@ -425,7 +425,7 @@
 	font-family: 'LatoRegular', 'Helvetica', arial;
 	color: #606060;
 	line-height: 30px;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .main a.read_more{

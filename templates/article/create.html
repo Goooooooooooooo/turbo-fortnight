@@ -67,6 +67,15 @@
                                       {{ form.tags.errors }}
                                   </div>
                                 <div class="form-group row">
+                                    <label class="col-4 col-form-label">Summary </label>
+                                    <div class="col-8">
+                                      {{ form.summary | add_class:'form-control here' }}
+                                    </div>
+                                </div>
+                                <div>
+                                      {{ form.summary.errors }}
+                                  </div>
+                                <div class="form-group row">
                                     <label class="col-4 col-form-label">Body *</label>
                                     <div class="col-8">
                                       {{ form.media }}
@@ -91,9 +100,11 @@
 </div>
 
 {% block script %}
+
 <script>
-    $(".django-ckeditor-widget").removeAttr('style');
-    var simplemde = new SimpleMDE();
+    //var simplemde = new SimpleMDE();
+
+    //$(".django-ckeditor-widget").removeAttr('style');
 </script>
 {% endblock script %}
 

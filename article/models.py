@@ -22,6 +22,8 @@ class ArticlePost(models.Model):
     # 文章标题图
     avatar = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
     title = models.CharField(max_length=100)
+    # 文章简介
+    summary = models.CharField(max_length=200, blank=True)
     body = models.TextField()
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
