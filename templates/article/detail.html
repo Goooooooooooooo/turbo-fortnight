@@ -79,14 +79,30 @@
     <!-- 评论框 -->
     <div class="row pb-3">
         <div class="col-10">
-            <textarea class="form-control" style="min-height:200px;" placeholder="Enter Comment(200)" aria-label="With textarea"></textarea>
-            <div class="pt-3 pr-2" style="text-align:right;">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#commentModal" >Submit</button>
+            {% if user.is_authenticated %}
+            <form action="{% url 'comment:post-comment' article_detail.id %}" method="POST">
+                {% csrf_token %}
+                {{ comment_form.body | add_class:'form-control here' }}
+<!--                <textarea id="comment" name="comment" class="form-control" style="min-height:200px;" placeholder="Enter Comment(200)" aria-label="With textarea"></textarea>-->
+            <div>
+
             </div>
+            <div class="pt-3 pr-2" style="text-align:right;">
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </div>
+            </form>
+            {% else %}
+                            <br>
+            <h5 class="row justify-content-center">
+                请<a href="{% url 'userprofile:login' %}">登录</a>后回复
+            </h5>
+            <br>
+            {% endif %}
         </div>
     </div>
 
     <!-- Comment Display -->
+    {% load mptt_tags %}
     <div class="row pt-5">
         <div class="col-10">
             <div class="card" style="width:100%">
@@ -94,15 +110,33 @@
         Comment
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-                Cras justo odio<br />
-                Cras justo odio
-                <p class="text-right">2019-10-11</p>
-            </li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            {% recursetree comments %}
+        <!-- 给 node 取个别名 comment -->
+            {% with comment=node %}
+                <li class="list-group-item">
+                    <p><strong style="color: gray">{{ comment.user }}</strong>
+                        {% if comment.reply_to %}
+                            <i class="far fa-arrow-alt-circle-right" style="color: cornflowerblue;"></i>
+                            <strong style="color: pink">{{ comment.reply_to }}</strong>
+                        {% endif %}
+                    </p><br />
+                    <div>{{ comment.body|safe }}</div><br />
+                    <span style="color: gray">
+                        {{ comment.created|date:"Y-m-d H:i" }}
+                    </span>
+                </li>
+                {% if not comment.is_leaf_node %}
+                <li class="list-group-item">
+                    <div class="children">
+                        {{ children }}
+                    </div>
+                </li>
+                {% endif %}
+            {% endwith %}
+        {% endrecursetree %}
         </ul>
-    </div>
+
+        </div>
         </div>
     </div>
 

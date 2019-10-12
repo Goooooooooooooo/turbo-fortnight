@@ -8,5 +8,5 @@ class CommentForm(forms.ModelForm):
     class Meta:
         # 指明数据模型来源
         model = Comment
-        fields = ('body')
+        fields = ('body',)
 

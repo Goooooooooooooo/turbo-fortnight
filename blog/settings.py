@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # user 扩展对象
     'userprofile',
     # 评论
-    # 'comment',
+    'comment',
     'mptt',
     # 自定义过滤器
     'article.templatetags',

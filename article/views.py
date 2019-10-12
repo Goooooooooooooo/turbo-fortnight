@@ -7,7 +7,8 @@ from django.utils import timezone
 from .forms import ArticlePostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
-#from comment.models import Comment
+from comment.models import Comment
+from comment.forms import CommentForm
 import markdown
 
 
@@ -90,14 +91,16 @@ class ArticleDetailView(generic.DeleteView):
     # 复写 get_context_data 方法为上下文对象添加额外的变量，以便在模板中访问
     def get_context_data(self, **kwargs):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
-        # comments = Comment.objects.filter(article=id)
+        pk = self.kwargs.get(self.pk_url_kwarg)
+        comments = Comment.objects.filter(article=pk)
         md = markdown.Markdown(
             extensions=[
                 'markdown.extensions.toc',
             ]
         )
         context['toc'] = md.toc
-        # context['comments'] = comments
+        context['comments'] = comments
+        context['comment_form'] = CommentForm()
         return context
 
 

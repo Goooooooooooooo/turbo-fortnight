@@ -24,7 +24,7 @@ urlpatterns = [
     path('userprofile/', include('userprofile.urls', namespace='userprofile')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('password-reset/', include('password_reset.urls')),
-    # path('comment/', include('comment.urls', namespace='comment')),
+    path('comment/', include('comment.urls', namespace='comment')),
 ]
 
 # settings.py 中添加了 MEDIA_URL MEDIA_ROOT，在这里配置媒体文件的 URL
