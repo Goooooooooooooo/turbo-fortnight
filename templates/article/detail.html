@@ -2,6 +2,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% load extra_tags %}
+{% load mptt_tags %}
+
 {% block title %}
     文章详情
 {% endblock title %}
@@ -18,7 +20,7 @@
                         <ul class="nav pull-right nav-pills block-center">
                             <li class="py-2 pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|date:'Y-m-d h:i:s' }}</li>
                             <li class="py-2 pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
-                            <li class="py-2 pr-4 fc--18"><i class="fa fa-comments"></i>24 Comments</li>
+                            <li class="py-2 pr-4 fc--18"><i class="fa fa-comments"></i>{{ comments.count }} Comments</li>
                             <li class="py-2 pr-4 fc--18"><i class="fas fa-eye"></i>{{ article_detail.total_views }}</li>
                         </ul>
                     <hr style="width:100%">
@@ -50,11 +52,12 @@
                                 编辑文章
                         </a>
                     {% endif %}
-                    <a href="#" class="list-group-item">
+                    <a href="#comment_display" class="list-group-item">
                         <i class="far fa-thumbs-up"></i>
                     </a>
-                    <a href="#" class="list-group-item">
+                    <a id="move_comment" class="list-group-item">
                         <i class="far fa-comment-dots"></i>
+                        评论
                     </a>
                 </div>
             <div class="fs--30"><h3>Tags</h3></div>
@@ -80,15 +83,14 @@
     <div class="row pb-3">
         <div class="col-10">
             {% if user.is_authenticated %}
-            <form action="{% url 'comment:post-comment' article_detail.id %}" method="POST">
+            <form id="comment_form" action="." method="post">
                 {% csrf_token %}
-                {{ comment_form.body | add_class:'form-control here' }}
-<!--                <textarea id="comment" name="comment" class="form-control" style="min-height:200px;" placeholder="Enter Comment(200)" aria-label="With textarea"></textarea>-->
-            <div>
+                {{ comment_form.media }}
 
-            </div>
+<!--                <textarea id="comment" name="comment" class="form-control" style="min-height:200px;" placeholder="Enter Comment(200)" aria-label="With textarea"></textarea>-->
+
             <div class="pt-3 pr-2" style="text-align:right;">
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="button" class="btn btn-primary" onclick="confirm_submit({{ article_detail.id }})" >Submit</button>
             </div>
             </form>
             {% else %}
@@ -102,14 +104,14 @@
     </div>
 
     <!-- Comment Display -->
-    {% load mptt_tags %}
-    <div class="row pt-5">
+
+    <div id="comment_display" class="row pt-5">
         <div class="col-10">
             <div class="card" style="width:100%">
-        <div class="card-header">
-        Comment
-        </div>
-        <ul class="list-group list-group-flush">
+                <div class="card-header">
+                Comment
+                </div>
+                <ul class="list-group list-group-flush">
             {% recursetree comments %}
         <!-- 给 node 取个别名 comment -->
             {% with comment=node %}
@@ -124,6 +126,7 @@
                     <span style="color: gray">
                         {{ comment.created|date:"Y-m-d H:i" }}
                     </span>
+                    <button type="button" class="btn btn-primary" style="" data-toggle="modal" data-target="#replyModal" data-whatever="{{ comment.user }}">回复</button>
                 </li>
                 {% if not comment.is_leaf_node %}
                 <li class="list-group-item">
@@ -135,43 +138,41 @@
             {% endwith %}
         {% endrecursetree %}
         </ul>
-
-        </div>
+            </div>
         </div>
     </div>
 
 <!--Comment -->
-<button type="button" class="btn btn-primary" style="display:none;" data-toggle="modal" data-target="#commentModal" data-whatever="@mdo">Open modal for @mdo</button>
 
-<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+
+<div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="commentModalLabel">New message</h5>
+                <h5 class="modal-title" id="commentModalLabel"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="post">
+<!--                    <div class="form-group">-->
+<!--                        <label for="recipient-name" class="col-form-label">Recipient:</label>-->
+<!--                        <input type="text" class="form-control" id="recipient-name">-->
+<!--                    </div>-->
+                    {% csrf_token %}
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Recipient:</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Message:</label>
-                        <textarea class="form-control" id="message-text"></textarea>
+                    {{ comment_form.body }}
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Send message</button>
+                <button type="button" class="btn btn-primary" onclick="confirm_submit({{ article_detail.id }}, {{ comment.id }})">Send message</button>
             </div>
         </div>
     </div>
 </div>
-
 
 </div>
 
@@ -202,11 +203,19 @@
     </form>
 {% block script %}
     <script>
+
+        // 锚点定位
+		var move = document.getElementById("move_comment");
+        move.addEventListener('click', function(){
+			var target = document.getElementById('comment_display');
+	        target.scrollIntoView(false);
+		})
+
         function confirm_safe_delete() {
             $('form#safe_delete button').click();
         }
 
-        $('#commentModal').on('show.bs.modal', function (event) {
+        $('#replyModal').on('show.bs.modal', function (event) {
             // Button that triggered the modal
             var button = $(event.relatedTarget)
             // Extract info from data-* attributes
@@ -214,34 +223,46 @@
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
-            modal.find('.modal-title').text('New message to ' + recipient)
-            modal.find('.modal-body input').val(recipient)
+            modal.find('.modal-title').text('reply to ' + recipient)
+            modal.find('.modal-body').append({{ comment_form.media }})
         })
+
+        // 移除 ckeditor 元素，是 CKeditor 能够自适应大小
+        $(function(){
+            $(".django-ckeditor-widget").removeAttr('style');
+        });
+
+        // ajax 发送请求，保存评论 并刷新评论
+        function confirm_submit(article_id, comment_id = ''){
+            var ajax_url;
+            if(comment_id =='' || comment_id == undefined || comment_id == null){
+                ajax_url = '/comment/post-comment/' + article_id + '/';
+            }else{
+                ajax_url = '/comment/post-comment/' + article_id + '/' + comment_id;
+            }
+
+            // 从 ckeditor 中取值
+            let content = CKEDITOR.instances['id_body'].getData();
+
+            $.ajaxSetup({
+                data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+            });
+
+            // 调用 ajax 与后端交换数据
+            $.ajax({
+                url: ajax_url,
+                type: 'POST',
+                data: {body: content},
+                // 成功回调
+                success: function(e){
+                    //$(#comment_display).load(location.href + ' #comment_display>*');
+                    if(e === '200 OK'){
+                        parent.location.reload();
+                    }
+                }
+            })
+        }
     </script>
-
-<!--    <script src="{% static 'csrf.js' %}"></script>-->
-<!--    <script>-->
-<!--    $(function(){-->
-<!--        $(".django-ckeditor-widget").removeAttr('style');-->
-<!--    });-->
-
-<!--    function confirm_submit(article_id, comment_id){-->
-<!--        // 从 ckeditor 中取值-->
-<!--        let content = CKEDITOR.instances['id_body'].getData();-->
-<!--        // 调用 ajax 与后端交换数据-->
-<!--        $.ajax({-->
-<!--            url: '/comment/post-comment/' + article_id + '/' + comment_id,-->
-<!--            type: 'POST',-->
-<!--            data: {body: content},-->
-<!--            // 成功回调-->
-<!--            success: function(e){-->
-<!--                if(e === '200 OK'){-->
-<!--                    parent.location.reload();-->
-<!--                }-->
-<!--            }-->
-<!--        })-->
-<!--    }-->
-<!--    </script>-->
 
 {% endblock script %}
 <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>

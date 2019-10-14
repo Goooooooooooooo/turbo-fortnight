@@ -12,6 +12,7 @@ def post_comment(request, article_id, parent_comment_id=None):
 
     # 处理 POST 请求
     if request.method == 'POST':
+        print('ajax 保存')
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
@@ -22,14 +23,14 @@ def post_comment(request, article_id, parent_comment_id=None):
             if parent_comment_id:
                 parent_comment = Comment.objects.get(id=parent_comment_id)
                 # 若回复层级超过二级，则转换为二级
-                # new_comment.parent_id = parent_comment.get_root().id
+                new_comment.parent_id = parent_comment.get_root().id
                 # 被回复人
                 new_comment.reply_to = parent_comment.user
                 new_comment.save()
                 return HttpResponse('200 OK')
 
             new_comment.save()
-            return redirect(article)
+            return HttpResponse('200 OK')
         else:
             print(comment_form.errors)
             return HttpResponse("表单内容有误，请重新填写。")

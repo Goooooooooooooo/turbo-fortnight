@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from article.models import ArticlePost
+from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -33,7 +35,7 @@ class Comment(MPTTModel):
 
     article = models.ForeignKey(ArticlePost, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
-    body = models.TextField(max_length=200)
+    body = RichTextField()
     created = models.DateTimeField(auto_now_add=True)
     # 新增，mptt树形结构
     parent = TreeForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='children')
@@ -45,3 +47,6 @@ class Comment(MPTTModel):
     #     ordering = ('created',)
     class MPTTMeta:
         order_insertion_by = ['created']
+
+    def get_success_url(self):
+        return reverse('article:article-detail', kwargs={'pk': self.pk})
