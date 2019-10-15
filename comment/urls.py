@@ -24,5 +24,5 @@ app_name = 'comment'
 urlpatterns = [
     path('post-comment/<int:article_id>/', views.post_comment, name='post-comment'),
     # 新增代码，处理二级回复
-    path('post-comment/<int:article_id>/<int:parent_comment_id>', views.post_comment, name='comment-reply'),
+    path('post-comment/<int:article_id>/<int:parent_comment_id>/', views.post_comment, name='comment-reply'),
 ]

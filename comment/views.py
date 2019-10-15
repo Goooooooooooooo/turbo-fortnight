@@ -12,7 +12,6 @@ def post_comment(request, article_id, parent_comment_id=None):
 
     # 处理 POST 请求
     if request.method == 'POST':
-        print('ajax 保存')
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
