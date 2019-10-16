@@ -13,13 +13,8 @@
 				  <li class="nav-item">
 					<a class="nav-link" href="{% url 'article:article-portfolio' %}">Portfolio</a>
 				  </li>
-				  {% if user.is_authenticated %}
 				  <li class="nav-item">
-					<a class="nav-link" href="{% url 'article:article-create' %}"> Create </a>
-				  </li>
-				  {% endif %}
-				  <li class="nav-item">
-					<a class="nav-link" href="{% static '..\blog\templates\404.html' %}"> 404 </a>
+					<a class="nav-link" href="{% url 'page_404' %}"> 404 </a>
 				  </li>
 				  <li class="nav-item">
 					<a class="nav-link" href="#"> About Me </a>
@@ -44,9 +39,9 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								{% if user.profile.avatar %}
-									<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="width:40px;height=60px;border-radius:10px;">
+									<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border-radius:10px;">
 								{% else %}
-									<img src="{% static 'img/001.jpg' %}" class="img-circle" alt="Cinque Terre" style="width:40px;height=40px;">
+									<img src="{% static 'img/001.jpg' %}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=40px;">
 								{% endif %}
 							</a>
 							<div class="header-drop dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
