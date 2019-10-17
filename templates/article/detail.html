@@ -10,6 +10,22 @@
 
 
 {% block content %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/home-bg.jpg' %}{% endif %} )">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-10 mx-auto">
+				<div class="site-heading">
+					<h1>My Blog</h1>
+					<span class="subheading">A Blog Theme by Start Bootstrap</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+
 <div class="container">
     <div class="row pm-2">
         <div class="col-10">
@@ -25,11 +41,6 @@
                     <hr style="width:100%">
                 </div>
                 <div class="article pb-5">
-                <div class="avatar">
-                    {% if article_detail.avatar %}
-                        <img src="{{ article_detail.avatar.url }}" style="width:80%; height:300px;" />
-                    {% endif %}
-                </div>
                 <div class="markdown fs--16 ff-default">
                     <p>{{ article_detail.body|convert_markdown|safe }}</p>
                 </div>
