@@ -28,10 +28,12 @@
 
     {% include 'footer.html' %}
 
-    <script src="{% static 'jquery/jquery-3.4.1.js' %}"></script>
-    <script src="{% static 'popper/popper-1.15.0.js' %}"></script>
-    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
-    <script src="{% static 'jquery/simplemde.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/simplemde.min.js' %}"></script>
+
+    {% include 'back_to_top.html' %}
 
     {% block script %}{% endblock script %}
 

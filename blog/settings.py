@@ -25,6 +25,82 @@ SECRET_KEY = '*u(elr9%xm1_4!m$at8#a6f3un2mwlkc5(sdbju8gmr(ln*r%v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
+'''
+    django：将 django 产生的所有消息转交给 console 处理器
+    django.request：将网络请求相关消息转交给 file、mail_admins 这两个处理器。
+    注意这里的 'propagate': False 使得此记录器处理过的消息就不再让 django 记录器再次处理了
+    自定义 log
+    from my_blog.settings import LOGGING
+    import logging
+    
+    logging.config.dictConfig(LOGGING)
+    logger = logging.getLogger('django.request')
+    
+    def whatever(request):
+        # do something
+        logger.warning('Something went wrong!')
+        # do something else
+'''
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+            'verbose': {
+                # 详细的格式化器，依次输出：消息级别、发生时间、抛出模块、进程ID、线程ID、提示信息
+                'format': '{asctime} {levelname} {module} {process:d} {thread:d} {message}',
+                'style': '{',
+            },
+            # 简要的格式化器，输出时间，消息级别和提示信息
+            'simple': {
+                'format': '{asctime} {levelname} {message}',
+                'style': '{',
+            },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        # INFO 以上级别消息，输出简要信息到命令行中；此处理器仅在调试模式生效
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'], # 使用此过滤器的消息仅在调试时才会生效
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        # ERROR 以上级别消息，输出详细信息到 Email 中
+        # 'mail_admins': {
+        #     'level': 'ERROR',
+        #     'class': 'django.utils.log.AdminEmailHandler',
+        #     'formatter': 'verbose',
+        # },
+        # WARNING 以上级别消息，输出详细信息到文件中
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.handlers.TimedRotatingFileHandler',   # Python 内置的随时间分割日志文件的模块
+            'when': 'midnight',                                     # 分割时间为凌晨
+            'backupCount': 30,                                      # 日志文件保存日期为30天
+            'filename': os.path.join(BASE_DIR, 'logs/debug.log'),
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console','file'],
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    }
+}
+
+
 ALLOWED_HOSTS = []
 
 

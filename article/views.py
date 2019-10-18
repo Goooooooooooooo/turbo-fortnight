@@ -150,12 +150,11 @@ class ArticleDetailView(generic.DeleteView):
         context['toc'] = md.toc
         context['comments'] = comments
         context['comment_form'] = CommentForm()
+        context['next'] = ''
+        context['previous'] = ''
         return context
 
 
-    '''
-
-    '''
 
 # 创建新文章
 class ArticleCreateView(LoginRequiredMixin, generic.CreateView):

@@ -11,21 +11,6 @@
 
 {% block content %}
 
-<!-- Page Header -->
-<header class="masthead" style="background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/home-bg.jpg' %}{% endif %} )">
-	<div class="overlay"></div>
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-8 col-md-10 mx-auto">
-				<div class="site-heading">
-					<h1>My Blog</h1>
-					<span class="subheading">A Blog Theme by Start Bootstrap</span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
 <div class="container">
     <div class="row pm-2">
         <div class="col-10">
@@ -41,11 +26,37 @@
                     <hr style="width:100%">
                 </div>
                 <div class="article pb-5">
-                <div class="markdown fs--16 ff-default">
-                    <p>{{ article_detail.body|convert_markdown|safe }}</p>
-                </div>
+                    <div class="markdown fs--16 ff-default">
+                        <p>{{ article_detail.body|convert_markdown|safe }}</p>
+                    </div>
                 </div>
             </article>
+
+            <br>
+            <!-- 上一篇 下一篇 -->
+            <nav class="pagination">
+                <div class="row">
+                    <div class="col-3">
+                        {% if page_obj.has_previous %}
+                            <a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
+                        {% else %}
+                            <a href="javascript:volid(0);" title="first page" class="previous"><i></i>Previous</a>
+                        {% endif %}
+                    </div>
+                    <div class="col text-center">
+                        <span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
+                        <span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
+                    </div>
+                    <div class="col-3">
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
+                        {% else %}
+                            <a href="javascript:volid(0);" title="Last Page" class="next">Next<i></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+
         </div>
 
         <!-- 侧边栏 Tools -->
@@ -91,7 +102,10 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+
     <!-- 占位Div -->
     <div style="width:100%;visibility:hidden;min-height:200px;"></div>
 
@@ -99,14 +113,14 @@
     <div class="row pb-3">
         <div class="col-10">
             {% if user.is_authenticated %}
-            <form id="comment_form" action="." method="post">
+            <div id="comment_form">
                 {% csrf_token %}
                 {{ comment_form.media }}
                 {{ comment_form.body }}
             <div class="pt-3 pr-2" style="text-align:right;">
                 <button type="button" class="btn btn-primary" onclick="confirm_submit({{ article_detail.id }})" >Submit</button>
             </div>
-            </form>
+            </div>
             {% else %}
             <br>
             <h5 class="row justify-content-center">
@@ -118,7 +132,6 @@
     </div>
 
     <!-- Comment Display -->
-
     <div id="comment_display" class="row pt-5" style="min-height:200px;">
         <div class="col-10">
             <div class="card" style="width:100%">
@@ -130,22 +143,26 @@
                         {% with comment=node %}
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <p><strong style="color: gray">{{ comment.user }}</strong>
+                                <p><strong style="color: gray"> {{ comment.user }} </strong>
                                     {% if comment.reply_to %}
-                                        <i class="far fa-arrow-alt-circle-right" style="color: cornflowerblue;"></i>
-                                        <strong style="color: pink">{{ comment.reply_to }}</strong>
+                                        <i class="fas fa-share" style="color:gray"></i>
+                                        <strong style="color: pink"> {{ comment.reply_to }} </strong>
                                     {% endif %}
-                                </p><br />
+                                    <span style="color: gray">{{ comment.created|date:"Y-m-d H:i" }}</span>
+                                    <span>
+                                    {% if user.is_authenticated %}
+                                    <a class="reply" href="" data-toggle="modal" data-target="#replyModal"
+                                            data-whatever="{{ comment.user }},{{ article_detail.id }},{{ comment.id }}">回复
+                                    </a>
+                                    {% else %}
+                                    <a class="reply" style="" href="{% url 'userprofile:login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
+                                    </a>
+                                    {% endif %}
+                                    </span>
+                                </p>
+                                <br />
                                 <div>{{ comment.body|safe }}</div><br />
-                                <span style="color: gray">{{ comment.created|date:"Y-m-d H:i" }}</span>
-                                {% if user.is_authenticated %}
-                                <a class="reply" href="" data-toggle="modal" data-target="#replyModal"
-                                        data-whatever="{{ comment.user }},{{ article_detail.id }},{{ comment.id }}">回复
-                                </a>
-                                {% else %}
-                                <a class="reply" style="" href="{% url 'userprofile:login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
-                                </a>
-                                {% endif %}
+
 
                                 {% if not comment.is_leaf_node %}
                                     <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapse_{{ comment.id }}" role="button" aria-expanded="false"
@@ -168,6 +185,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
 <!-- 评论弹窗 -->
@@ -218,6 +236,9 @@
     a.reply:link {color:#20c997;}
     a.reply:visited {color:#20c997;}
     a.reply:hover {color:#20c997;}
+    header.masthead{
+        background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/pic1.jpg' %}{% endif %} )
+    }
 </style>
 
 
@@ -278,8 +299,8 @@
                 // 成功回调
                 success: function(e){
                     if(e === '200 OK'){
-                        //parent.location.reload();
                         $("#comment_display").load(location.href + "#comment_display>*");
+                        //window.location.reload();
                     }
                 }
             })

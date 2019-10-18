@@ -24,41 +24,21 @@
 }
 
 
-/* Header CSS-Start */
+/* Searchbar CSS */
 
-#searchbar {
-    margin-bottom: auto;
-    margin-top: auto;
-    height: 60px;
-    padding: 10px;
-    align-items: center;
-    background-color:rgba(0,0,0,0);
+.form-control-borderless {
+	border: none;
+	width:100%;
 }
 
-#searchbar > .search_input{
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+	border: none;
+	outline: none;
 	box-shadow: none;
-	opacity: 0.5;
-    border: 0;
-    outline: 0;
-    caret-color:#f8f9fa;
-    border-radius: 30px;
-    width: 350px;
-    line-height: 40px;
-    background-color:rgba(0,0,0,0);
-}
-
-#searchbar > input:-moz-placeholder{
-	color: #cccccc;
-}
-#searchbar > input:-ms-input-placeholder{
-	color: #cccccc;
-}
-#searchbar > input::-webkit-input-placeholder{
-	color: #cccccc;
 }
 
 
-/* Header CSS-End */
+
 
 /* Font Size CSS-Start */
 
@@ -361,7 +341,7 @@ footer ul.social_profiles li a,
 }
 
 #mainNav .navbar-nav>li.nav-item>a {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase
@@ -425,6 +405,10 @@ header.masthead {
   background-attachment: scroll;
   position: relative;
   background-size: cover
+}
+
+header.masthead{
+    background-image: url(../img/home-bg.jpg)
 }
 
 header.masthead .overlay {

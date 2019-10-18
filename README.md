@@ -105,3 +105,6 @@ git reset --hard [commit]
 ```Bash
 git push origin master --force
 ```
+```Javascript
+//# sourceMappingURL=popper.min.js.map
+```
