@@ -29,9 +29,8 @@
 						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							{% if user.profile.avatar %}
 								<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border-radius:10px;">
-							{% else %}
-								<img src="{% static 'img/001.jpg' %}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=40px;">
 							{% endif %}
+							<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border-radius:10px;">
 						</a>
 						<div class="header-drop dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item fs--16" href="#">{{ user.username }}</a>
@@ -44,10 +43,10 @@
 				</ul>
 				{% else %}
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'userprofile:login' %}"> Login </a>
+					<a class="nav-link" href="{% url 'account_login' %}"> Login </a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{% url 'userprofile:register' %}">Register</a>
+					<a class="nav-link" href="{% url 'account_signup' %}">Signup</a>
 				</li>
 				{% endif %}
 			</ul>
