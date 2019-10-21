@@ -74,6 +74,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'blog.urls'
 
+AUTHENTICATION_BACKENDS = (
+    # Django 后台可独立于 allauth 登录
+    'django.contrib.auth.backends.ModelBackend',
+    # 配置 allauth 独有的认证方法，如 email 登录
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -256,16 +264,17 @@ LOGGING = {
 
 # 第三方登录 allauth 配置
 
-AUTHENTICATION_BACKENDS = (
-    # Django 后台可独立于 allauth 登录
-    'django.contrib.auth.backends.ModelBackend',
-
-    # 配置 allauth 独有的认证方法，如 email 登录
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
-
 # 设置站点
 SITE_ID = 1
+
+# 强制注册邮箱验证(注册成功后，会发送一封验证邮件，用户必须验证邮箱后，才能登陆)
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+# 登录方式(选择用户名或者邮箱都能登录)
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+# 设置用户注册的时候必须填写邮箱地址
+ACCOUNT_EMAIL_REQUIRED = True
+# 用户登出(需要确认)
+ACCOUNT_LOGOUT_ON_GET = False
 
 # 登录成功后重定向地址
 LOGIN_REDIRECT_URL = '/'

@@ -21,9 +21,9 @@ from django.views.generic import TemplateView
 from article.views import ArticleListView
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     # home
     path('', ArticleListView.as_view(), name='home'),
-    path('admin/', admin.site.urls),
     # 直接返回视图，不渲染
     path('404/',TemplateView.as_view(template_name='404.html'), name='page_404'),
     path('article/', include('article.urls', namespace='article')),

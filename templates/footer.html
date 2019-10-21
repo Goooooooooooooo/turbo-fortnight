@@ -1,19 +1,13 @@
 
 {% load staticfiles %}
-{% load account socialaccount %}
-
-<!--<footer id="footer" class="footer bg-dark py-5">-->
-<!--  <div class="container text-center py-5">-->
-<!--      <span class="text-muted">Place sticky footer content here.</span>-->
-<!--  </div>-->
-<!--  <p class="text-center fs&#45;&#45;20"><a href="#">Back to top</a></p>-->
-<!--</footer>-->
+{% load socialaccount %}
 
 <!-- Footer -->
+<hr>
 <footer>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 center-block">
                 <ul class="list-inline text-center">
                     <li class="list-inline-item">
                         <a href="#">
@@ -32,7 +26,7 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a href="{% provider_login_url 'github' %}">
+                        <a href="{% provider_login_url 'github' %}" data-toggle="tooltip" data-placement="top" title="GitHub账号登录">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -56,6 +50,7 @@
                         </a>
                     </li>
                 </ul>
+                <br>
                 <p class="copyright text-muted">Copyright &copy; Your Website 2019</p>
             </div>
         </div>
