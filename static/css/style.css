@@ -321,7 +321,7 @@ footer ul.social_profiles li a,
 /* header.html */
 
 #mainNav {
-  position: absolute;
+  /*position: absolute;*/
   border-bottom: 1px solid #e9ecef;
   background-color: #fff;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -405,7 +405,8 @@ header.masthead {
   background-color: #868e96;
   background-attachment: scroll;
   position: relative;
-  background-size: cover
+  background-size: cover;
+  z-index:-1;
 }
 
 /* 背景图 */
@@ -510,3 +511,15 @@ footer .copyright {
   text-align: center
 }
 
+footer > div > div > div > ul > li > a{
+    color: #343a40;
+}
+
+footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li > a:hover {
+    color: rgba(173, 181, 189, 1)
+}
+/* 导航栏选中 背景颜色 */
+.active-bg{
+    background:#dc3545;
+    color: white;
+}

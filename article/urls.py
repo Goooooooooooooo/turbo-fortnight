@@ -22,7 +22,6 @@ app_name = 'article'
 # 类视图时候要加括号:as_view() 普通方法不加括号:views.方法
 urlpatterns = [
     path('article-list/', views.ArticleListView.as_view(), name='article-list'),
-    # path('article/<int:id>/', views.article_detail, name='article-detail'),
     path('article-detail/<int:pk>/', views.ArticleDetailView.as_view(), name='article-detail'),
     path('article-delete/<int:pk>/', views.article_safe_delete, name='article-safe-delete'),
     path('article-create/', views.ArticleCreateView.as_view(), name='article-create'),

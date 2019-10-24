@@ -18,6 +18,8 @@ class Category(models.Model):
 
 class ArticlePost(models.Model):
 
+    objects = models.Manager()
+
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     # 文章标题图
     avatar = models.ImageField(upload_to='article/%Y%m%d/', blank=True)
@@ -61,3 +63,35 @@ class ArticlePost(models.Model):
     def __str__(self):
         return self.title
 
+    '''
+        一般来说，要使用某个类的方法，需要先实例化一个对象再调用方法。
+        而使用 @staticmethod 或 @classmethod，就可以不需要实例化，直接类名.方法名()来调用。
+        这有利于组织代码，把某些应该属于某个类的函数给放到那个类里去，同时有利于命名空间的整洁。
+        如果在 @staticmethod 中要调用到这个类的一些属性方法，只能直接类名.属性名或类名.方法名。
+        而 @classmethod 因为持有 cls 参数，可以来调用类的属性，类的方法，实例化对象等，避免硬编码。
+
+        上一篇：小于当前 id 的第一篇，下一篇：大于当前 id 的第一篇
+        @staticmethod 不需要表示自身对象的 self 和自身类的 cls 参数，就跟使用函数一样
+        @classmethod 不需要 self 参数，但第一个参数需要是表示自身类的 cls 参数。
+    '''
+    # 上一篇
+    @classmethod
+    def get_pre_article(cls, pk):
+        pre_article = cls.objects.filter(id__lt=pk).order_by('-id')
+        # 取出相邻前一篇文章
+        if pre_article.count() > 0:
+            pre_article = pre_article[0]
+        else:
+            pre_article = None
+        return pre_article
+
+    # 下一篇
+    @classmethod
+    def get_next_article(cls, pk):
+        next_article = cls.objects.filter(id__gt=pk).order_by('id')
+        # 取出相邻后一篇文章
+        if next_article.count() > 0:
+            next_article = next_article[0]
+        else:
+            next_article = None
+        return next_article

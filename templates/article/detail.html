@@ -13,28 +13,14 @@
 
 <!-- Page Header -->
 <header class="masthead">
-	<div class="overlay"></div>
+<!--	<div class="overlay"></div>-->
 	<div class="container">
 		<div class="row justify-content-center">
-			<div class="col-lg-8 col-md-10">
+			<div class="col-lg-10 col-md-12">
 				<div class="site-heading">
-					<h1>My Blog</h1>
-					<span class="subheading">A Blog</span>
-					<br>
-					<form class="card card-sm" method="get" action="{% url 'article:article-list' %}">
-						{% csrf_token %}
-							<div class="row no-gutters align-items-center">
-								<div class="col-auto pl-1">
-									<i class="fas fa-search h4 text-body m-auto"></i>
-								</div>
-								<div class="col">
-									<input name="search" id="search" class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search topics or keywords">
-								</div>
-								<div class="col-auto pr-1">
-									<button class="btn btn-success" type="button">Search</button>
-								</div>
-							</div>
-					</form>
+					<h1></h1>
+                    <br>
+					<span class="subheading"></span>
 				</div>
 			</div>
 		</div>
@@ -49,7 +35,7 @@
                 <div class="py-4">
                     <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
                         <ul class="nav pull-right nav-pills block-center">
-                            <li class="py-2 pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|date:'Y-m-d h:i:s' }}</li>
+                            <li class="py-2 pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|timesince_zh }}</li>
                             <li class="py-2 pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
                             <li class="py-2 pr-4 fc--18"><i class="fa fa-comments"></i> {{ comments.count }} Comments</li>
                             <li class="py-2 pr-4 fc--18"><i class="fas fa-eye"></i> {{ article_detail.total_views }}</li>
@@ -67,22 +53,14 @@
             <!-- 上一篇 下一篇 -->
             <nav class="pagination">
                 <div class="row">
-                    <div class="col-3">
-                        {% if page_obj.has_previous %}
-                            <a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
-                        {% else %}
-                            <a href="javascript:volid(0);" title="first page" class="previous"><i></i>Previous</a>
+                    <div class="col-6">
+                        {% if pre_article %}
+                        <a href="{{ pre_article.get_absolute_url }}" class="previous" style="font-size: 16px;"><i></i>{{ pre_article.title }}</a>
                         {% endif %}
                     </div>
-                    <div class="col text-center">
-                        <span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
-                        <span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
-                    </div>
-                    <div class="col-3">
-                        {% if page_obj.has_next %}
-                            <a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
-                        {% else %}
-                            <a href="javascript:volid(0);" title="Last Page" class="next">Next<i></i></a>
+                    <div class="col-6">
+                        {% if next_article %}
+                        <a href="{{ next_article.get_absolute_url }}" class="next" style="font-size: 16px;">{{ next_article.title }}<i></i></a>
                         {% endif %}
                     </div>
                 </div>
@@ -133,7 +111,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
@@ -268,7 +245,8 @@
     a.reply:visited {color:#20c997;}
     a.reply:hover {color:#20c997;}
     header.masthead{
-        background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/pic1.jpg' %}{% endif %} )
+        min-height: 600px;
+        background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )
     }
 </style>
 

@@ -10,7 +10,9 @@ from django.db.models import Q
 from comment.models import Comment
 from comment.forms import CommentForm
 import markdown
+import logging
 
+logging.getLogger().setLevel(logging.INFO)
 
 '''
     # 复写 get_context_data 方法为上下文对象添加额外的变量，以便在模板中访问
@@ -128,6 +130,7 @@ class ArticleListView(generic.ListView):
 
 # 单篇文章详细
 class ArticleDetailView(generic.DeleteView):
+
     model = ArticlePost
     template_name = 'article/detail.html'
     context_object_name = 'article_detail'
@@ -150,9 +153,10 @@ class ArticleDetailView(generic.DeleteView):
         context['toc'] = md.toc
         context['comments'] = comments
         context['comment_form'] = CommentForm()
-        context['next'] = ''
-        context['previous'] = ''
+        context['next_article'] = context['article_detail'].get_pre_article(pk=pk)
+        context['pre_article'] = context['article_detail'].get_next_article(pk=pk)
         return context
+
 
 
 
