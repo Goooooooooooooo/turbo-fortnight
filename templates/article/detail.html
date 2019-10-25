@@ -199,7 +199,7 @@
 <!-- 评论弹窗 -->
 <div class="modal fade" id="replyModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content" style="height:490px;">
+        <div class="modal-content" style="height:425px;">
             <div class="modal-header">
                 <h5 class="modal-title" id="commentModalLabel"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -249,71 +249,36 @@
         background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )
     }
 </style>
-
-
-
 {% endblock %}
 
 {% block script %}
 <script>
 
-        // 移除 ckeditor 元素，是 CKeditor 能够自适应大小
-        $(function(){
-            $(".django-ckeditor-widget").removeAttr('style');
+    // ajax 发送请求，保存评论 并刷新评论
+    function confirm_submit(article_id){
+        let ajax_url = '/comment/post-comment/' + article_id + '/';
+        // 从 ckeditor 中取值
+        let content = CKEDITOR.instances['id_body'].getData();
+
+        // 添加 csrf
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
         });
 
-        // 锚点定位
-		var move = document.getElementById("move_comment");
-        move.addEventListener('click', function(){
-			var target = document.getElementById('comment_display');
-	        target.scrollIntoView(false);
-		})
-
-        function confirm_safe_delete() {
-            $('form#safe_delete button').click();
-        }
-
-        // 加载 iframe ckeditor
-        $("#replyModal").on('show.bs.modal', function (event) {
-            // Button that triggered the modal
-            var button = $(event.relatedTarget)
-            // Extract info from data-* attributes
-            var recipient = button.data('whatever')
-            var res = recipient.split(",");
-            var modal = $(this)
-            modal.find('.modal-title').text('reply to ' + res[0])
-            if(modal.find('.modal-body').children().length === 0){
-                let content = '<iframe id="myiframe" src="/comment/post-comment/' +
-                    res[1] + '/' + res[2] + '" frameborder="0" style="width:100%;height:100%;" ></iframe>';
-                modal.find('.modal-body').append(content);
+        // 调用 ajax 与后端交换数据
+        $.ajax({
+            url: ajax_url,
+            type: 'POST',
+            data: {body: content},
+            // 成功回调
+            success: function(e){
+                if(e === '200 OK'){
+                    $("#comment_display").load(location.href + "#comment_display>*");
+                    //window.location.reload();
+                }
             }
         })
-
-        // ajax 发送请求，保存评论 并刷新评论
-        function confirm_submit(article_id){
-            let ajax_url = '/comment/post-comment/' + article_id + '/';
-            // 从 ckeditor 中取值
-            let content = CKEDITOR.instances['id_body'].getData();
-
-            // 添加 csrf
-            $.ajaxSetup({
-                data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
-            });
-
-            // 调用 ajax 与后端交换数据
-            $.ajax({
-                url: ajax_url,
-                type: 'POST',
-                data: {body: content},
-                // 成功回调
-                success: function(e){
-                    if(e === '200 OK'){
-                        $("#comment_display").load(location.href + "#comment_display>*");
-                        //window.location.reload();
-                    }
-                }
-            })
-        }
+    }
 </script>
 
 {% endblock script %}

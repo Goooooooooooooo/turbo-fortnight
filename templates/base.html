@@ -32,38 +32,12 @@
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/simplemde.min.js' %}"></script>
+    <script src="{% static 'js/blog-js.js' %}" ></script>
 
     {% include 'back_to_top.html' %}
 
     {% block script %}{% endblock script %}
 
-    <style>
-    html, body {
-        height: 100%;
-        margin: 0;
-    }
-    #wrapper {
-        min-height: 100%;
-        margin-bottom: -150px;
-    }
-    #push{
-        height: 200px;
-    }
-    #footer{
-        height: 200px;
-    }
-    </style>
-    <script type="text/javascript">
-        console.log(location.pathname)
-        $(document).ready(function() {
-            $("#navbarResponsive .navbar-nav > li.nav-item > a").each(function(){
-                $this = $(this);
-                if($this[0].href==String(window.location)){
-                  $this.addClass("active-bg");
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>

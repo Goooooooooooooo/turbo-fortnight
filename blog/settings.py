@@ -169,7 +169,7 @@ CKEDITOR_CONFIGS = {
     # django-ckeditor 默认使用 default 配置
     'default':{
         'width':'auto',
-        'height':'250px',
+        'height':'200px',
         'tabSpace':4,
         'toolbar':'Custom',
         'toolbar_Custom':[

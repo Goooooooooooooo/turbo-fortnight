@@ -23,6 +23,21 @@
 
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+#wrapper {
+    min-height: 100%;
+    margin-bottom: -150px;
+}
+#push{
+    height: 200px;
+}
+#footer{
+    height: 200px;
+}
+
 
 /* Searchbar CSS */
 
@@ -37,11 +52,7 @@
 	box-shadow: none;
 }
 
-
-
-
 /* Font Size CSS-Start */
-
 
 .ff--default {
 	font-family: 'LatoBold', 'Helvetica', arial, 
@@ -518,8 +529,32 @@ footer > div > div > div > ul > li > a{
 footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li > a:hover {
     color: rgba(173, 181, 189, 1)
 }
+
+
+#weixin > a:focus, #weixin > a:hover {
+    color: rgba(27, 187, 63, 1)
+}
+
+#qq > a:focus, #qq > a:hover {
+    color: rgba(71, 144, 222, 1)
+}
+
+#facebook > a:focus,#facebook > a:hover{
+    color: rgba(7, 91, 181, 1)
+}
+
+#twitter > a:focus,#twitter > a:hover{
+    color: rgba(0, 123, 255, 1)
+}
+
+#github > a:focus,#github > a:hover{
+    color: rgba(220, 53, 69, 1)
+}
+
 /* 导航栏选中 背景颜色 */
 .active-bg{
-    background:#dc3545;
-    color: white;
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    background:#007bff;
 }

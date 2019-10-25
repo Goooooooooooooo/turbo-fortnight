@@ -33,17 +33,9 @@
     <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/blog-js.js' %}" ></script>
 
     <script>
-        // 移除 ckeditor 元素，使 ckeditor 能够自适应大小
-        $(function(){
-            $(".django-ckeditor-widget").removeAttr('style');
-        });
-
-        // 清空 ckeditor 文本内容
-        function text_clear(){
-            CKEDITOR.instances['id_body'].setData(' ');
-        }
 
         // ajax 发送请求，保存评论 并刷新评论
         function confirm_submit(article_id, comment_id){
