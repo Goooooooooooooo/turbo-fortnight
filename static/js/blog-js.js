@@ -1,7 +1,9 @@
 $(document).ready(function() {
+    $("#blog-nav > div").eq(0).addClass("active-bg");
     $("#navbarResponsive .navbar-nav > li.nav-item").each(function(){
         if($(">a",this)[0].href==String(window.location)){
             $(">div",this).eq(0).addClass("active-bg");
+            $("#blog-nav > div").eq(0).removeClass("active-bg")
         }
     });
 });
@@ -45,4 +47,12 @@ $("#replyModal").on('show.bs.modal', function (event) {
 //comment/reply.html 清空 ckeditor 文本内容
 function text_clear(){
     CKEDITOR.instances['id_body'].setData(' ');
+}
+
+//header.html search-form
+function search_form_submit() {
+    //获取form表单的dom对象
+    var form = document.getElementById('search-form');
+    //调用对象的submit方法
+    form.submit();
 }
