@@ -44,21 +44,21 @@
 					<li class="nav">
 						<!-- Dropdown -->
 						<div class="btn-group nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							{% if user.profile.avatar %}
-								<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border-radius:10px;">
-							{% elif user.socialaccount_set.all.0.get_avatar_url %}
-								<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border-radius:10px;">
-							{% endif %}
-						</a>
-						<div class="dropdown-menu dropdown-primary">
-							<a class="dropdown-item fs--16" href="#">{{ user.username }}</a>
-							<a class="dropdown-item fs--16" href="{% url 'article:article-create' %}">Create Article</a>
-							<a class="dropdown-item fs--16" href="{% url 'userprofile:edit-profile' user.id %}">Edit Profile</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item fs--16" href="{% url 'userprofile:logout' %}">Logout</a>
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								{% if user.profile.avatar %}
+									<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border: 1px solid #212529!important;border-radius:10px;">
+								{% elif user.socialaccount_set.all.0.get_avatar_url %}
+									<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border: 1px solid #212529!important;border-radius:10px;">
+								{% endif %}
+							</a>
+							<div class="dropdown-menu dropdown-primary">
+								<a class="dropdown-item fs--16" href="#">{{ user.username }}</a>
+								<a class="dropdown-item fs--16" href="{% url 'article:article-create' %}">Create Article</a>
+								<a class="dropdown-item fs--16" href="{% url 'userprofile:edit-profile' user.id %}">Edit Profile</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item fs--16" href="{% url 'userprofile:logout' %}">Logout</a>
+							</div>
 						</div>
-					</div>
 					</li>
 				{% else %}
 					<li class="nav-item" id="login">

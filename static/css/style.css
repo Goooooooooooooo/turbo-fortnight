@@ -219,7 +219,7 @@ html, body {
 	font-family: 'LatoRegular', 'Helvetica', arial;
 	display: inline-block;
 	padding: 10px 30px 13px 30px;
-	background: #ffffff;
+	background: #fff;
 	border: 2px #c2c2c2 solid;
 	color: #c2c2c2;
 	text-decoration: none;
@@ -597,6 +597,15 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 }
 #login_github > a:focus, #login_github > a:hover{
     color: rgba(175, 39, 52, 1)
+}
+
+.form-control-radius{
+    width: 100%;
+    border-radius: 30px;
+}
+
+.col-border-radius{
+    border-radius:5px;
 }
 
 .hr-text {

@@ -11,35 +11,42 @@
 {% block content %}
 <div class="container">
     <div class="row" style="margin-top:120px;">
-        <div class="col"></div>
-        <div class="col-5 border border-secondary" style="border-radius:5px;">
+        <div class="col-md-6 border border-secondary col-border-radius offset-md-3">
             {% get_providers as socialaccount_providers %}
                 {% if socialaccount_providers %}
-
 <!--                        <ul class="socialaccount_providers">-->
 <!--                          {% include "socialaccount/snippets/provider_list.html" with process="login" %}-->
 <!--                        </ul>-->
-
-
                     {% include "socialaccount/snippets/login_extra.html" %}
 
                 {% endif %}
-                <div class="socialaccount_ballot">
-                    <h3 class="m-3">Login</h3>
+                <div>
+                    <h1 class="m-3">Login</h1>
                 </div>
                 <hr class="colorgraph">
                 <form class="login" id="login_form" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {% if form.errors %}
-                        <strong style="color:red;">{{ form.errors }}</strong>
-                    {% endif %}
+					    {% for field in form %}
+					        {% for error in field.errors %}
+					            <div class="alert alert-error">
+					                <strong style="color:red;">{{ error|escape }}</strong>
+					            </div>
+					        {% endfor %}
+					    {% endfor %}
+					    {% for error in form.non_field_errors %}
+					        <div class="alert alert-error">
+					            <strong style="color:red;">{{ error|escape }}</strong>
+					        </div>
+					    {% endfor %}
+					{% endif %}
                     <div class="form-group">
                         <input type="text" name="login" placeholder="Username or Email" autofocus="autofocus" required
-                            id="id_login" class="form-control" />
+                            id="id_login" class="form-control form-control-radius" />
                     </div>
                     <div class="form-group mb-1">
                         <input type="password" name="password" placeholder="Password" required id="id_password"
-                            class="form-control" />
+                            class="form-control form-control-radius" />
                         <p class="form-text text-muted ml-1">
                             <a href="{% url 'account_signup' %}">
                                 Register for an account?
@@ -55,7 +62,7 @@
                             Remeber me
                         </label>
                     </div>
-                    <button class="primaryAction btn btn-success" style="width:100%" type="submit" id="submit_login">Sign in</button>
+                    <button class="primaryAction btn btn-danger form-control-radius" type="submit" id="submit_login">Sign in</button>
                 </form>
                 <hr class="hr-text" data-content="OR">
                 <div>
@@ -103,9 +110,7 @@
                         </li>
                     </ul>
                 </div>
-
         </div>
-        <div class="col"></div>
     </div>
 </div>
 
