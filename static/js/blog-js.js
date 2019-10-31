@@ -1,9 +1,9 @@
 $(document).ready(function() {
-    $("#blog-nav > div").eq(0).addClass("active-bg");
+    //$("#blog-nav > div").eq(0).addClass("active-bg");
     $("#navbarResponsive .navbar-nav > li.nav-item").each(function(){
         if($(">a",this)[0].href==String(window.location)){
             $(">div",this).eq(0).addClass("active-bg");
-            $("#blog-nav > div").eq(0).removeClass("active-bg")
+            //$("#blog-nav > div").eq(0).removeClass("active-bg")
         }
     });
 });

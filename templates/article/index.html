@@ -25,7 +25,6 @@
 	</header>
 
 	<section class="main wrapper">
-
 		{% if search %}
 			{% if article_list %}
 				<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
@@ -38,7 +37,7 @@
 
 		{% for article in article_list %}
 		<article>
-			<div class="card text-center" style="height: 350px;">
+			<div class="card text-center" style="height: 300px;">
 			  <div class="card-header">
 				  <div class="pb-1">
 					  	{% if article.category %}
@@ -60,7 +59,12 @@
 						</span>
 						<!-- 标签 -->
 						{% for tag in article.tags.all %}
-							<span><a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></span>
+							<span>
+								<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-dark">
+									<i class="fa fa-tags"></i>
+									{{ tag }}
+								</a>
+							</span>
 						{% endfor %}
 				  </div>
 			  </div>
@@ -72,9 +76,9 @@
                     <p class="ff--default fs--24 card-text">{{ article.body |slice:'100' | safe }}</p>
                   {% endif %}
 			  </div>
-				<div class="pb-3">
-					  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
-				  </div>
+			  <div class="pb-3">
+				  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
+			  </div>
 			  <div class="card-footer text-muted">
 					<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
 						{{ article.total_views }}
@@ -95,22 +99,22 @@
 		<!-- 翻页 start -->
 		<nav class="pagination">
 			<div class="row">
-				<div class="col-3">
+				<div class="col">
 					{% if page_obj.has_previous %}
 						<a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
 					{% else %}
-						<a href="javascript:volid(0);" title="first page" class="previous"><i></i>Previous</a>
+						<a href="javascript:void(0);" title="first page" class="previous"><i></i>Previous</a>
 					{% endif %}
 				</div>
 				<div class="col text-center">
 					<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
 					<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
 				</div>
-				<div class="col-3">
+				<div class="col">
 					{% if page_obj.has_next %}
 						<a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
 					{% else %}
-						<a href="javascript:volid(0);" title="Last Page" class="next">Next<i></i></a>
+						<a href="javascript:void(0);" title="Last Page" class="next">Next<i></i></a>
 					{% endif %}
 				</div>
 			</div>

@@ -77,6 +77,37 @@ logging.getLogger().setLevel(logging.INFO)
         return render(request, 'article/detail.html', context)
 '''
 
+# 全局 400 处理函数
+def bad_request(request, exception=None):
+    from django.shortcuts import render_to_response
+    # django 内置函数生成 response 对象，可以传递参数 context{}
+    response = render_to_response('400.html', {})
+    # 设置状态码
+    response.status_code = 400
+    return response
+
+# 全局 403 处理函数
+def permission_denied(request, exception=None):
+    from django.shortcuts import render_to_response
+    response = render_to_response('403.html', {})
+    response.status_code = 403
+    return response
+
+# 全局 404 处理函数
+def page_not_found(request, exception=None):
+    from django.shortcuts import render_to_response
+    response = render_to_response('404.html', {})
+    response.status_code = 404
+    return response
+
+# 全局 500 处理函数
+def server_error(request, exception=None):
+    from django.shortcuts import render_to_response
+    response = render_to_response('500.html', {})
+    response.status_code = 500
+    return response
+
+
 # 单纯的迁移画面，不做额外的处理
 def portfolio(request):
     return render(request, 'article/portfolio.html')
