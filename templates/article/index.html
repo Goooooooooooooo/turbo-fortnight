@@ -9,7 +9,7 @@
 
 {% block content %}
 
-		<!-- Page Header -->
+	<!-- Page Header -->
 	<header class="masthead">
 		<div class="overlay"></div>
 		<div class="container">
@@ -23,120 +23,109 @@
 			</div>
 		</div>
 	</header>
-
-	<section class="main wrapper">
-		{% if search %}
-			{% if article_list %}
-				<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
-				<hr>
-			{% else %}
-				<h4>暂无<span style="color: red">"{{ search }}"</span>有关的文章。</h4>
-				<hr>
-			{% endif %}
-    	{% endif %}
-
-		{% for article in article_list %}
-		<article>
-			<div class="card text-center" style="height: 300px;">
-			  <div class="card-header">
-				  <div class="pb-1">
-					  	{% if article.category %}
-						<span>
-							<a href="{% url 'article:article-list' %}?category={{ article.category.id }}" name="category" class="btn btn-sm mb-2 {% if article.category.name == 'Django' %}
-																	  btn-dark
-																  {% elif article.category.name == 'Java' %}
-																	  btn-danger
-																  {% elif article.category.name == 'Html' %}
-																	  btn-warning
-																  {% elif article.category.name == 'CSS' %}
-																	  btn-danger
-																  {% elif article.category.name == 'Python' %}
-																	  btn-info
-																  {% endif %}">
-									{{ article.category.name }}
-							</a>
-							{% endif %}
-						</span>
-						<!-- 标签 -->
-						{% for tag in article.tags.all %}
-							<span>
-								<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="blog-tags text-dark">
-									<i class="fa fa-tags"></i>
-									{{ tag }}
-								</a>
-							</span>
-						{% endfor %}
-				  </div>
-			  </div>
-			  <div class="card-body post" style="height:100%; overflow:hidden;">
-				<h1 class="title"><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a></h1>
-                  {% if article.summary %}
-				    <p class="ff--default fs--24 card-text">{{ article.summary | convert_markdown | safe }}</p>
-                  {% else %}
-                    <p class="ff--default fs--24 card-text">{{ article.body |slice:'100' | safe }}</p>
-                  {% endif %}
-			  </div>
-			  <div class="pb-3">
-				  <a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
-			  </div>
-			  <div class="card-footer text-muted">
-					<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
-						{{ article.total_views }}
-					</span>
-					<span style="color:#328CF2;padding-right:5px;"><i class="fa fa-calendar"></i>
-						{{ article.created|date:'Y-m-d' }}
-					</span>
-					<span style="color:#F23263;padding-right:5px;"><i class="fas fa-redo-alt"></i>
-						{{ article.updated|date:'Y-m-d' }}
-					</span>
-			  </div>
-			</div>
-		</article>
-		{% endfor %}
-
-
-
-		<!-- 翻页 start -->
-		<nav class="pagination">
-			<div class="row">
-				<div class="col">
-					{% if page_obj.has_previous %}
-						<a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
-					{% else %}
-						<a href="javascript:void(0);" title="first page" class="previous"><i></i>Previous</a>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<section class="main wrapper">
+					{% if search %}
+						{% if article_list %}
+							<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
+							<hr>
+						{% else %}
+							<h4>暂无<span style="color: red">"{{ search }}"</span>有关的文章。</h4>
+							<hr>
+						{% endif %}
 					{% endif %}
-				</div>
-				<div class="col text-center">
-					<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
-					<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
-				</div>
-				<div class="col">
-					{% if page_obj.has_next %}
-						<a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
-					{% else %}
-						<a href="javascript:void(0);" title="Last Page" class="next">Next<i></i></a>
-					{% endif %}
-				</div>
+
+					{% for article in article_list %}
+						<article>
+						<div class="card text-center" style="height: 300px;">
+							<div class="card-body post text-left" style="height:100%; overflow:hidden;">
+								<div class="card-title text-left">
+									<h1 class="title">
+										<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
+									</h1>
+								</div>
+									<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
+										{{ article.total_views }}
+									</span>
+									<span style="color:#328CF2;padding-right:5px;"><i class="fa fa-calendar"></i>
+									{{ article.created|date:'Y-m-d' }}
+									</span>
+									<span style="color:#F23263;padding-right:5px;"><i class="fas fa-redo-alt"></i>
+									  {{ article.updated|date:'Y-m-d' }}
+									</span>
+									{% if article.category %}
+									<span>
+										<a href="{% url 'article:article-list' %}?category={{ article.category.id }}" name="category"
+										   						class="badge badge-primary
+										   							  {% if article.category.name == 'Django' %}
+																		  badge badge-dark
+																	  {% elif article.category.name == 'Java' %}
+																		  badge badge-danger
+																	  {% elif article.category.name == 'Html' %}
+																		  badge badge-warning
+																	  {% elif article.category.name == 'CSS' %}
+																		  badge badge-success
+																	  {% elif article.category.name == 'Python' %}
+																		  badge badge-info
+																	  {% endif %}">
+											{{ article.category.name }}
+										</a>
+									</span>
+									{% endif %}
+									<!-- 标签 -->
+									{% for tag in article.tags.all %}
+										<span>
+											<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="badge badge-pill badge-secondary">
+												{{ tag }}
+											</a>
+										</span>
+									{% endfor %}
+									<hr style="width:100%;margin:0;">
+									{% if article.summary %}
+										<p class="ff--default fs--14">{{ article.summary | convert_markdown | safe }}</p>
+									{% else %}
+										<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
+									{% endif %}
+								</div>
+							<div class="card-footer text-muted text-left">
+								<a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
+							</div>
+						</div>
+					</article>
+					{% endfor %}
+
+					<!-- 翻页 start -->
+					<nav class="pagination">
+						<div class="row">
+							<div class="col">
+								{% if page_obj.has_previous %}
+									<a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
+								{% else %}
+			<!--						<a href="javascript:void(0);" title="first page" class="previous"><i></i>Previous</a>-->
+								{% endif %}
+							</div>
+							<div class="col text-center">
+								<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
+								<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
+							</div>
+							<div class="col">
+								{% if page_obj.has_next %}
+									<a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
+								{% else %}
+			<!--						<a href="javascript:void(0);" title="Last Page" class="next">Next<i></i></a>-->
+								{% endif %}
+							</div>
+						</div>
+					</nav>
+					<!-- 翻页 end -->
+				</section>
 			</div>
-		</nav>
-		<!-- 翻页 end -->
-	</section>
-
-
-<style type="text/css">
-    #father {
-        position: relative;
-        }
-    #child {
-        position: absolute;
-        bottom: 20px;
-        }
-    #child p {
-    	margin-bottom: 5px;
-    }
-
-</style>
-
+			<div class="col border" style="margin-top:30px;">
+			</div>
+		</div>
+	</div>
 
 {% endblock %}
 

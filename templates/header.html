@@ -18,10 +18,10 @@
 			<form id="search-form" class="search-bar mr-3" method="get" action="{% url 'article:article-list' %}">
 			{% csrf_token %}
 				<div class="input-group">
-					<input type="search" class="search-bar-input form-control form-control-borderless" placeholder="Search" name="search" id="search" style="outline:0">
+					<input type="search" class="search-bar-input form-control form-control-borderless" placeholder="Search..." name="search" id="search">
 					<div class="input-group-btn">
 						<button class="btn btn-default search-bar-btn" type="button" onclick="search_form_submit()">
-							<i class="fas fa-search" style="color: rgba(173, 181, 189, 1);"></i>
+							<i class="fas fa-search" style="color: #d70719;"></i>
 						</button>
 					</div>
 				</div>
