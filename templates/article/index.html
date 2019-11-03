@@ -25,7 +25,7 @@
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<section class="main wrapper">
 					{% if search %}
 						{% if article_list %}
@@ -38,7 +38,7 @@
 					{% endif %}
 
 					{% for article in article_list %}
-						<article>
+					<article>
 						<div class="card text-center" style="height: 300px;">
 							<div class="card-body post text-left" style="height:100%; overflow:hidden;">
 								<div class="card-title text-left">
@@ -46,6 +46,7 @@
 										<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
 									</h1>
 								</div>
+								<div>
 									<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
 										{{ article.total_views }}
 									</span>
@@ -89,7 +90,8 @@
 										<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
 									{% endif %}
 								</div>
-							<div class="card-footer text-muted text-left">
+							</div>
+							<div class="card-footer form-control-borderless text-muted text-left">
 								<a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
 							</div>
 						</div>
@@ -123,10 +125,18 @@
 				</section>
 			</div>
 			<div class="col border" style="margin-top:30px;">
+				<div class="clock">
+					<div class="date date-screen"></div>
+					<div class="hour screen"></div>
+					<div class="screen"> : </div>
+					<div class="minute screen"></div>
+					<div class="screen"> : </div>
+					<div class="second screen"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-
+	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 {% endblock %}
 
 

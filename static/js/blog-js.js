@@ -1,9 +1,12 @@
 $(document).ready(function() {
-    //$("#blog-nav > div").eq(0).addClass("active-bg");
-    $("#navbarResponsive .navbar-nav > li.nav-item").each(function(){
-        if($(">a",this)[0].href==String(window.location)){
-            $(">div",this).eq(0).addClass("active-bg");
-            //$("#blog-nav > div").eq(0).removeClass("active-bg")
+    $("#header-nav > nav > ul.main-nav > li").each(function(){
+        var ele = $(">a",this);
+        var attr = ele.attr('href');
+        if(typeof attr !== typeof undefined && attr !== false){
+            if(ele[0].href==String(window.location)){
+                $(this).eq(0).addClass("current");
+                //$("#blog-nav > div").eq(0).removeClass("active-bg")
+            }
         }
     });
 });
@@ -56,3 +59,42 @@ function search_form_submit() {
     //调用对象的submit方法
     form.submit();
 }
+
+function openSearch() {
+    document.getElementById("searchOverlay").style.display = "block";
+}
+
+function closeSearch() {
+    document.getElementById("searchOverlay").style.display = "none";
+}
+
+function initEvents() {
+    document.addEventListener('keyup', function(ev) {
+        // escape key.
+        if( ev.keyCode == 27 ) {
+            closeSearch();
+        }
+    });
+}
+initEvents();
+
+function openNav() {
+  document.getElementById("side-user-menu").style.width = "250px";
+  document.getElementById("wrapper").style.marginRight = "250px";
+}
+
+function closeNav() {
+  document.getElementById("side-user-menu").style.width = "0";
+  document.getElementById("wrapper").style.marginRight= "0";
+}
+
+//detail.html 加载 iframe ckeditor
+$("#signOutModal").on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget)
+    var modal = $(this)
+    modal.find('.modal-title').text('Sign Out')
+    if(modal.find('.modal-body').children().length === 0){
+        let content = '<iframe id="myiframe" src="/accounts/logout/" frameborder="0" style="width:100%;height:100%;" ></iframe>';
+        modal.find('.modal-body').append(content);
+    }
+})

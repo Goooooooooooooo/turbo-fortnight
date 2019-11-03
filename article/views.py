@@ -114,7 +114,7 @@ def portfolio(request):
 
 
 
-@login_required(login_url='/userprofile/login/')
+@login_required(login_url='/account/login/')
 def article_safe_delete(request, pk):
     if request.method == 'POST':
         article = ArticlePost.objects.get(id=pk)
@@ -194,7 +194,7 @@ class ArticleDetailView(generic.DeleteView):
 # 创建新文章
 class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
     # 如果用户未登录 跳转到登录页面
-    login_url = '/userprofile/login/'
+    login_url = '/accounts/login/'
 
     model = ArticlePost
     form_class = ArticlePostForm
@@ -210,7 +210,7 @@ class ArticleCreateView(LoginRequiredMixin, generic.CreateView):
 
 
 class ArticleUpdateView(LoginRequiredMixin, generic.UpdateView):
-    login_url = '/userprofile/login/'
+    login_url = '/account/login/'
     model = ArticlePost
     context_object_name = 'article'
     template_name = 'article/update.html'

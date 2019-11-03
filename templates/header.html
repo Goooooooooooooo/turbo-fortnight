@@ -1,79 +1,69 @@
 
 
 {% load staticfiles %}
-
-  <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
-	<div class="container">
-		<div id="blog-nav">
-			<a class="navbar-brand" href="{% url 'article:article-list' %}">博客</a>
-			<div></div>
-		</div>
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			Menu
-			<i class="fas fa-bars"></i>
-		</button>
-
-		<div class="collapse navbar-collapse" id="navbarResponsive">
-			<form id="search-form" class="search-bar mr-3" method="get" action="{% url 'article:article-list' %}">
-			{% csrf_token %}
-				<div class="input-group">
-					<input type="search" class="search-bar-input form-control form-control-borderless" placeholder="Search..." name="search" id="search">
-					<div class="input-group-btn">
-						<button class="btn btn-default search-bar-btn" type="button" onclick="search_form_submit()">
-							<i class="fas fa-search" style="color: #d70719;"></i>
-						</button>
-					</div>
-				</div>
-			</form>
-			<ul class="navbar-nav ml-auto">
-				<li class="nav-item" id="article-list">
-					<a class="nav-link" href="{% url 'article:article-list' %}">首页</a>
-					<div></div>
-				</li>
-				<li class="nav-item" id="portfolio">
-					<a class="nav-link" href="{% url 'article:article-create' %}">写文章</a>
-					<div></div>
-				</li>
-				<li class="nav-item" id="page_404">
-					<a class="nav-link" href="{% url 'page_404' %}">404</a>
-					<div></div>
-				</li>
+<div class="container-fluid" style="padding-left:0;padding-right:0;min-width: 1100px;">
+	<div id="header-nav">
+		<a class="nav-logo" href="{% url 'article:article-list' %}">博客</a>
+		<nav>
+			<ul class="main-nav">
+				<li><a class="open-btn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
+				<li><a href="{% url 'article:article-list' %}">首页</a></li>
+				<li><a href="{% url 'article:article-create' %}">写文章</a></li>
+				<li><a href="{% url 'page_404' %}">404</a></li>
+				{% if not user.is_authenticated %}
+				<li><a href="{% url 'account_login' %}">登录</a></li>
+				<li><a href="{% url 'account_signup' %}">注册</a></li>
+				{% endif %}
 				{% if user.is_authenticated %}
-				<!-- Links -->
-					<li class="nav">
-						<!-- Dropdown -->
-						<div class="btn-group nav-item dropdown">
-							<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								{% if user.profile.avatar %}
-									<img src="{{ user.profile.avatar.url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border: 1px solid #212529!important;border-radius:10px;">
-								{% elif user.socialaccount_set.all.0.get_avatar_url %}
-									<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="img-circle" alt="Cinque Terre" style="max-width:40px;max-height=60px;border: 1px solid #212529!important;border-radius:10px;">
-								{% endif %}
-							</a>
-							<div class="dropdown-menu dropdown-primary">
-								<a class="dropdown-item fs--16" href="#">{{ user.username }}</a>
-								<a class="dropdown-item fs--16" href="{% url 'article:article-create' %}">写文章</a>
-								<a class="dropdown-item fs--16" href="{% url 'userprofile:edit-profile' user.id %}">个人主页</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item fs--16" href="{% url 'account_logout' %}">退出</a>
-							</div>
-						</div>
-					</li>
-				{% else %}
-					<li class="nav-item" id="login">
-					<a class="nav-link" href="{% url 'account_login' %}"> 登录 </a>
-					<div></div>
-				</li>
-					<li class="nav-item" id="signup">
-					<a class="nav-link" href="{% url 'account_signup' %}">注册</a>
-					<div></div>
-				</li>
+				<li><a class="open-btn" onclick="openNav()"><i class="far fa-user"></i></a></li>
 				{% endif %}
 			</ul>
-		</div>
+		</nav>
 	</div>
-</nav>
+	<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
+</div>
 
-<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
+<div id="searchOverlay" class="s-overlay">
+	<span class="close-btn" onclick="closeSearch()" title="Close Overlay">&times;</span>
+	<div class="overlay-content">
+		<p class="search-tips">Hit enter to search or ESC to close</p>
+		<form method="get" action="{% url 'article:article-list' %}">
+			{% csrf_token %}
+			<input type="search" placeholder="Search.." name="search" />
+			<button type="button" onclick="search_form_submit()"><i class="fa fa-search" style="color: #d70719;"></i></button>
+		</form>
+	</div>
+</div>
+{% if user.is_authenticated %}
+<div id="side-user-menu" class="user-nav">
+	<div class="user">
+		<div class="user-pic" style="{% if user.profile.avatar %}
+										background-image: url({{ user.profile.avatar.url }});
+									 {% elif user.socialaccount_set.all.0.get_avatar_url %}
+										background-image: url({{ user.socialaccount_set.all.0.get_avatar_url }});
+									 {% endif %}
+			">
+		</div>
+		<div class="user-name">{{ user.username }}</div>
+	</div>
+	<span class="nav-close-btn" onclick="closeNav()" title="Close">&times;</span>
+	<a href="{% url 'userprofile:edit-profile' user.id %}">个人主页</a>
+	<a href="{% url 'article:article-create' %}">写文章</a>
+	<a href="#" data-toggle="modal" data-target="#signOutModal">退出</a>
+<!--	{% url 'account_logout' %}-->
+</div>
+{% endif %}
 
+<div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="height:425px;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="signOutModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
