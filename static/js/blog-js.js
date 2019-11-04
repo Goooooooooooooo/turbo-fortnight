@@ -92,9 +92,9 @@ function closeNav() {
 $("#signOutModal").on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
     var modal = $(this)
-    modal.find('.modal-title').text('Sign Out')
+    //modal.find('.modal-title').text('Sign Out')
     if(modal.find('.modal-body').children().length === 0){
-        let content = '<iframe id="myiframe" src="/accounts/logout/" frameborder="0" style="width:100%;height:100%;" ></iframe>';
+        let content = '<iframe id="myiframe" src="/accounts/logout/" onload="this.height=iFrame1.document.body.scrollHeight" frameborder="0" style="width:100%;height:100%;" ></iframe>';
         modal.find('.modal-body').append(content);
     }
 })

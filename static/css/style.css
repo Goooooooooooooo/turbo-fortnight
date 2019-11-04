@@ -452,10 +452,10 @@ footer ul li a,
 
 }
 .s-overlay
- input:-webkit-autofill,
- input:-webkit-autofill:hover,
- input:-webkit-autofill:focus,
- input:-webkit-autofill:active  {
+ input[type=search]:-webkit-autofill,
+ input[type=search]:-webkit-autofill:hover,
+ input[type=search]:-webkit-autofill:focus,
+ input[type=search]:-webkit-autofill:active  {
    transition: background-color 5000s ease-in-out 0s;
    -webkit-text-fill-color: white !important;
 }
@@ -481,12 +481,12 @@ footer ul li a,
   height: 115px;
   width: 100%;
   background: #f01e3b;
-  -webkit-clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);
-  clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);
+  /*-webkit-clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);*/
+  /*clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);*/
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px 0;
+  margin: 40px 0;
   margin-bottom: 30px;
 }
 
@@ -511,20 +511,51 @@ footer ul li a,
   padding-top: 60px;
 }
 
-.user-nav a {
-  padding: 0 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  text-align: center;
+#side-user-menu ul{
+  padding-left: 0px;
 }
 
-.user-nav a:hover {
-  color: #f1f1f1;
-  background: #f01e3b;
+#side-user-menu ul li{
+  position: relative;
+  color: #616161;
+  height: 2.8rem;
+  background: none;
+  transition: all 0.5s;
+  display: flex;
+    text-align: center;
+  align-items: center;
+}
+
+#side-user-menu ul li a{
+  text-decoration: none;
+  color: #818181;
+  margin: 0 20px;
+}
+
+#side-user-menu ul li:before{
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 100%;
+  z-index: -1;
   transition: all 0.4s ease-out;
+}
+
+#side-user-menu ul li:hover a{
+  color: white;
+  -webkit-transition-delay:0.3s;
+  -moz-transition-delay:0.3s;
+}
+
+#side-user-menu ul li a:hover{
+  color: white;
+}
+
+#side-user-menu ul li:hover:before{
+  background: #f01e3b;
+  color: white;
+  width: 100%;
 }
 
 .user-nav .nav-close-btn {

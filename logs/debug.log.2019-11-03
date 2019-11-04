@@ -1,0 +1,977 @@
+2019-11-03 00:10:10,060 INFO basehttp 9596 9872 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:10:10,073 INFO basehttp 9596 9872 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:10:10,074 INFO basehttp 9596 10000 "GET /static/js/time.js HTTP/1.1" 200 890
+2019-11-03 00:11:24,276 INFO basehttp 9596 10000 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:11:24,295 INFO basehttp 9596 9872 "GET /static/css/all.css HTTP/1.1" 304 0
+2019-11-03 00:11:24,296 INFO basehttp 9596 10000 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+2019-11-03 00:11:24,297 INFO basehttp 9596 7232 "GET /static/css/monokai.css HTTP/1.1" 304 0
+2019-11-03 00:11:24,298 INFO basehttp 9596 11296 "GET /media/avatar/20191009/pic3_w3heRk6.jpg HTTP/1.1" 304 0
+2019-11-03 00:11:24,299 INFO basehttp 9596 5280 "GET /static/css/simplemde.min.css HTTP/1.1" 304 0
+2019-11-03 00:11:24,299 INFO basehttp 9596 18140 "GET /static/js/time.js HTTP/1.1" 200 890
+2019-11-03 00:11:24,328 INFO basehttp 9596 7232 "GET /static/js/simplemde.min.js HTTP/1.1" 304 0
+2019-11-03 00:11:24,328 INFO basehttp 9596 10000 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:11:24,358 INFO basehttp 9596 9872 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+2019-11-03 00:11:24,817 INFO basehttp 9596 5280 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+2019-11-03 00:11:24,817 INFO basehttp 9596 11296 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+2019-11-03 00:11:24,817 INFO basehttp 9596 18140 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 304 0
+2019-11-03 00:11:24,818 INFO basehttp 9596 7232 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 304 0
+2019-11-03 00:11:24,819 INFO basehttp 9596 10000 "GET /static/img/home-bg-4.jpg HTTP/1.1" 304 0
+2019-11-03 00:11:24,819 INFO basehttp 9596 9872 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 304 0
+2019-11-03 00:11:24,821 INFO basehttp 9596 5280 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+2019-11-03 00:11:24,821 INFO basehttp 9596 11296 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-11-03 00:11:24,892 INFO basehttp 9596 11296 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 304 0
+2019-11-03 00:12:22,903 INFO basehttp 9596 11296 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:12:22,918 INFO basehttp 9596 11296 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:12:22,919 INFO basehttp 9596 5280 "GET /static/js/time.js HTTP/1.1" 200 881
+2019-11-03 00:13:23,957 INFO basehttp 9596 5280 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:13:23,972 INFO basehttp 9596 5280 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:13:25,037 INFO basehttp 9596 5280 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:14:03,469 INFO basehttp 9596 5280 "GET /article/article-list/ HTTP/1.1" 200 20741
+2019-11-03 00:14:03,483 INFO basehttp 9596 5280 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:15:09,548 INFO basehttp 9596 5280 "GET /article/article-list/ HTTP/1.1" 200 20753
+2019-11-03 00:15:09,562 INFO basehttp 9596 5280 "GET /static/css/style.css HTTP/1.1" 200 13358
+2019-11-03 00:15:09,562 INFO basehttp 9596 11296 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:17:41,405 INFO basehttp 9596 11296 "GET /article/article-list/ HTTP/1.1" 200 20753
+2019-11-03 00:17:41,417 INFO basehttp 9596 11296 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:17:41,418 INFO basehttp 9596 5280 "GET /static/js/time.js HTTP/1.1" 200 902
+2019-11-03 00:18:46,173 INFO basehttp 9596 5280 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:18:46,187 INFO basehttp 9596 5280 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:18:46,188 INFO basehttp 9596 11296 "GET /static/js/time.js HTTP/1.1" 200 881
+2019-11-03 00:18:48,608 INFO basehttp 9596 11296 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:19:19,038 INFO basehttp 9596 11296 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:19:19,050 INFO basehttp 9596 11296 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:19:19,051 INFO basehttp 9596 5280 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 00:30:14,460 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:30:14,475 INFO basehttp 9596 18108 "GET /static/css/style.css HTTP/1.1" 200 13449
+2019-11-03 00:30:14,484 INFO basehttp 9596 4784 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:30:16,254 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:30:16,266 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:30:47,079 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:30:47,089 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:30:48,436 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:30:51,045 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:31:17,080 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:31:17,097 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:31:51,661 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:31:51,673 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:31:51,675 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:31:59,056 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:32:02,330 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:32:02,342 INFO basehttp 9596 18108 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:32:07,271 INFO basehttp 9596 18108 "GET /article/article-create/ HTTP/1.1" 200 12583
+2019-11-03 00:32:07,284 INFO basehttp 9596 18108 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 304 0
+2019-11-03 00:32:07,285 INFO basehttp 9596 4784 "GET /static/prism/prism.css HTTP/1.1" 304 0
+2019-11-03 00:32:15,629 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:32:15,641 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:35:11,945 INFO basehttp 9596 4784 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:35:11,958 INFO basehttp 9596 4784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:35:11,958 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:35:31,049 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:35:31,067 INFO basehttp 9596 10696 "GET /static/css/style.css HTTP/1.1" 200 13449
+2019-11-03 00:35:31,068 INFO basehttp 9596 3348 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 00:35:31,072 INFO basehttp 9596 18108 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 00:35:31,073 INFO basehttp 9596 10696 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 00:35:31,074 INFO basehttp 9596 15200 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 00:35:31,076 INFO basehttp 9596 4784 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 00:35:31,078 INFO basehttp 9596 17428 "GET /media/avatar/20191009/pic3_w3heRk6.jpg HTTP/1.1" 200 70981
+2019-11-03 00:35:31,112 INFO basehttp 9596 18108 "GET /static/js/blog-js.js HTTP/1.1" 200 1894
+2019-11-03 00:35:31,112 INFO basehttp 9596 4784 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 00:35:31,113 INFO basehttp 9596 15200 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 00:35:31,114 INFO basehttp 9596 17428 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 00:35:31,117 INFO basehttp 9596 10696 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 00:35:31,147 INFO basehttp 9596 10696 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 00:35:31,152 INFO basehttp 9596 3348 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 00:35:31,152 INFO basehttp 9596 4784 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 00:35:31,154 INFO basehttp 9596 18108 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 00:35:31,157 INFO basehttp 9596 17428 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 00:35:31,158 INFO basehttp 9596 15200 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 00:35:31,200 INFO basehttp 9596 17428 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 00:35:31,231 INFO basehttp 9596 17428 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 00:37:23,636 INFO basehttp 9596 17428 "GET /article/article-list/ HTTP/1.1" 200 20763
+2019-11-03 00:37:23,649 INFO basehttp 9596 17428 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:37:23,650 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:37:23,650 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:37:54,462 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20755
+2019-11-03 00:37:54,475 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:39:38,063 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20770
+2019-11-03 00:39:38,076 INFO basehttp 9596 15200 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:39:38,078 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:39:38,078 INFO basehttp 9596 17428 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:44:12,800 INFO basehttp 9596 17428 "GET /article/article-list/ HTTP/1.1" 200 21034
+2019-11-03 00:44:12,813 INFO basehttp 9596 17428 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:44:12,815 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:44:12,816 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:45:44,035 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20827
+2019-11-03 00:45:44,049 INFO basehttp 9596 15200 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:45:44,050 INFO basehttp 9596 18108 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:46:12,360 INFO basehttp 9596 18108 "GET /article/article-create/ HTTP/1.1" 200 12640
+2019-11-03 00:46:12,373 INFO basehttp 9596 15200 "GET /static/prism/prism.css HTTP/1.1" 200 4159
+2019-11-03 00:46:12,376 INFO basehttp 9596 18108 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 200 99487
+2019-11-03 00:46:13,720 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20827
+2019-11-03 00:47:12,777 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20827
+2019-11-03 00:47:12,792 INFO basehttp 9596 18108 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:47:12,793 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 200 1903
+2019-11-03 00:47:17,167 INFO basehttp 9596 15200 "GET /article/article-create/ HTTP/1.1" 200 12640
+2019-11-03 00:47:17,182 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:47:18,219 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20827
+2019-11-03 00:47:18,240 INFO basehttp 9596 15200 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:47:18,240 INFO basehttp 9596 18108 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:48:54,771 ERROR log 9596 18108 Internal Server Error: /article/article-list/
+Traceback (most recent call last):
+  File "J:\django\venv\lib\site-packages\django\template\smartif.py", line 175, in translate_token
+    op = OPERATORS[token]
+KeyError: '!user.is_authenticated'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "J:\django\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "J:\django\venv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "J:\django\venv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "J:\django\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "J:\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "J:\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\loader_tags.py", line 176, in render
+    template = context.template.engine.get_template(template_name)
+  File "J:\django\venv\lib\site-packages\django\template\engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "J:\django\venv\lib\site-packages\django\template\engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "J:\django\venv\lib\site-packages\django\template\loaders\base.py", line 30, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 156, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 194, in compile_nodelist
+    return parser.parse()
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 478, in parse
+    raise self.error(token, e)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "J:\django\venv\lib\site-packages\django\template\defaulttags.py", line 951, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "J:\django\venv\lib\site-packages\django\template\defaulttags.py", line 884, in __init__
+    super().__init__(*args, **kwargs)
+  File "J:\django\venv\lib\site-packages\django\template\smartif.py", line 166, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "J:\django\venv\lib\site-packages\django\template\smartif.py", line 177, in translate_token
+    return self.create_var(token)
+  File "J:\django\venv\lib\site-packages\django\template\defaulttags.py", line 887, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 663, in __init__
+    "from '%s'" % (token[upto:], token))
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '!user.is_authenticated' from '!user.is_authenticated'
+2019-11-03 00:48:54,779 ERROR basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 500 218121
+2019-11-03 00:49:16,228 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20833
+2019-11-03 00:49:16,242 INFO basehttp 9596 18108 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:49:16,243 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:49:20,346 INFO basehttp 9596 15200 "GET /accounts/logout/ HTTP/1.1" 200 7372
+2019-11-03 00:49:22,485 INFO basehttp 9596 15200 "POST /accounts/logout/ HTTP/1.1" 302 0
+2019-11-03 00:49:22,517 INFO basehttp 9596 15200 "GET / HTTP/1.1" 200 20191
+2019-11-03 00:49:25,847 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20191
+2019-11-03 00:49:27,561 INFO basehttp 9596 15200 "GET /article/article-create/ HTTP/1.1" 302 0
+2019-11-03 00:49:27,573 INFO basehttp 9596 15200 "GET /accounts/login/?next=/article/article-create/ HTTP/1.1" 200 11743
+2019-11-03 00:49:31,839 INFO basehttp 9596 15200 "GET /accounts/login/ HTTP/1.1" 200 11599
+2019-11-03 00:49:31,852 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:50:04,463 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20191
+2019-11-03 00:50:04,477 INFO basehttp 9596 18108 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:50:04,477 INFO basehttp 9596 15200 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:50:34,181 INFO basehttp 9596 15200 "GET /article/article-create/ HTTP/1.1" 302 0
+2019-11-03 00:50:34,194 INFO basehttp 9596 15200 "GET /accounts/login/?next=/article/article-create/ HTTP/1.1" 200 11743
+2019-11-03 00:50:34,211 INFO basehttp 9596 15200 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:50:37,089 INFO basehttp 9596 15200 "GET /article/article-list/ HTTP/1.1" 200 20191
+2019-11-03 00:50:49,477 INFO basehttp 9596 15200 "GET /accounts/login/ HTTP/1.1" 200 11599
+2019-11-03 00:50:52,407 INFO basehttp 9596 15200 "GET /accounts/github/login/ HTTP/1.1" 302 0
+2019-11-03 00:50:53,674 INFO basehttp 9596 15200 "GET /accounts/github/login/callback/?code=00869576a1c39f186346&state=GvSRIlEZxuzB HTTP/1.1" 302 0
+2019-11-03 00:50:53,709 INFO basehttp 9596 15200 "GET / HTTP/1.1" 200 20858
+2019-11-03 00:52:19,062 INFO basehttp 9596 15200 "GET / HTTP/1.1" 200 20852
+2019-11-03 00:52:19,073 INFO basehttp 9596 15200 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:52:19,074 INFO basehttp 9596 18108 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 00:52:25,231 INFO basehttp 9596 18108 "GET /article/article-list/ HTTP/1.1" 200 20852
+2019-11-03 00:59:17,916 INFO basehttp 9596 4048 "GET /article/article-list/ HTTP/1.1" 200 20795
+2019-11-03 00:59:17,928 INFO basehttp 9596 4048 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 00:59:17,929 INFO basehttp 9596 8136 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 00:59:17,955 INFO basehttp 9596 8136 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,826 INFO basehttp 9596 8136 "GET /article/article-list/ HTTP/1.1" 200 20816
+2019-11-03 01:02:22,844 INFO basehttp 9596 8136 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+2019-11-03 01:02:22,844 INFO basehttp 9596 4048 "GET /static/css/all.css HTTP/1.1" 304 0
+2019-11-03 01:02:22,848 INFO basehttp 9596 16492 "GET /static/css/style.css HTTP/1.1" 200 13427
+2019-11-03 01:02:22,849 INFO basehttp 9596 15640 "GET /static/css/simplemde.min.css HTTP/1.1" 304 0
+2019-11-03 01:02:22,849 INFO basehttp 9596 7088 "GET /static/css/monokai.css HTTP/1.1" 304 0
+2019-11-03 01:02:22,850 INFO basehttp 9596 872 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,851 INFO basehttp 9596 4048 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,873 INFO basehttp 9596 872 "GET /static/js/simplemde.min.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,873 INFO basehttp 9596 4048 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,874 INFO basehttp 9596 7088 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 01:02:22,901 INFO basehttp 9596 7088 "GET /static/img/read_more_arrow.png HTTP/1.1" 304 0
+2019-11-03 01:02:22,902 INFO basehttp 9596 4048 "GET /static/img/home-bg-4.jpg HTTP/1.1" 304 0
+2019-11-03 01:02:22,904 INFO basehttp 9596 872 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 304 0
+2019-11-03 01:02:22,904 INFO basehttp 9596 15640 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+2019-11-03 01:02:22,904 INFO basehttp 9596 16492 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 304 0
+2019-11-03 01:02:22,905 INFO basehttp 9596 8136 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+2019-11-03 01:02:22,928 INFO basehttp 9596 8136 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-11-03 01:02:22,984 INFO basehttp 9596 8136 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 304 0
+2019-11-03 01:03:17,743 INFO basehttp 9596 8136 "GET /article/article-list/ HTTP/1.1" 200 21349
+2019-11-03 01:03:17,755 INFO basehttp 9596 8136 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 01:04:08,285 INFO basehttp 9596 8136 "GET /article/article-list/ HTTP/1.1" 200 21578
+2019-11-03 01:04:08,298 INFO basehttp 9596 8136 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 01:04:08,299 INFO basehttp 9596 16492 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 01:04:08,299 INFO basehttp 9596 15640 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 01:04:41,414 INFO basehttp 9596 15640 "GET /article/article-list/ HTTP/1.1" 200 21925
+2019-11-03 01:04:41,434 INFO basehttp 9596 15640 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 01:06:30,670 INFO basehttp 9596 15640 "GET /article/article-list/ HTTP/1.1" 200 21925
+2019-11-03 01:06:30,683 INFO basehttp 9596 15640 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 01:06:30,684 INFO basehttp 9596 16492 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,322 INFO basehttp 9404 4228 "GET /article/article-list/ HTTP/1.1" 200 21854
+2019-11-03 14:06:22,340 INFO basehttp 9404 15324 "GET /static/css/monokai.css HTTP/1.1" 304 0
+2019-11-03 14:06:22,341 INFO basehttp 9404 9716 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,341 INFO basehttp 9404 5532 "GET /static/css/all.css HTTP/1.1" 304 0
+2019-11-03 14:06:22,341 INFO basehttp 9404 2392 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 14:06:22,341 INFO basehttp 9404 12108 "GET /static/css/simplemde.min.css HTTP/1.1" 304 0
+2019-11-03 14:06:22,347 INFO basehttp 9404 15324 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,347 INFO basehttp 9404 2392 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,358 INFO basehttp 9404 5532 "GET /static/js/simplemde.min.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,359 INFO basehttp 9404 12108 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,390 INFO basehttp 9404 4228 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+2019-11-03 14:06:22,390 INFO basehttp 9404 9716 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+2019-11-03 14:06:22,406 INFO basehttp 9404 9716 "GET /static/img/read_more_arrow.png HTTP/1.1" 304 0
+2019-11-03 14:06:22,410 INFO basehttp 9404 4228 "GET /static/img/home-bg-4.jpg HTTP/1.1" 304 0
+2019-11-03 14:06:22,411 INFO basehttp 9404 5532 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+2019-11-03 14:06:22,411 INFO basehttp 9404 12108 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 304 0
+2019-11-03 14:06:22,411 INFO basehttp 9404 2392 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 304 0
+2019-11-03 14:06:22,412 INFO basehttp 9404 9716 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+2019-11-03 14:06:22,809 WARNING log 9404 9716 Not Found: /favicon.ico
+2019-11-03 14:06:22,810 WARNING basehttp 9404 9716 "GET /favicon.ico HTTP/1.1" 404 2876
+2019-11-03 14:09:16,153 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23072
+2019-11-03 14:09:16,170 WARNING log 9404 9716 Not Found: /article/article-list/img/logo.png
+2019-11-03 14:09:16,170 WARNING basehttp 9404 9716 "GET /article/article-list/img/logo.png HTTP/1.1" 404 4044
+2019-11-03 14:09:25,614 INFO basehttp 9404 9716 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 304 0
+2019-11-03 14:09:25,619 INFO basehttp 9404 9716 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-11-03 14:11:21,300 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23072
+2019-11-03 14:11:21,315 WARNING log 9404 9716 Not Found: /article/article-list/img/logo.png
+2019-11-03 14:11:21,316 WARNING basehttp 9404 9716 "GET /article/article-list/img/logo.png HTTP/1.1" 404 4044
+2019-11-03 14:12:34,090 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23097
+2019-11-03 14:12:34,109 WARNING log 9404 9716 Not Found: /article/article-list/img/logo.png
+2019-11-03 14:12:34,109 WARNING basehttp 9404 9716 "GET /article/article-list/img/logo.png HTTP/1.1" 404 4044
+2019-11-03 14:12:35,072 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23097
+2019-11-03 14:12:35,088 WARNING log 9404 9716 Not Found: /article/article-list/img/logo.png
+2019-11-03 14:12:35,089 WARNING basehttp 9404 9716 "GET /article/article-list/img/logo.png HTTP/1.1" 404 4044
+2019-11-03 14:13:36,736 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23017
+2019-11-03 14:13:38,008 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23017
+2019-11-03 14:15:23,266 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23031
+2019-11-03 14:18:01,730 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23037
+2019-11-03 14:18:45,922 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23042
+2019-11-03 14:19:14,575 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23077
+2019-11-03 14:19:42,654 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23077
+2019-11-03 14:21:02,401 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23007
+2019-11-03 14:21:03,421 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23007
+2019-11-03 14:22:43,991 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23007
+2019-11-03 14:23:58,784 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 22987
+2019-11-03 14:27:12,633 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23002
+2019-11-03 14:27:48,717 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23017
+2019-11-03 14:29:33,612 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 22979
+2019-11-03 14:31:13,973 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 22995
+2019-11-03 14:31:14,994 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 22995
+2019-11-03 14:31:53,646 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 22995
+2019-11-03 14:34:05,300 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23091
+2019-11-03 14:37:01,906 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:41:04,721 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23111
+2019-11-03 14:42:41,003 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23131
+2019-11-03 14:42:58,435 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23111
+2019-11-03 14:43:08,474 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:45:03,609 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:45:17,491 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:45:50,885 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:46:02,067 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23112
+2019-11-03 14:47:18,073 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23149
+2019-11-03 14:48:30,802 INFO basehttp 9404 9716 "GET /article/article-list/ HTTP/1.1" 200 23228
+2019-11-03 14:48:33,317 INFO basehttp 9404 9716 "GET /article/article-create/ HTTP/1.1" 200 15041
+2019-11-03 14:48:33,330 INFO basehttp 9404 9716 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 304 0
+2019-11-03 14:48:33,330 INFO basehttp 9404 5804 "GET /static/prism/prism.css HTTP/1.1" 304 0
+2019-11-03 14:49:28,502 INFO basehttp 9404 5804 "GET /article/article-create/ HTTP/1.1" 200 15041
+2019-11-03 14:49:29,993 INFO basehttp 9404 5804 "GET /article/article-create/ HTTP/1.1" 200 15041
+2019-11-03 14:49:31,049 INFO basehttp 9404 5804 "GET /article/article-list/ HTTP/1.1" 200 23228
+2019-11-03 14:49:31,924 INFO basehttp 9404 5804 "GET /404/ HTTP/1.1" 200 1495
+2019-11-03 14:49:34,146 INFO basehttp 9404 5804 "GET /accounts/login/ HTTP/1.1" 302 0
+2019-11-03 14:49:34,182 INFO basehttp 9404 5804 "GET / HTTP/1.1" 200 23228
+2019-11-03 14:49:35,166 INFO basehttp 9404 5804 "GET /article/article-list/ HTTP/1.1" 200 23228
+2019-11-03 14:51:13,503 INFO basehttp 9404 5804 "GET /article/article-list/ HTTP/1.1" 200 23130
+2019-11-03 14:52:26,794 INFO basehttp 9404 5804 "GET /article/article-list/ HTTP/1.1" 200 23158
+2019-11-03 14:53:34,132 INFO basehttp 9404 5804 "GET /article/article-list/ HTTP/1.1" 200 23177
+2019-11-03 14:53:37,089 INFO basehttp 9404 5804 "GET /article/article-create/ HTTP/1.1" 200 14990
+2019-11-03 14:53:58,729 INFO basehttp 9404 5804 "GET /article/article-create/ HTTP/1.1" 200 14974
+2019-11-03 14:55:44,738 INFO basehttp 9404 5804 "GET /article/article-create/ HTTP/1.1" 200 14989
+2019-11-03 15:01:41,511 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:01:44,030 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:01:46,777 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:01:47,520 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:01:57,967 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:01:58,993 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:02:00,194 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:13,337 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:14,830 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:15,620 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:03:16,677 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:20,463 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:03:20,984 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:42,852 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:43,831 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:03:44,358 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:03:45,128 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:05:24,448 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:05:25,574 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:05:26,220 INFO basehttp 9404 8656 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:05:26,692 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:06:08,439 INFO basehttp 9404 8656 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:06:08,457 INFO basehttp 9404 13368 "GET /static/css/style.css HTTP/1.1" 200 13174
+2019-11-03 15:06:08,458 INFO basehttp 9404 2696 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 15:06:08,470 INFO basehttp 9404 15912 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 15:06:08,470 INFO basehttp 9404 15680 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 15:06:08,473 INFO basehttp 9404 3112 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 15:06:08,475 INFO basehttp 9404 3112 "GET /static/js/blog-js.js HTTP/1.1" 200 1944
+2019-11-03 15:06:08,481 INFO basehttp 9404 8656 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 15:06:08,492 INFO basehttp 9404 2696 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 15:06:08,493 INFO basehttp 9404 13368 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 15:06:08,498 INFO basehttp 9404 15680 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 15:06:08,509 INFO basehttp 9404 15912 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 15:06:08,516 INFO basehttp 9404 15912 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 15:06:08,518 INFO basehttp 9404 13368 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 15:06:08,518 INFO basehttp 9404 8656 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 15:06:08,519 INFO basehttp 9404 3112 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 15:06:08,519 INFO basehttp 9404 2696 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 15:06:08,535 INFO basehttp 9404 15680 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 15:06:08,571 INFO basehttp 9404 15680 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 15:06:08,582 INFO basehttp 9404 15680 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 15:06:10,236 INFO basehttp 9404 15680 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:06:10,248 INFO basehttp 9404 2696 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:06:10,248 INFO basehttp 9404 3112 "GET /static/prism/prism.css HTTP/1.1" 200 4159
+2019-11-03 15:06:10,269 INFO basehttp 9404 15680 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 200 99487
+2019-11-03 15:06:12,014 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:06:15,802 INFO basehttp 9404 15680 "GET /article/article-create/ HTTP/1.1" 200 14988
+2019-11-03 15:06:15,814 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:06:16,540 INFO basehttp 9404 15680 "GET /404/ HTTP/1.1" 200 1495
+2019-11-03 15:06:18,072 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 23175
+2019-11-03 15:06:18,084 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:08:30,547 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22735
+2019-11-03 15:08:30,560 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 200 1900
+2019-11-03 15:08:50,284 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22721
+2019-11-03 15:08:50,297 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:09:39,448 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22724
+2019-11-03 15:09:39,462 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:10:21,205 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22703
+2019-11-03 15:10:21,218 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:11:15,704 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22691
+2019-11-03 15:11:15,717 INFO basehttp 9404 15680 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:14:04,474 INFO basehttp 9404 15680 "GET /article/article-list/ HTTP/1.1" 200 22704
+2019-11-03 15:14:04,487 INFO basehttp 9404 15680 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 15:14:04,488 INFO basehttp 9404 15624 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:17:12,554 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22740
+2019-11-03 15:17:12,567 INFO basehttp 9404 15624 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:17:38,175 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22762
+2019-11-03 15:18:29,555 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22797
+2019-11-03 15:18:29,567 INFO basehttp 9404 15624 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:18:39,319 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22781
+2019-11-03 15:18:56,670 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22781
+2019-11-03 15:19:44,755 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22797
+2019-11-03 15:19:44,766 INFO basehttp 9404 15624 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:19:56,284 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22799
+2019-11-03 15:20:07,781 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22799
+2019-11-03 15:21:14,712 INFO basehttp 9404 15624 "GET /article/article-list/ HTTP/1.1" 200 22865
+2019-11-03 15:21:14,724 INFO basehttp 9404 15624 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 15:21:14,725 INFO basehttp 9404 256 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:21:15,853 INFO basehttp 9404 256 "GET /article/article-list/ HTTP/1.1" 200 22865
+2019-11-03 15:21:24,565 INFO basehttp 9404 256 "GET /article/article-list/ HTTP/1.1" 200 22865
+2019-11-03 15:21:55,980 INFO basehttp 9404 256 "GET /article/article-list/ HTTP/1.1" 200 22866
+2019-11-03 15:24:15,901 INFO basehttp 9404 256 "GET /article/article-list/ HTTP/1.1" 200 22237
+2019-11-03 15:24:15,913 INFO basehttp 9404 256 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:24:42,796 INFO basehttp 9404 256 "GET /article/article-list/ HTTP/1.1" 200 22232
+2019-11-03 15:40:42,225 INFO basehttp 9404 6452 "GET /article/article-list/ HTTP/1.1" 200 22983
+2019-11-03 15:40:42,237 INFO basehttp 9404 6452 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 15:40:42,245 INFO basehttp 9404 5336 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:40:46,316 INFO basehttp 9404 5336 "GET /article/article-list/?search= HTTP/1.1" 200 22983
+2019-11-03 15:44:31,415 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 22954
+2019-11-03 15:44:31,430 INFO basehttp 9404 14552 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:45:30,449 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 23293
+2019-11-03 15:46:17,102 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 24091
+2019-11-03 15:48:35,900 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 24358
+2019-11-03 15:48:35,914 INFO basehttp 9404 14552 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:50:57,360 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 24472
+2019-11-03 15:50:57,389 INFO basehttp 9404 14552 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 15:52:48,090 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 24549
+2019-11-03 15:52:48,103 INFO basehttp 9404 14552 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:53:52,945 INFO basehttp 9404 14552 "GET /article/article-list/?search= HTTP/1.1" 200 24315
+2019-11-03 15:54:12,096 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 24315
+2019-11-03 15:55:23,112 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 24295
+2019-11-03 15:55:37,941 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 24294
+2019-11-03 15:57:27,625 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 23187
+2019-11-03 15:57:27,637 INFO basehttp 9404 14552 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 15:58:38,590 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 23261
+2019-11-03 15:59:15,129 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 23460
+2019-11-03 15:59:42,608 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 24480
+2019-11-03 16:02:40,906 INFO basehttp 9404 14552 "GET /article/article-list/ HTTP/1.1" 200 24535
+2019-11-03 16:02:40,920 INFO basehttp 9404 14552 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 16:02:40,920 INFO basehttp 9404 5180 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:03:53,730 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24557
+2019-11-03 16:05:08,681 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24562
+2019-11-03 16:05:46,568 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24562
+2019-11-03 16:06:27,038 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24573
+2019-11-03 16:06:45,610 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24563
+2019-11-03 16:08:29,393 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24477
+2019-11-03 16:08:29,407 INFO basehttp 9404 5180 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:08:40,828 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24477
+2019-11-03 16:10:10,535 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24479
+2019-11-03 16:12:16,948 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24508
+2019-11-03 16:13:13,119 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24514
+2019-11-03 16:14:04,328 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24464
+2019-11-03 16:14:04,338 INFO basehttp 9404 5180 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 16:14:54,031 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24479
+2019-11-03 16:14:54,043 INFO basehttp 9404 5180 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:18:03,988 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24672
+2019-11-03 16:19:52,797 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24686
+2019-11-03 16:21:10,758 INFO basehttp 9404 5180 "GET /article/article-list/ HTTP/1.1" 200 24701
+2019-11-03 16:26:25,203 INFO basehttp 9404 13340 "GET /article/article-list/ HTTP/1.1" 200 24721
+2019-11-03 16:26:25,215 INFO basehttp 9404 13340 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 16:26:25,216 INFO basehttp 9404 916 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:30:25,765 INFO basehttp 9404 916 "GET /article/article-list/ HTTP/1.1" 200 24667
+2019-11-03 16:31:18,779 INFO basehttp 9404 916 "GET /article/article-list/ HTTP/1.1" 200 24713
+2019-11-03 16:32:35,587 INFO basehttp 9404 916 "GET /article/article-list/ HTTP/1.1" 200 24713
+2019-11-03 16:33:42,144 INFO basehttp 9404 916 "GET /article/article-list/ HTTP/1.1" 200 24739
+2019-11-03 16:35:14,928 INFO basehttp 9404 916 "GET /article/article-list/ HTTP/1.1" 200 24741
+2019-11-03 16:35:14,942 INFO basehttp 9404 916 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 16:35:14,942 INFO basehttp 9404 16188 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:36:14,588 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24692
+2019-11-03 16:39:47,459 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24728
+2019-11-03 16:43:26,971 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24752
+2019-11-03 16:43:26,982 INFO basehttp 9404 16188 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 16:44:19,818 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24722
+2019-11-03 16:44:19,829 INFO basehttp 9404 16188 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:45:11,090 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24758
+2019-11-03 16:46:05,784 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24721
+2019-11-03 16:46:53,376 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24660
+2019-11-03 16:47:45,585 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24646
+2019-11-03 16:49:03,196 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24679
+2019-11-03 16:49:53,608 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24694
+2019-11-03 16:51:02,150 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24693
+2019-11-03 16:51:44,488 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24693
+2019-11-03 16:53:00,159 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 24699
+2019-11-03 16:54:57,984 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 23568
+2019-11-03 16:54:57,996 INFO basehttp 9404 16188 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 16:59:35,544 INFO basehttp 9404 16188 "GET /article/article-list/ HTTP/1.1" 200 21306
+2019-11-03 16:59:35,572 INFO basehttp 9404 15896 "GET /static/css/all.css HTTP/1.1" 304 0
+2019-11-03 16:59:35,572 INFO basehttp 9404 16188 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+2019-11-03 16:59:35,575 INFO basehttp 9404 672 "GET /static/css/style.css HTTP/1.1" 200 13642
+2019-11-03 16:59:35,577 INFO basehttp 9404 8572 "GET /static/css/monokai.css HTTP/1.1" 304 0
+2019-11-03 16:59:35,579 INFO basehttp 9404 15896 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+2019-11-03 16:59:35,580 INFO basehttp 9404 14508 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 304 0
+2019-11-03 16:59:35,580 INFO basehttp 9404 9660 "GET /static/css/simplemde.min.css HTTP/1.1" 304 0
+2019-11-03 16:59:35,581 INFO basehttp 9404 672 "GET /static/js/simplemde.min.js HTTP/1.1" 304 0
+2019-11-03 16:59:35,581 INFO basehttp 9404 16188 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+2019-11-03 16:59:35,635 INFO basehttp 9404 16188 "GET /static/img/read_more_arrow.png HTTP/1.1" 304 0
+2019-11-03 16:59:35,640 INFO basehttp 9404 16188 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 304 0
+2019-11-03 16:59:35,640 INFO basehttp 9404 9660 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+2019-11-03 16:59:35,640 INFO basehttp 9404 672 "GET /static/img/home-bg-4.jpg HTTP/1.1" 304 0
+2019-11-03 16:59:35,641 INFO basehttp 9404 15896 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 304 0
+2019-11-03 16:59:35,681 INFO basehttp 9404 15896 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-11-03 16:59:35,689 INFO basehttp 9404 15896 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+2019-11-03 16:59:35,762 INFO basehttp 9404 15896 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 304 0
+2019-11-03 17:09:05,108 INFO basehttp 9404 332 "GET /article/article-list/ HTTP/1.1" 200 21100
+2019-11-03 17:09:05,121 INFO basehttp 9404 332 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 17:09:05,122 INFO basehttp 9404 9608 "GET /static/js/blog-js.js HTTP/1.1" 200 2308
+2019-11-03 20:08:38,191 INFO basehttp 9404 8564 "GET /article/article-list/ HTTP/1.1" 200 21145
+2019-11-03 20:08:38,207 INFO basehttp 9404 6792 "GET /static/css/all.css HTTP/1.1" 304 0
+2019-11-03 20:08:38,207 INFO basehttp 9404 8564 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0
+2019-11-03 20:08:38,210 INFO basehttp 9404 11520 "GET /static/css/monokai.css HTTP/1.1" 304 0
+2019-11-03 20:08:38,210 INFO basehttp 9404 15704 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:08:38,211 INFO basehttp 9404 13364 "GET /static/css/simplemde.min.css HTTP/1.1" 304 0
+2019-11-03 20:08:38,211 INFO basehttp 9404 11620 "GET /static/js/time.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,211 INFO basehttp 9404 6792 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,212 INFO basehttp 9404 8564 "GET /static/js/popper.min.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,226 INFO basehttp 9404 15704 "GET /static/js/simplemde.min.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,226 INFO basehttp 9404 11520 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,226 INFO basehttp 9404 13364 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 20:08:38,244 INFO basehttp 9404 13364 "GET /static/img/read_more_arrow.png HTTP/1.1" 304 0
+2019-11-03 20:08:38,247 INFO basehttp 9404 15704 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+2019-11-03 20:08:38,248 INFO basehttp 9404 11520 "GET /static/img/home-bg-4.jpg HTTP/1.1" 304 0
+2019-11-03 20:08:38,248 INFO basehttp 9404 13364 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 304 0
+2019-11-03 20:08:38,248 INFO basehttp 9404 8564 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 304 0
+2019-11-03 20:08:38,261 INFO basehttp 9404 11520 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 304 0
+2019-11-03 20:09:10,503 INFO basehttp 9404 11520 "GET /article/article-list/ HTTP/1.1" 200 21144
+2019-11-03 20:09:48,839 INFO basehttp 9404 11520 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:12:50,432 INFO basehttp 9404 11520 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 304 0
+2019-11-03 20:12:50,438 INFO basehttp 9404 11520 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 304 0
+2019-11-03 20:16:38,319 INFO basehttp 9404 11520 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:17:17,933 INFO basehttp 9404 11520 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:18:05,423 INFO basehttp 9404 11520 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:18:05,443 INFO basehttp 9404 13240 "GET /static/css/style.css HTTP/1.1" 200 13731
+2019-11-03 20:18:05,446 INFO basehttp 9404 16196 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 20:18:05,447 INFO basehttp 9404 12460 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 20:18:05,450 INFO basehttp 9404 11520 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 20:18:05,452 INFO basehttp 9404 16316 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 20:18:05,453 INFO basehttp 9404 16196 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 20:18:05,454 INFO basehttp 9404 6488 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 20:18:05,455 INFO basehttp 9404 13240 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 20:18:05,456 INFO basehttp 9404 12460 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 20:18:05,460 INFO basehttp 9404 11520 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 20:18:05,468 INFO basehttp 9404 16316 "GET /static/js/blog-js.js HTTP/1.1" 200 2308
+2019-11-03 20:18:05,511 INFO basehttp 9404 11520 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 20:18:05,513 INFO basehttp 9404 6488 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 20:18:05,514 INFO basehttp 9404 16196 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 20:18:05,514 INFO basehttp 9404 12460 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 20:18:05,517 INFO basehttp 9404 16316 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 20:18:05,552 INFO basehttp 9404 16316 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 20:18:05,575 INFO basehttp 9404 16316 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 20:18:05,670 INFO basehttp 9404 16316 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 20:18:40,487 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:18:40,499 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13754
+2019-11-03 20:19:44,799 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:19:44,810 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:20:20,935 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:20:20,948 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13759
+2019-11-03 20:20:54,008 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:20:54,020 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13774
+2019-11-03 20:22:32,629 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:22:32,645 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13796
+2019-11-03 20:24:12,124 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21170
+2019-11-03 20:24:12,137 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:25:36,966 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:25:36,981 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13757
+2019-11-03 20:26:54,377 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:26:54,391 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13755
+2019-11-03 20:28:38,887 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:28:38,905 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13772
+2019-11-03 20:28:55,056 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21164
+2019-11-03 20:28:55,068 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13770
+2019-11-03 20:29:50,647 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21165
+2019-11-03 20:29:50,659 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:30:07,613 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21165
+2019-11-03 20:30:07,624 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:31:47,017 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21165
+2019-11-03 20:31:47,029 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:32:53,434 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21165
+2019-11-03 20:32:53,447 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13771
+2019-11-03 20:35:13,601 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21165
+2019-11-03 20:35:13,612 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 200 13779
+2019-11-03 20:37:23,382 INFO basehttp 9404 16316 "GET /article/article-list/ HTTP/1.1" 200 21240
+2019-11-03 20:37:23,394 INFO basehttp 9404 16316 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:37:23,395 INFO basehttp 9404 2960 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 20:38:00,148 INFO basehttp 9404 2960 "GET /article/article-list/ HTTP/1.1" 200 21444
+2019-11-03 20:38:00,164 INFO basehttp 9404 2960 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:38:03,175 INFO basehttp 9404 2960 "GET /404/ HTTP/1.1" 200 1495
+2019-11-03 20:38:04,424 INFO basehttp 9404 2960 "GET /article/article-list/ HTTP/1.1" 200 21444
+2019-11-03 20:45:01,797 INFO basehttp 9404 8012 "GET /article/article-list/ HTTP/1.1" 200 21683
+2019-11-03 20:45:01,810 INFO basehttp 9404 8012 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:52:24,929 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 22110
+2019-11-03 20:52:24,941 INFO basehttp 9404 15308 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:54:20,466 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 22413
+2019-11-03 20:54:20,479 INFO basehttp 9404 15308 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:55:01,412 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 22433
+2019-11-03 20:57:00,356 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 23031
+2019-11-03 20:57:00,370 INFO basehttp 9404 15308 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:57:30,860 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 23031
+2019-11-03 20:59:31,614 INFO basehttp 9404 15308 "GET /article/article-list/ HTTP/1.1" 200 23033
+2019-11-03 20:59:31,627 INFO basehttp 9404 15308 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 20:59:31,628 INFO basehttp 9404 8736 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 21:00:07,275 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23024
+2019-11-03 21:00:59,164 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23070
+2019-11-03 21:01:42,159 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23064
+2019-11-03 21:03:40,354 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23086
+2019-11-03 21:03:40,366 INFO basehttp 9404 8736 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:04:16,016 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23086
+2019-11-03 21:04:35,944 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23086
+2019-11-03 21:05:01,334 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23076
+2019-11-03 21:06:54,822 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23076
+2019-11-03 21:06:54,833 INFO basehttp 9404 8736 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:08:52,778 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23081
+2019-11-03 21:12:06,471 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23091
+2019-11-03 21:12:06,485 INFO basehttp 9404 8736 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:14:55,266 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23170
+2019-11-03 21:16:12,740 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23193
+2019-11-03 21:16:12,751 INFO basehttp 9404 8736 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:19:20,363 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23196
+2019-11-03 21:19:56,475 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:20:19,374 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:20:19,387 INFO basehttp 9404 8736 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:20:31,194 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:21:49,066 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:22:27,043 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:22:34,206 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:22:34,220 INFO basehttp 9404 8736 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 21:23:23,465 INFO basehttp 9404 8736 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:23:23,485 INFO basehttp 9404 2744 "GET /static/css/style.css HTTP/1.1" 200 13779
+2019-11-03 21:23:23,487 INFO basehttp 9404 5828 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 21:23:23,488 INFO basehttp 9404 4728 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 21:23:23,489 INFO basehttp 9404 1440 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 21:23:23,490 INFO basehttp 9404 16096 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 21:23:23,491 INFO basehttp 9404 8736 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 21:23:23,519 INFO basehttp 9404 5828 "GET /static/js/blog-js.js HTTP/1.1" 200 2308
+2019-11-03 21:23:23,520 INFO basehttp 9404 8736 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 21:23:23,520 INFO basehttp 9404 4728 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 21:23:23,521 INFO basehttp 9404 16096 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 21:23:23,525 INFO basehttp 9404 1440 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 21:23:23,550 INFO basehttp 9404 1440 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 21:23:23,556 INFO basehttp 9404 16096 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 21:23:23,573 INFO basehttp 9404 4728 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 21:23:23,574 INFO basehttp 9404 1440 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 21:23:23,574 INFO basehttp 9404 16096 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 21:23:23,601 INFO basehttp 9404 4728 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 21:23:23,602 INFO basehttp 9404 16096 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 21:23:23,655 INFO basehttp 9404 16096 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 21:24:07,608 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23214
+2019-11-03 21:24:07,620 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:25:02,433 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23194
+2019-11-03 21:25:02,444 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:25:52,844 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23213
+2019-11-03 21:25:52,855 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:27:51,566 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23246
+2019-11-03 21:27:51,577 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:29:24,547 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23248
+2019-11-03 21:29:24,560 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:29:39,981 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23245
+2019-11-03 21:33:51,380 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23279
+2019-11-03 21:33:51,393 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:34:49,791 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23285
+2019-11-03 21:35:31,756 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23282
+2019-11-03 21:35:31,768 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:36:41,936 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23282
+2019-11-03 21:38:45,219 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23282
+2019-11-03 21:38:45,231 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 200 13802
+2019-11-03 21:39:57,020 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23331
+2019-11-03 21:39:57,032 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:43:23,995 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23364
+2019-11-03 21:43:24,007 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:43:24,079 INFO basehttp 9404 16096 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+2019-11-03 21:44:44,709 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23381
+2019-11-03 21:44:44,721 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:44:49,811 INFO basehttp 9404 16096 "GET /userprofile/edit-profile/5/ HTTP/1.1" 200 13550
+2019-11-03 21:44:53,016 INFO basehttp 9404 16096 "GET /article/article-create/ HTTP/1.1" 200 15194
+2019-11-03 21:44:53,028 INFO basehttp 9404 15992 "GET /static/prism/prism.css HTTP/1.1" 200 4159
+2019-11-03 21:44:53,030 INFO basehttp 9404 16096 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 200 99487
+2019-11-03 21:44:56,335 INFO basehttp 9404 16096 "GET /accounts/logout/ HTTP/1.1" 200 9920
+2019-11-03 21:44:59,776 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23381
+2019-11-03 21:48:10,483 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23381
+2019-11-03 21:48:10,495 INFO basehttp 9404 16096 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:48:26,267 INFO basehttp 9404 16096 "GET /article/article-list/ HTTP/1.1" 200 23381
+2019-11-03 21:48:26,287 INFO basehttp 9404 9588 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 21:48:26,288 INFO basehttp 9404 13720 "GET /static/css/style.css HTTP/1.1" 200 13802
+2019-11-03 21:48:26,288 INFO basehttp 9404 15992 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 21:48:26,288 INFO basehttp 9404 3132 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 21:48:26,293 INFO basehttp 9404 10060 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 21:48:26,294 INFO basehttp 9404 16096 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 21:48:26,299 INFO basehttp 9404 16096 "GET /static/js/blog-js.js HTTP/1.1" 200 2315
+2019-11-03 21:48:26,300 INFO basehttp 9404 13720 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 21:48:26,300 INFO basehttp 9404 15992 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 21:48:26,301 INFO basehttp 9404 9588 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 21:48:26,305 INFO basehttp 9404 3132 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 21:48:26,359 INFO basehttp 9404 3132 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 21:48:26,367 INFO basehttp 9404 16096 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+2019-11-03 21:48:26,368 INFO basehttp 9404 10060 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 21:48:26,368 INFO basehttp 9404 9588 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 21:48:26,369 INFO basehttp 9404 13720 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 21:48:26,374 INFO basehttp 9404 15992 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 21:48:26,417 INFO basehttp 9404 13720 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 21:48:26,427 INFO basehttp 9404 15992 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 21:48:26,504 INFO basehttp 9404 15992 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 21:50:12,136 INFO basehttp 9404 15992 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:50:12,150 INFO basehttp 9404 15992 "GET /static/css/style.css HTTP/1.1" 200 15149
+2019-11-03 21:50:12,151 INFO basehttp 9404 13720 "GET /static/js/blog-js.js HTTP/1.1" 200 2631
+2019-11-03 21:50:17,974 INFO basehttp 9404 13720 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:50:17,987 INFO basehttp 9404 13720 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:50:17,987 INFO basehttp 9404 15992 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 21:50:47,664 INFO basehttp 9404 15992 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:50:47,678 INFO basehttp 9404 15992 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:50:47,680 INFO basehttp 9404 13720 "GET /static/js/blog-js.js HTTP/1.1" 200 2627
+2019-11-03 21:51:04,977 INFO basehttp 9404 13720 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:51:04,995 INFO basehttp 9404 3132 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 21:51:04,996 INFO basehttp 9404 10060 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 21:51:04,996 INFO basehttp 9404 16096 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 21:51:04,998 INFO basehttp 9404 9588 "GET /static/css/style.css HTTP/1.1" 200 15149
+2019-11-03 21:51:05,001 INFO basehttp 9404 15992 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 21:51:05,007 INFO basehttp 9404 16096 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 21:51:05,007 INFO basehttp 9404 10060 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 21:51:05,009 INFO basehttp 9404 15992 "GET /static/js/blog-js.js HTTP/1.1" 200 2627
+2019-11-03 21:51:05,009 INFO basehttp 9404 3132 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 21:51:05,010 INFO basehttp 9404 13720 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 21:51:05,016 INFO basehttp 9404 9588 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 21:51:05,061 INFO basehttp 9404 9588 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 21:51:05,068 INFO basehttp 9404 10060 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+2019-11-03 21:51:05,068 INFO basehttp 9404 16096 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 21:51:05,069 INFO basehttp 9404 3132 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 21:51:05,069 INFO basehttp 9404 9588 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 21:51:05,070 INFO basehttp 9404 13720 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 21:51:05,071 INFO basehttp 9404 15992 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 21:51:05,107 INFO basehttp 9404 15992 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 21:51:05,151 INFO basehttp 9404 15992 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 21:51:17,975 INFO basehttp 9404 15992 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:51:17,988 INFO basehttp 9404 15992 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:51:17,990 INFO basehttp 9404 13720 "GET /static/js/blog-js.js HTTP/1.1" 200 2621
+2019-11-03 21:51:29,489 INFO basehttp 9404 13720 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:51:29,507 INFO basehttp 9404 9588 "GET /static/css/style.css HTTP/1.1" 200 15149
+2019-11-03 21:51:29,507 INFO basehttp 9404 10060 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 21:51:29,507 INFO basehttp 9404 16096 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 21:51:29,507 INFO basehttp 9404 3132 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 21:51:29,508 INFO basehttp 9404 15992 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 21:51:29,510 INFO basehttp 9404 13720 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 21:51:29,516 INFO basehttp 9404 9588 "GET /static/js/blog-js.js HTTP/1.1" 200 2621
+2019-11-03 21:51:29,517 INFO basehttp 9404 3132 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 21:51:29,518 INFO basehttp 9404 16096 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 21:51:29,520 INFO basehttp 9404 10060 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 21:51:29,521 INFO basehttp 9404 15992 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 21:51:29,564 INFO basehttp 9404 15992 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 21:51:29,570 INFO basehttp 9404 3132 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+2019-11-03 21:51:29,570 INFO basehttp 9404 9588 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 21:51:29,571 INFO basehttp 9404 13720 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 21:51:29,572 INFO basehttp 9404 16096 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 21:51:29,572 INFO basehttp 9404 15992 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 21:51:29,575 INFO basehttp 9404 10060 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 21:51:29,605 INFO basehttp 9404 10060 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 21:51:29,654 INFO basehttp 9404 10060 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 21:51:50,601 INFO basehttp 9404 10060 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:51:50,612 INFO basehttp 9404 10060 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:51:50,614 INFO basehttp 9404 15992 "GET /static/js/blog-js.js HTTP/1.1" 200 2624
+2019-11-03 21:55:56,415 INFO basehttp 9404 15992 "GET /article/article-list/ HTTP/1.1" 200 21784
+2019-11-03 21:55:56,428 INFO basehttp 9404 15992 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 21:55:56,430 INFO basehttp 9404 10060 "GET /static/js/blog-js.js HTTP/1.1" 200 2702
+2019-11-03 22:05:20,714 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:05:20,731 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:05:20,732 INFO basehttp 9404 3740 "GET /static/js/blog-js.js HTTP/1.1" 200 2706
+2019-11-03 22:05:26,937 INFO basehttp 9404 3740 "GET /article/article-create/ HTTP/1.1" 200 13578
+2019-11-03 22:05:26,952 INFO basehttp 9404 9664 "GET /static/prism/prism.css HTTP/1.1" 200 4159
+2019-11-03 22:05:26,953 INFO basehttp 9404 15600 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:05:26,955 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js HTTP/1.1" 200 99487
+2019-11-03 22:05:28,464 INFO basehttp 9404 3740 "GET /404/ HTTP/1.1" 200 1495
+2019-11-03 22:05:33,390 INFO basehttp 9404 3740 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:05:33,403 INFO basehttp 9404 3740 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:07:03,633 INFO basehttp 9404 3740 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:07:03,647 INFO basehttp 9404 3740 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:07:03,656 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 200 2718
+2019-11-03 22:07:27,212 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:07:27,225 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 200 2721
+2019-11-03 22:07:29,088 INFO basehttp 9404 9664 "GET /article/article-create/ HTTP/1.1" 200 13578
+2019-11-03 22:07:29,102 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:07:30,049 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:07:30,062 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:08:27,890 INFO basehttp 9404 9664 "GET /article/article-detail/2/ HTTP/1.1" 200 67543
+2019-11-03 22:08:27,951 INFO basehttp 9404 9664 "GET /static/ckeditor/ckeditor-init.js HTTP/1.1" 200 2216
+2019-11-03 22:08:27,956 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:08:27,989 INFO basehttp 9404 5616 "GET /static/ckeditor/ckeditor/plugins/smiley/images/sad_smile.png HTTP/1.1" 200 1115
+2019-11-03 22:08:27,994 INFO basehttp 9404 15600 "GET /static/ckeditor/ckeditor/plugins/smiley/images/thumbs_up.png HTTP/1.1" 200 959
+2019-11-03 22:08:28,014 INFO basehttp 9404 15600 "GET /static/img/pagination.png HTTP/1.1" 200 991
+2019-11-03 22:08:28,156 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/ckeditor.js HTTP/1.1" 200 701922
+2019-11-03 22:08:28,454 INFO basehttp 9404 3740 "GET /static/img/pic4.jpg HTTP/1.1" 200 132081
+2019-11-03 22:08:28,534 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/config.js?t=J39A HTTP/1.1" 200 338
+2019-11-03 22:08:28,607 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/skins/moono-lisa/editor.css?t=J39A HTTP/1.1" 200 47805
+2019-11-03 22:08:28,623 INFO basehttp 9404 15600 "GET /static/ckeditor/ckeditor/lang/en.js?t=J39A HTTP/1.1" 200 18861
+2019-11-03 22:08:28,662 INFO basehttp 9404 15600 "GET /static/ckeditor/ckeditor/styles.js?t=J39A HTTP/1.1" 200 5579
+2019-11-03 22:08:28,686 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/plugins/prism/plugin.js?t=J39A HTTP/1.1" 200 4333
+2019-11-03 22:08:28,690 INFO basehttp 9404 15600 "GET /static/ckeditor/ckeditor/plugins/codesnippet/plugin.js?t=J39A HTTP/1.1" 200 3824
+2019-11-03 22:08:28,719 INFO basehttp 9404 15600 "GET /static/ckeditor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css?t=J39A HTTP/1.1" 200 381
+2019-11-03 22:08:28,719 INFO basehttp 9404 3740 "GET /static/ckeditor/ckeditor/plugins/scayt/dialogs/dialog.css?t=J39A HTTP/1.1" 200 419
+2019-11-03 22:08:28,728 INFO basehttp 9404 9664 "GET /static/ckeditor/ckeditor/plugins/codesnippet/lang/en.js?t=J39A HTTP/1.1" 200 369
+2019-11-03 22:08:28,737 INFO basehttp 9404 5616 "GET /static/ckeditor/ckeditor/plugins/tableselection/styles/tableselection.css HTTP/1.1" 200 1145
+2019-11-03 22:08:28,744 INFO basehttp 9404 3932 "GET /static/ckeditor/ckeditor/plugins/wsc/skins/moono-lisa/wsc.css?t=J39A HTTP/1.1" 200 1306
+2019-11-03 22:08:28,762 INFO basehttp 9404 9664 "GET /static/ckeditor/ckeditor/plugins/copyformatting/styles/copyformatting.css HTTP/1.1" 200 1513
+2019-11-03 22:08:28,768 INFO basehttp 9404 3932 "GET /static/ckeditor/ckeditor/plugins/codesnippet/icons/codesnippet.png?t=J39A HTTP/1.1" 200 597
+2019-11-03 22:08:28,784 INFO basehttp 9404 9664 "GET /static/ckeditor/ckeditor/skins/moono-lisa/icons.png?t=e1836357e HTTP/1.1" 200 12421
+2019-11-03 22:08:28,812 INFO basehttp 9404 9664 "GET /static/ckeditor/ckeditor/contents.css?t=J39A HTTP/1.1" 200 3094
+2019-11-03 22:08:28,814 INFO basehttp 9404 3932 "GET /static/ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.css HTTP/1.1" 200 2063
+2019-11-03 22:08:37,514 INFO basehttp 9404 3932 "GET /static/img/pagination_hover.png HTTP/1.1" 200 1048
+2019-11-03 22:08:39,936 INFO basehttp 9404 3932 "GET /article/article-detail/1/ HTTP/1.1" 200 23237
+2019-11-03 22:08:39,957 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:08:47,880 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:08:47,895 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:08:47,896 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:10:55,986 INFO basehttp 9404 9664 "GET /userprofile/edit-profile/5/ HTTP/1.1" 200 11934
+2019-11-03 22:10:55,999 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:10:56,000 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:10:58,637 INFO basehttp 9404 3932 "GET /accounts/password/change/ HTTP/1.1" 302 0
+2019-11-03 22:10:58,656 INFO basehttp 9404 3932 "GET /accounts/password/set/ HTTP/1.1" 200 8637
+2019-11-03 22:11:02,295 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:12:46,276 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:12:46,295 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:13:19,688 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:13:19,699 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 200 15203
+2019-11-03 22:13:19,699 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:14:16,915 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:14:16,928 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 200 15233
+2019-11-03 22:14:16,928 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:14:30,301 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:14:30,312 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 200 15235
+2019-11-03 22:15:01,867 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:15:01,879 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 200 15252
+2019-11-03 22:15:01,880 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:16:06,277 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:16:06,289 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 200 15273
+2019-11-03 22:16:06,290 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:16:23,590 INFO basehttp 9404 3932 "GET /article/article-list/ HTTP/1.1" 200 21765
+2019-11-03 22:16:23,603 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 200 15273
+2019-11-03 22:16:49,042 INFO basehttp 9404 3932 "GET /accounts/logout/ HTTP/1.1" 200 8304
+2019-11-03 22:16:49,051 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:16:55,845 INFO basehttp 9404 3932 "POST /accounts/logout/ HTTP/1.1" 302 0
+2019-11-03 22:16:56,003 ERROR log 9404 3932 Internal Server Error: /
+Traceback (most recent call last):
+  File "J:\django\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "J:\django\venv\lib\site-packages\django\core\handlers\base.py", line 145, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "J:\django\venv\lib\site-packages\django\core\handlers\base.py", line 143, in _get_response
+    response = response.render()
+  File "J:\django\venv\lib\site-packages\django\template\response.py", line 106, in render
+    self.content = self.rendered_content
+  File "J:\django\venv\lib\site-packages\django\template\response.py", line 83, in rendered_content
+    content = template.render(context, self._request)
+  File "J:\django\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\loader_tags.py", line 150, in render
+    return compiled_parent._render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\loader_tags.py", line 188, in render
+    return template.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 937, in render
+    bit = node.render_annotated(context)
+  File "J:\django\venv\lib\site-packages\django\template\base.py", line 904, in render_annotated
+    return self.render(context)
+  File "J:\django\venv\lib\site-packages\django\template\defaulttags.py", line 443, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "J:\django\venv\lib\site-packages\django\urls\base.py", line 90, in reverse
+    return iri_to_uri(resolver._reverse_with_prefix(view, prefix, *args, **kwargs))
+  File "J:\django\venv\lib\site-packages\django\urls\resolvers.py", line 673, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'edit-profile' with arguments '(None,)' not found. 1 pattern(s) tried: ['userprofile/edit\\-profile/(?P<pk>[0-9]+)/$']
+2019-11-03 22:16:56,009 ERROR basehttp 9404 3932 "GET / HTTP/1.1" 500 187003
+2019-11-03 22:19:04,329 INFO basehttp 9404 3932 "GET / HTTP/1.1" 200 20158
+2019-11-03 22:19:04,344 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:19:04,345 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:19:08,279 INFO basehttp 9404 9664 "GET /accounts/login/ HTTP/1.1" 200 11566
+2019-11-03 22:19:18,035 INFO basehttp 9404 9664 "POST /accounts/login/ HTTP/1.1" 302 0
+2019-11-03 22:19:18,091 INFO basehttp 9404 9664 "GET / HTTP/1.1" 200 21755
+2019-11-03 22:19:18,187 INFO basehttp 9404 9664 "GET /media/avatar/20191009/pic3_w3heRk6.jpg HTTP/1.1" 200 70981
+2019-11-03 22:20:14,070 INFO basehttp 9404 9664 "GET / HTTP/1.1" 200 21741
+2019-11-03 22:20:14,086 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:20:14,087 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:20:17,048 INFO basehttp 9404 3932 "GET /accounts/logout/ HTTP/1.1" 200 8280
+2019-11-03 22:20:18,209 INFO basehttp 9404 3932 "POST /accounts/logout/ HTTP/1.1" 302 0
+2019-11-03 22:20:18,243 INFO basehttp 9404 3932 "GET / HTTP/1.1" 200 20156
+2019-11-03 22:20:20,029 INFO basehttp 9404 3932 "GET /accounts/signup/ HTTP/1.1" 200 8268
+2019-11-03 22:20:22,375 INFO basehttp 9404 3932 "GET /accounts/login/ HTTP/1.1" 200 11564
+2019-11-03 22:20:25,494 INFO basehttp 9404 3932 "GET /accounts/signup/ HTTP/1.1" 200 8268
+2019-11-03 22:20:26,886 INFO basehttp 9404 3932 "GET /accounts/login/ HTTP/1.1" 200 11564
+2019-11-03 22:21:15,263 INFO basehttp 9404 3932 "GET /accounts/login/ HTTP/1.1" 200 11564
+2019-11-03 22:21:15,279 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:24:55,631 INFO basehttp 9404 3932 "GET /accounts/login/ HTTP/1.1" 200 11565
+2019-11-03 22:24:55,646 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:24:55,646 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:26:26,387 INFO basehttp 9404 9664 "GET /accounts/login/ HTTP/1.1" 200 11565
+2019-11-03 22:26:26,398 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 200 15273
+2019-11-03 22:26:48,385 INFO basehttp 9404 9664 "GET /accounts/login/ HTTP/1.1" 200 11565
+2019-11-03 22:26:48,397 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 200 15295
+2019-11-03 22:26:48,397 INFO basehttp 9404 3932 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:29:42,319 INFO basehttp 9404 3932 "GET /accounts/login/ HTTP/1.1" 200 11537
+2019-11-03 22:29:42,330 INFO basehttp 9404 3932 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:29:42,332 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:31:34,230 INFO basehttp 9404 9664 "GET /accounts/login/ HTTP/1.1" 200 11577
+2019-11-03 22:31:34,241 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:34:49,856 INFO basehttp 9404 9664 "GET /accounts/login/ HTTP/1.1" 200 10828
+2019-11-03 22:34:49,876 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:34:49,877 INFO basehttp 9404 2552 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:36:18,099 INFO basehttp 9404 2552 "GET /accounts/login/ HTTP/1.1" 200 10846
+2019-11-03 22:36:18,111 INFO basehttp 9404 2552 "GET /static/css/style.css HTTP/1.1" 200 15273
+2019-11-03 22:37:48,763 INFO basehttp 9404 2552 "POST /accounts/login/ HTTP/1.1" 302 0
+2019-11-03 22:37:48,805 INFO basehttp 9404 2552 "GET / HTTP/1.1" 200 19945
+2019-11-03 22:37:48,821 INFO basehttp 9404 2552 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:37:48,822 INFO basehttp 9404 9664 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:37:52,486 INFO basehttp 9404 9664 "GET /accounts/logout/ HTTP/1.1" 200 6484
+2019-11-03 22:38:03,488 INFO basehttp 9404 9664 "GET /article/article-list/ HTTP/1.1" 200 19945
+2019-11-03 22:38:03,500 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:42:50,481 INFO basehttp 9404 9664 "GET /accounts/logout/ HTTP/1.1" 200 7132
+2019-11-03 22:42:50,509 INFO basehttp 9404 9664 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:42:50,510 INFO basehttp 9404 14784 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:42:53,133 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:42:55,532 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:45:31,091 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:45:31,105 INFO basehttp 9404 14784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:46:09,881 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:46:09,899 INFO basehttp 9404 12744 "GET /static/css/monokai.css HTTP/1.1" 200 4118
+2019-11-03 22:46:09,900 INFO basehttp 9404 4052 "GET /static/css/style.css HTTP/1.1" 200 15273
+2019-11-03 22:46:09,902 INFO basehttp 9404 3444 "GET /static/css/simplemde.min.css HTTP/1.1" 200 10935
+2019-11-03 22:46:09,902 INFO basehttp 9404 9664 "GET /static/css/all.css HTTP/1.1" 200 74946
+2019-11-03 22:46:09,906 INFO basehttp 9404 14784 "GET /static/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 155764
+2019-11-03 22:46:09,907 INFO basehttp 9404 2036 "GET /static/js/time.js HTTP/1.1" 200 891
+2019-11-03 22:46:09,910 INFO basehttp 9404 14784 "GET /static/js/blog-js.js HTTP/1.1" 200 3364
+2019-11-03 22:46:09,912 INFO basehttp 9404 9664 "GET /static/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 58078
+2019-11-03 22:46:09,912 INFO basehttp 9404 4052 "GET /static/js/popper.min.js HTTP/1.1" 200 20302
+2019-11-03 22:46:09,913 INFO basehttp 9404 12744 "GET /static/js/jquery-3.4.1.js HTTP/1.1" 200 88145
+2019-11-03 22:46:09,917 INFO basehttp 9404 3444 "GET /static/js/simplemde.min.js HTTP/1.1" 200 269322
+2019-11-03 22:46:09,962 INFO basehttp 9404 3444 "GET /static/img/read_more_arrow.png HTTP/1.1" 200 1029
+2019-11-03 22:46:09,966 INFO basehttp 9404 2036 "GET /static/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+2019-11-03 22:46:09,967 INFO basehttp 9404 14784 "GET /static/webfonts/Lato-Bold.woff HTTP/1.1" 200 32372
+2019-11-03 22:46:09,967 INFO basehttp 9404 4052 "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 75728
+2019-11-03 22:46:09,968 INFO basehttp 9404 9664 "GET /media/avatar/20191009/pic3_w3heRk6.jpg HTTP/1.1" 200 70981
+2019-11-03 22:46:09,971 INFO basehttp 9404 3444 "GET /static/webfonts/Lato-Regular.woff HTTP/1.1" 200 31792
+2019-11-03 22:46:09,973 INFO basehttp 9404 12744 "GET /static/img/home-bg-4.jpg HTTP/1.1" 200 298115
+2019-11-03 22:46:09,973 INFO basehttp 9404 14784 "GET /static/webfonts/fa-brands-400.woff2 HTTP/1.1" 200 75336
+2019-11-03 22:46:10,011 INFO basehttp 9404 14784 "GET /static/bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 625953
+2019-11-03 22:46:10,060 INFO basehttp 9404 14784 "GET /static/bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 190253
+2019-11-03 22:47:01,820 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:47:01,835 INFO basehttp 9404 14784 "GET /static/js/blog-js.js HTTP/1.1" 200 3189
+2019-11-03 22:47:04,603 INFO basehttp 9404 14784 "GET /accounts/logout/ HTTP/1.1" 200 7132
+2019-11-03 22:47:04,612 INFO basehttp 9404 14784 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:47:56,354 INFO basehttp 9404 14784 "GET /article/article-list/ HTTP/1.1" 200 20593
+2019-11-03 22:47:56,370 INFO basehttp 9404 14784 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:47:56,371 INFO basehttp 9404 12744 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:47:58,679 INFO basehttp 9404 12744 "GET /accounts/logout/ HTTP/1.1" 200 304
+2019-11-03 22:48:03,719 INFO basehttp 9404 12744 "POST /accounts/logout/ HTTP/1.1" 302 0
+2019-11-03 22:48:03,751 INFO basehttp 9404 12744 "GET / HTTP/1.1" 200 20080
+2019-11-03 22:48:03,762 INFO basehttp 9404 12744 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:48:27,322 INFO basehttp 9404 12744 "GET /article/article-list/ HTTP/1.1" 200 20080
+2019-11-03 22:48:27,337 INFO basehttp 9404 12744 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:49:09,044 INFO basehttp 9404 12744 "GET /article/article-list/ HTTP/1.1" 200 20080
+2019-11-03 22:49:09,056 INFO basehttp 9404 12744 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:49:09,057 INFO basehttp 9404 14784 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:59:03,630 INFO basehttp 7780 3388 "GET /article/article-list/ HTTP/1.1" 200 20080
+2019-11-03 22:59:03,658 INFO basehttp 7780 3388 "GET /static/css/style.css HTTP/1.1" 304 0
+2019-11-03 22:59:03,658 INFO basehttp 7780 4224 "GET /static/js/blog-js.js HTTP/1.1" 304 0
+2019-11-03 22:59:05,462 INFO basehttp 7780 4224 "GET /accounts/login/ HTTP/1.1" 200 11488
+2019-11-03 22:59:07,109 INFO basehttp 7780 4224 "GET /accounts/github/login/ HTTP/1.1" 302 0
+2019-11-03 22:59:08,407 INFO basehttp 7780 4224 "GET /accounts/github/login/callback/?code=5e540fd5d7673541c886&state=WGVneEBnIYHu HTTP/1.1" 302 0
+2019-11-03 22:59:08,445 INFO basehttp 7780 4224 "GET / HTTP/1.1" 200 20618
+2019-11-03 22:59:15,454 INFO basehttp 7780 4224 "GET /accounts/logout/ HTTP/1.1" 200 304
