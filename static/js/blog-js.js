@@ -60,14 +60,28 @@ function search_form_submit() {
     form.submit();
 }
 
+// 画面小于 992px 时 菜单打开关闭控制
+$("#btn").click(function(){
+    if($("#nav-menu").css("display")=="none"){
+        $("#nav-menu").css("display", "block");
+    }else{
+        $("#nav-menu").css("display", "none");
+    }
+    window.onresize = function(){
+        var w = document.documentElement.clientWidth;
+        if(w >= 992){
+            $("#nav-menu").css("display", "block");
+        }
+    }
+});
+
+// 搜索栏 弹出控制
 function openSearch() {
     document.getElementById("searchOverlay").style.display = "block";
 }
-
 function closeSearch() {
     document.getElementById("searchOverlay").style.display = "none";
 }
-
 function initEvents() {
     document.addEventListener('keyup', function(ev) {
         // escape key.
@@ -78,11 +92,11 @@ function initEvents() {
 }
 initEvents();
 
+// 用户菜单弹出控制
 function openNav() {
   document.getElementById("side-user-menu").style.width = "250px";
   document.getElementById("wrapper").style.marginRight = "250px";
 }
-
 function closeNav() {
   document.getElementById("side-user-menu").style.width = "0";
   document.getElementById("wrapper").style.marginRight= "0";

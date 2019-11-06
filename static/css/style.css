@@ -20,6 +20,68 @@
   font-weight: normal;
   font-style: normal;
 }
+.ff--default {
+  font-family: 'LatoBold', 'Helvetica', arial,
+				"lucida grande", "lucida sans unicode",
+				lucida, helvetica, "Hiragino Sans GB",
+				"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.ff--primary {
+  font-family: Playfair Display,serif;
+}
+.fs--12 {
+  font-size: 9pt;
+  line-height: 22px;
+}
+.fs--14 {
+  font-size: 14px;
+  line-height: 24px;
+}
+.fs--16 {
+  font-size: 1pc;
+  line-height: 26px;
+}
+.fs--18 {
+  font-size: 18px;
+  line-height: 28px;
+}
+.fs--20 {
+  font-size: 20px;
+  line-height: 30px;
+}
+.fs--22 {
+  font-size: 22px;
+  line-height: 2pc;
+}
+.fs--24 {
+  font-size: 24px;
+  line-height: 34px;
+}
+.fs--26 {
+  font-size: 26px;
+  line-height: 36px;
+}
+.fs--28 {
+  font-size: 28px;
+  line-height: 38px;
+}
+.fs--30 {
+  font-size: 30px;
+  line-height: 40px;
+}
+.fs--100 {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 50px;
+  margin-bottom: 0;
+  padding: 0 0 20px 0;
+  display: inline-block;
+  color: white;
+}
+.fc--18{
+  color: #898989;
+  font-size: 18px;
+  line-height: 28px;
+}
 
 html, body {
   height: 100%;
@@ -40,84 +102,6 @@ html, body {
 
 .bg-gray{
     background-color: #c7c7c7;
-}
-
-/* Font Size CSS-Start */
-
-.ff--default {
-  font-family: 'LatoBold', 'Helvetica', arial,
-				"lucida grande", "lucida sans unicode", 
-				lucida, helvetica, "Hiragino Sans GB", 
-				"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
-
-.ff--primary {
-  font-family: Playfair Display,serif;
-}
-
-.fs--12 {
-  font-size: 9pt;
-  line-height: 22px;
-}
-
-.fs--14 {
-  font-size: 14px;
-  line-height: 24px;
-}
-
-.fs--16 {
-  font-size: 1pc;
-  line-height: 26px;
-}
-
-.fs--18 {
-  font-size: 18px;
-  line-height: 28px;
-}
-
-.fs--20 {
-  font-size: 20px;
-  line-height: 30px;
-}
-
-.fs--22 {
-  font-size: 22px;
-  line-height: 2pc;
-}
-
-.fs--24 {
-  font-size: 24px;
-  line-height: 34px;
-}
-
-.fs--26 {
-  font-size: 26px;
-  line-height: 36px;
-}
-
-.fs--28 {
-  font-size: 28px;
-  line-height: 38px;
-}
-
-.fs--30 {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.fs--100 {
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 50px;
-  margin-bottom: 0;
-  padding: 0 0 20px 0;
-  display: inline-block;
-  color: white;
-}
-
-.fc--18{
-  color: #898989;
-  font-size: 18px;
-  line-height: 28px;
 }
 
 #tools a,
@@ -330,7 +314,6 @@ footer ul li a,
   background-color: #292929;
   border-bottom: 4px #1e1e1e solid;
 }
-
 #header-nav .nav-logo{
   float: left;
   width: 130px;
@@ -342,57 +325,103 @@ footer ul li a,
   text-decoration:none;
   text-align: center;
 }
-
 #header-nav .nav-logo:hover{
   background: #242424;
 }
-
-#header-nav nav{
-  float: right;
-  height: 100%;
+#header-nav nav ul.main-nav li a:hover{
+  background: #242424;
 }
-
 #header-nav nav ul.main-nav{
   font-family: 'LatoBold', 'Helvetica', arial;
   margin-right: -1px;
   font-weight: bold;
   height: 100%;
 }
-
-#header-nav nav ul.main-nav li{
-  list-style:none;
-  height: 100%;
-  float: left;
-  letter-spacing: 2px;
-  font-size: 20px;
-  padding: 0;
-  margin: 0;
-}
-
 #header-nav nav ul.main-nav li a{
-  display: block;
-  width: 130px;
-  height: 100%;
-  color: #fff;
-  line-height: 100px;
-  border-right: 1px #1e1e1e solid;
-  vertical-align: middle;
   text-decoration: none;
-  text-shadow: 0px 1px 0 #1e1e1e;
+  color: #fff;
+  display: block;
   text-align: center;
 }
-
-#header-nav nav ul.main-nav li:first-child a{
-  border-left: 1px #1e1e1e solid;
+/* 画面大于 992px 时的样式 */
+@media only screen and (min-width:993px) {
+  #header-nav nav{
+    float: right;
+    height: 100%;
+    display: block;
+  }
+  #header-nav nav ul.main-nav li{
+    float: left;
+    font-size: 20px;
+    list-style:none;
+    height: 100%;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+  }
+  #header-nav nav ul.main-nav li a{
+    width: 130px;
+    height: 100%;
+    line-height: 100px;
+    border-right: 1px #1e1e1e solid;
+    vertical-align: middle;
+    text-shadow: 0px 1px 0 #1e1e1e;
+  }
+  #header-nav nav ul.main-nav li:first-child a{
+    border-left: 1px #1e1e1e solid;
+  }
+  #header-nav nav ul.main-nav li.current a{
+    color: #faad00;
+    box-shadow: 0 4px 0 #faad00;
+  }
 }
 
-#header-nav nav ul.main-nav li.current a{
-  color: #f01e3b;
-  box-shadow: 0 4px 0 #f01e3b;
-}
-
-#header-nav nav ul.main-nav li a:hover{
-  background: #242424;
+/* 画面小于 992px 时的样式 */
+@media screen and (max-width: 992px) {
+  #header-nav{
+    position: relative;
+  }
+  #header-nav nav {
+    position: absolute;
+    width: 100%;
+    margin-top: 100px;
+    height: auto;
+    background: rgba(41, 41, 41, 0.4);
+    display: none;
+    z-index: 999;
+  }
+  #header-nav nav ul.main-nav{
+    width: 100%;
+    padding: 25px 0 0 0;
+    list-style: none;
+  }
+  #header-nav nav ul.main-nav li{
+    margin: 5px 0;
+    width: 100%;
+    min-height: 40px;
+    color: #000;
+    text-align: center;
+  }
+  #header-nav nav ul.main-nav li a{
+    font-size: 25px;
+    letter-spacing: 3px;
+  }
+  #header-nav nav ul.main-nav li a:hover {
+    background: #faad00;
+    color: #000;
+  }
+  #header-nav .open-nav-btn {
+    position: absolute;
+    line-height: 100px;
+    top: 0;
+    right: 0;
+    width: 130px;
+    height: 100%;
+    padding: 2px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 35px;
+  }
 }
 
 /* header-search css */
@@ -480,7 +509,7 @@ footer ul li a,
   color: #fff;
   height: 115px;
   width: 100%;
-  background: #f01e3b;
+  background: #faad00;
   /*-webkit-clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);*/
   /*clip-path: polygon(50% 100%, 100% 80%, 100% 0, 0 0, 0 80%);*/
   display: flex;
@@ -491,11 +520,17 @@ footer ul li a,
 }
 
 .user .user-pic {
-    width: 4rem;
-    height: 4rem;
-    background-size: cover;
-    margin-right: 0.5rem;
-    border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-size: cover;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+}
+
+.user .user-name{
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .user-nav {
@@ -521,12 +556,14 @@ footer ul li a,
   height: 2.8rem;
   background: none;
   transition: all 0.5s;
-  display: flex;
-    text-align: center;
+  text-align: center;
   align-items: center;
 }
 
 #side-user-menu ul li a{
+  display: flex;
+  align-items: center;
+  height: 100%;
   text-decoration: none;
   color: #818181;
   margin: 0 20px;
@@ -543,18 +580,19 @@ footer ul li a,
 }
 
 #side-user-menu ul li:hover a{
-  color: white;
+  color: #000;
+  font-weight: bold;
   -webkit-transition-delay:0.3s;
   -moz-transition-delay:0.3s;
 }
 
 #side-user-menu ul li a:hover{
-  color: white;
+  color: #000;
+  font-weight: bold;
 }
 
 #side-user-menu ul li:hover:before{
-  background: #f01e3b;
-  color: white;
+  background: #faad00;
   width: 100%;
 }
 
@@ -564,7 +602,7 @@ footer ul li a,
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
-  color: #f01e3b;
+  color: #faad00;
   cursor: pointer;
 }
 

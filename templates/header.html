@@ -1,10 +1,10 @@
 
 {% load i18n %}
 {% load staticfiles %}
-<div class="container-fluid" style="padding-left:0;padding-right:0;min-width: 1100px;">
+<div class="container-fluid" style="padding-left:0;padding-right:0;">
 	<div id="header-nav">
 		<a class="nav-logo" href="{% url 'article:article-list' %}">博客</a>
-		<nav>
+		<nav id="nav-menu">
 			<ul class="main-nav">
 				<li><a class="open-btn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
 				<li><a href="{% url 'article:article-list' %}">首页</a></li>
@@ -19,6 +19,7 @@
 				{% endif %}
 			</ul>
 		</nav>
+		<span class="open-nav-btn" id="btn"><i class="fas fa-bars"></i></span>
 	</div>
 </div>
 	<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
@@ -47,9 +48,16 @@
 	</div>
 	<span class="nav-close-btn" onclick="closeNav()" title="Close">&times;</span>
 	<ul class="option">
-		<li><a href="{% url 'userprofile:edit-profile' user.id %}">个人主页</a></li>
+        <li><a class="open-btn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
+        {% if not user.is_authenticated %}
+        <li><a href="{% url 'account_login' %}">登录</a></li>
+        <li><a href="{% url 'account_signup' %}">注册</a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'userprofile:edit-profile' user.id %}">个人主页</a></li>
 		<li><a href="{% url 'article:article-create' %}">写文章</a></li>
 		<li><a href="#" data-toggle="modal" data-target="#signOutModal">退出</a></li>
+        {% endif %}
 	</ul>
 <!--	{% url 'account_logout' %}-->
 </div>
@@ -77,3 +85,7 @@
         </div>
     </div>
 </div>
+
+<script>
+
+</script>

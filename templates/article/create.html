@@ -9,104 +9,89 @@
 {% endblock title %}
 
 {% block content %}
+<!--<div class="card">-->
+<!--		        <div class="card-body">-->
+<!--		            <div class="row">-->
+<!--		                <div class="col-md-12">-->
+<!--		                    <h4>Create Article</h4>-->
+<!--                            <p>-->
+<!--                                Markdown 在线编辑器：-->
+<!--                                <a href="https://stackedit.io/app#" target="_blank"> StackEdit </a> /-->
+<!--                                <a href="https://dillinger.io/" target="_blank"> Dillinger </a> /-->
+<!--                                <a href="https://daringfireball.net/projects/markdown/dingus" target="_blank"> Dingus </a>-->
+<!--                            </p>-->
+<!--		                    <hr>-->
+<!--		                </div>-->
 
+<!--		            </div>-->
 <br><br>
 <div class="container">
-	<div class="row pt-5">
-		<div class="col center-block">
-		    <div class="card">
-		        <div class="card-body">
-		            <div class="row">
-		                <div class="col-md-12">
-		                    <h4>Create Article</h4>
-                            <p>
-                                Markdown 在线编辑器：
-                                <a href="https://stackedit.io/app#" target="_blank"> StackEdit </a> /
-                                <a href="https://dillinger.io/" target="_blank"> Dillinger </a> /
-                                <a href="https://daringfireball.net/projects/markdown/dingus" target="_blank"> Dingus </a>
-                            </p>
-		                    <hr>
-		                </div>
-
-		            </div>
-		            <div class="row">
-		                <div class="col-md-12">
-                            <!-- 表单 -->
-		                    <form method="post" action="." enctype="multipart/form-data">
-                                {% csrf_token %}
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Title *</label>
-                                    <div class="col-8">
-                                      {{ form.title | add_class:'form-control here' }}
-                                    </div>
-                                  </div>
-                                <div>
-                                    {% if form.title.errors %}
-                                        <ol>
-                                        {% for error in form.title.errors %}
-                                            <li><strong>{{ error|escape }}</strong></li>
-                                        {% endfor %}
-                                        </ol>
-                                    {% endif %}
-                                </div>
-<!--                                <div class="form-group row">-->
-<!--                                    <label class="col-4 col-form-label">Avatar </label>-->
-<!--                                    <div class="col-8">-->
-<!--                                      {{ form.avatar }}-->
-<!--                                    </div>-->
-<!--                                  </div>-->
-<!--                                <div>-->
-<!--                                      {{ form.avatar.errors }}-->
-<!--                                  </div>-->
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Category </label>
-                                    <div class="col-8">
-                                      {{ form.category | add_class:'custom-select' }}
-                                    </div>
-                                  </div>
-                                <div>
-                                      {{ form.category.errors }}
-                                  </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Tags </label>
-                                    <div class="col-8">
-                                      {{ form.tags | add_class:'form-control here' }}
-                                    </div>
-                                  </div>
-                                <div>
-                                      {{ form.tags.errors }}
-                                  </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Summary </label>
-                                    <div class="col-8">
-                                      {{ form.summary | add_class:'form-control here' }}
-                                    </div>
-                                </div>
-                                <div>
-                                      {{ form.summary.errors }}
-                                  </div>
-                                <div class="form-group row">
-                                    <label class="col-4 col-form-label">Body *</label>
-                                    <div class="col-8">
-                                      {{ form.media }}
-                                      {{ form.body | add_class:'form-control here' }}
-                                    </div>
-                                </div>
-                                <div>
-                                      {{ form.body.errors }}
-                                  </div>
-                                <div class="form-group row">
-                                    <div class="offset-4 col-8">
-                                      <button name="submit" type="submit" class="btn btn-primary"> Save </button>
-                                    </div>
-                                  </div>
-                            </form>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-		</div>
-	</div>
+    <form method="post" action="." enctype="multipart/form-data" style="width:100%;">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-4 border border-info">
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Title *</label>
+                    <div class="col-8">
+                      {{ form.title | add_class:'form-control here' }}
+                    </div>
+                    <div>
+                        {% if form.title.errors %}
+                            <ol>
+                            {% for error in form.title.errors %}
+                                <li><strong>{{ error|escape }}</strong></li>
+                            {% endfor %}
+                            </ol>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Category </label>
+                    <div class="col-8">
+                        {{ form.category | add_class:'custom-select' }}
+                    </div>
+                    <div>
+                        {{ form.category.errors }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Tags </label>
+                    <div class="col-8">
+                      {{ form.tags | add_class:'form-control here' }}
+                    </div>
+                    <div>
+                      {{ form.tags.errors }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-4 col-form-label">Summary </label>
+                    <div class="col-8">
+                      {{ form.summary | add_class:'form-control here' }}
+                    </div>
+                    <div>
+                      {{ form.summary.errors }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="form-group">
+                    <label class="">Body *</label>
+                    <div class="" style="width:100%;height:100%;">
+                      {{ form.media }}
+                      {{ form.body | add_class:'form-control here' }}
+                    </div>
+                </div>
+                <div>
+                    {{ form.body.errors }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="offset-4 col-8">
+                  <button name="submit" type="submit" class="btn btn-primary"> Save </button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 {% block script %}
