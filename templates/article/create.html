@@ -26,13 +26,13 @@
 <!--		            </div>-->
 <br><br>
 <div class="container">
-    <form method="post" action="." enctype="multipart/form-data" style="width:100%;">
+    <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
             <div class="col-4 border border-info">
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">Title *</label>
-                    <div class="col-8">
+                <div class="form-group">
+                    <label class="">Title*</label>
+                    <div class="">
                       {{ form.title | add_class:'form-control here' }}
                     </div>
                     <div>
@@ -45,9 +45,9 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">Category </label>
-                    <div class="col-8">
+                <div class="form-group">
+                    <label class="">Category </label>
+                    <div class="">
                         {{ form.category | add_class:'custom-select' }}
                     </div>
                     <div>
@@ -55,17 +55,17 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-4 col-form-label">Tags </label>
-                    <div class="col-8">
+                    <label class="">Tags </label>
+                    <div class="">
                       {{ form.tags | add_class:'form-control here' }}
                     </div>
                     <div>
                       {{ form.tags.errors }}
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">Summary </label>
-                    <div class="col-8">
+                <div class="form-group">
+                    <label class="col">Summary </label>
+                    <div class="col">
                       {{ form.summary | add_class:'form-control here' }}
                     </div>
                     <div>
@@ -74,12 +74,9 @@
                 </div>
             </div>
             <div class="col-8">
-                <div class="form-group">
-                    <label class="">Body *</label>
-                    <div class="" style="width:100%;height:100%;">
-                      {{ form.media }}
-                      {{ form.body | add_class:'form-control here' }}
-                    </div>
+                <div class="" style="width:100%;height:100%;">
+                  {{ form.media }}
+                  {{ form.body | add_class:'form-control here' }}
                 </div>
                 <div>
                     {{ form.body.errors }}
@@ -94,17 +91,21 @@
     </form>
 </div>
 
-{% block script %}
-
-<script>
-    //var simplemde = new SimpleMDE();
-
-    //$(".django-ckeditor-widget").removeAttr('style');
-</script>
-{% endblock script %}
-
-
 <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
 <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 {% endblock content %}
+
+{% block script %}
+<script>
+    var mde = new SimpleMDE({
+        element: document.querySelector('textarea'),
+        autofocus:true,
+        autosave: {
+            enabled: true,
+            uniqueId: "SimpleMDE",
+            delay: 1000,
+        },
+    });
+</script>
+{% endblock script %}
