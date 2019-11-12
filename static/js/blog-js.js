@@ -66,19 +66,19 @@ $("#btn").click(function(){
         $("#nav-menu").css("display", "block");
     }else{
         $("#nav-menu").css("display", "none");
-    }
+    }*/
     window.onresize = function(){
         var w = document.documentElement.clientWidth;
         if(w >= 992){
             $("#nav-menu").css("display", "block");
         }
-    }*/
-    $("#nav-menu").toggle("normal");
+    }
+    //$("#nav-menu").toggle("normal");
 });
 // 点击任意选项之后，隐藏菜单
-$("#nav-menu > ul > li > a").click(function(){
-    $("#nav-menu").toggle("normal");
-});
+//$("#nav-menu > ul > li > a").click(function(){
+//    $("#nav-menu").toggle("normal");
+//});
 
 // 搜索栏 弹出控制
 function openSearch() {

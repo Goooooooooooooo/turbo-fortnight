@@ -29,12 +29,10 @@
     <form method="post" action="." enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
-            <div class="col-4 border border-info">
+            <div class="col-4">
                 <div class="form-group">
-                    <label class="">Title*</label>
-                    <div class="">
-                      {{ form.title | add_class:'form-control here' }}
-                    </div>
+                    <label>Title*</label>
+                    {{ form.title | add_class:'form-control here' }}
                     <div>
                         {% if form.title.errors %}
                             <ol>
@@ -46,50 +44,53 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="">Category </label>
-                    <div class="">
-                        {{ form.category | add_class:'custom-select' }}
-                    </div>
+                    <label>Category </label>
+                    {{ form.category | add_class:'custom-select' }}
                     <div>
                         {{ form.category.errors }}
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label class="">Tags </label>
-                    <div class="">
-                      {{ form.tags | add_class:'form-control here' }}
-                    </div>
-                    <div>
+                <div class="form-group">
+                    <label>Tags</label>
+                    {{ form.tags | add_class:'form-control here' }}
+                    <span>
                       {{ form.tags.errors }}
-                    </div>
+                    </span>
                 </div>
                 <div class="form-group">
-                    <label class="col">Summary </label>
-                    <div class="col">
-                      {{ form.summary | add_class:'form-control here' }}
-                    </div>
-                    <div>
+                    <label>Summary </label>
+                    {{ form.summary | add_class:'form-control' }}
+                    <span>
                       {{ form.summary.errors }}
-                    </div>
+                    </span>
                 </div>
             </div>
             <div class="col-8">
-                <div class="" style="width:100%;height:100%;">
-                  {{ form.media }}
-                  {{ form.body | add_class:'form-control here' }}
+                <label>Body</label>
+                <div class="editor">
+                    {{ form.media }}
+                    {{ form.body }}
                 </div>
-                <div>
-                    {{ form.body.errors }}
-                </div>
+                {{ form.body.errors }}
+                <button name="submit" type="submit" class="btn btn-primary" style="width:100%;"> Save </button>
             </div>
-            <div class="form-group">
-                <div class="offset-4 col-8">
-                  <button name="submit" type="submit" class="btn btn-primary"> Save </button>
-                </div>
-            </div>
+
         </div>
     </form>
 </div>
+
+<style>
+    .editor{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #fff;
+    }
+    .CodeMirror .CodeMirror-scroll {
+      min-height: 500px;
+    }
+</style>
+
 
 <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
 <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
@@ -106,6 +107,10 @@
             uniqueId: "SimpleMDE",
             delay: 1000,
         },
+        toolbar: [
+            "bold", "italic", "strikethrough", "heading", "code", "quote", "unordered-list",
+            "ordered-list", "clean-block", "link", "image", "table", "horizontal-rule", "preview", "side-by-side", "fullscreen", "guide",
+        ]
     });
 </script>
 {% endblock script %}

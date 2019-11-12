@@ -83,21 +83,23 @@
   line-height: 28px;
 }
 
-html, body {
-  height: 100%;
+html{
+  position: relative;
+  min-height: 100%;
   margin: 0;
   width: 100%;
 }
 
-#wrapper {
-  min-height: 100%;
-  margin-bottom: -150px;
+body{
+  width: 100%;
+  margin-bottom: 300px;
 }
-#push{
+
+#mainFooter{
+  position: absolute;
   height: 200px;
-}
-#footer{
-  height: 300px;
+  width: 100%;
+  bottom: 0;
 }
 
 .bg-gray{
@@ -446,7 +448,7 @@ footer ul li a,
 .overlay-content {
   position: relative;
   top: 46%;
-  width: 80%;
+  width: 50%;
   text-align: center;
   margin-top: 30px;
   margin: auto;
@@ -492,6 +494,7 @@ footer ul li a,
 .s-overlay button {
   width: 10%;
   background: none;
+  outline: 0;
   font-size: 40px;
   border: none;
   cursor: pointer;
@@ -875,12 +878,12 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 }
 
 .date-screen{
-    color: white;
+    color: #faad00;
     font-size: 20px;
 }
 
 .screen{
-  color: white;
+  color: #faad00;
   font-size: 35px;
   display: inline;
 }

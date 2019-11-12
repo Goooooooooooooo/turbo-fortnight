@@ -20,12 +20,9 @@
 
     {% include 'header.html' %}
 
-    <div id="wrapper">
         {% block content %}{% endblock content %}
-        <div id="push">
-            {% block page %}{% endblock page %}
-        </div>
-    </div>
+        {% block page %}{% endblock page %}
+
 
     {% include 'footer.html' %}
 

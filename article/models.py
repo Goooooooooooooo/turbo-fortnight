@@ -5,6 +5,8 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 from PIL import Image
 from ckeditor_uploader.fields import RichTextUploadingField
+import markdown
+from django.utils.html import strip_tags
 
 
 
@@ -36,6 +38,18 @@ class ArticlePost(models.Model):
 
     # save() model 内置方法，model实例保存时调用
     def save(self, *args, **kwargs):
+        # 如果没有填写摘要
+        if not self.summary:
+            # 首先实例化一个 Markdown 类，用于渲染 body 的文本
+            md = markdown.Markdown(extensions=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',
+            ])
+            # 先将 Markdown 文本渲染成 HTML 文本
+            # strip_tags 去掉 HTML 文本的全部 HTML 标签
+            # 从文本摘取前 100 个字符赋给 summary
+            self.summary = strip_tags(md.convert(self.body))[:100]
+
         # 调用父类原有的 save() 方法，保存数据，先保存图片，后进行缩放处理，否则会报找不到图片错误
         article = super(ArticlePost, self).save(*args, **kwargs)
 

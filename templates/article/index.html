@@ -23,11 +23,12 @@
 			</div>
 		</div>
 	</header>
-	<div class="container">
+
+	<div class="container pt-3">
 		<div class="row">
 			<div class="col-md-9">
 				<section class="main wrapper">
-					{% if search %}
+					{% if search or category or tag %}
 						{% if article_list %}
 							<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
 							<hr>
@@ -124,7 +125,7 @@
 					<!-- 翻页 end -->
 				</section>
 			</div>
-			<div class="col border" style="margin-top:30px;">
+			<div class="col" style="margin-top:30px;">
 				<div class="clock">
 					<div class="date date-screen"></div>
 					<div class="hour screen"></div>
@@ -133,10 +134,45 @@
 					<div class="screen"> : </div>
 					<div class="second screen"></div>
 				</div>
+				<div class="pt-3">
+					<div class="categories">
+					<h3> 分类 </h3>
+					{% if categories %}
+					<ul class="list-unstyled">
+						{% for c in categories %}
+							<li>
+								<a href="{% url 'article:article-list' %}?category={{ c.id }}" name="category">
+									<i class="fas fa-angle-double-right"></i>  {{ c.name }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
+
+<style>
+	.categories{
+	  padding: 5px 0;
+	}
+	.categories ul li{
+	  margin: 5px 0;
+	}
+	.categories ul li a{
+	  font-size: 18px;
+	  text-decoration: none;
+	  display: block;
+	  font-weight: bold;
+	  color: gray;
+	}
+	.categories ul li a:hover{
+	  color: #000;
+	}
+</style>
 {% endblock %}
 
 
