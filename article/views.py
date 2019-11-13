@@ -1,8 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.views import generic
 from .models import ArticlePost, Category
+from taggit.models import Tag
 from django.utils import timezone
 from .forms import ArticlePostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -154,6 +155,7 @@ class ArticleListView(generic.ListView):
         context['now'] = timezone.now
         context['search'] = self.request.GET.get('search')
         context['categories'] = Category.objects.all()
+        context['tags'] = Tag.objects.all()
         return context
 
 

@@ -16,7 +16,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-md-10">
 					<div class="site-heading">
-						<h1>My Blog</h1>
+                        <h1><s></s>博 客</h1>
 						<span class="subheading">A Blog</span>
 					</div>
 				</div>
@@ -26,9 +26,9 @@
 
 	<div class="container pt-3">
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-8">
 				<section class="main wrapper">
-					{% if search or category or tag %}
+					{% if search %}
 						{% if article_list %}
 							<h4><span style="color: red">"{{ search }}"</span>的搜索结果如下：</h4>
 							<hr>
@@ -40,63 +40,68 @@
 
 					{% for article in article_list %}
 					<article>
-						<div class="card text-center" style="height: 300px;">
-							<div class="card-body post text-left" style="height:100%; overflow:hidden;">
-								<div class="card-title text-left">
+						<div class="article_image">
+                            <div style="background-image: url(
+                                {% if article.avatar %}
+                                    {{ article.avatar.url }}
+                                {% else %}
+                                    {% static 'img/pic4.jpg' %}
+                                {% endif %} )">
+                            </div>
+						</div>
+						<div class="post">
+							<div class="row">
+								<div class="col-sm-3 col-md-2 post-date">
+									<p>
+										<span>
+										    {{ article.updated|date:'d' }}
+										</span>
+										{{ article.updated|date:'b' }}
+										{{ article.updated|date:'Y' }}
+									</p>
+								</div>
+								<div class="col-sm-9 col-md-10">
 									<h1 class="title">
 										<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
 									</h1>
-								</div>
-								<div>
-									<span style="color: green;padding-right:5px;"><i class="fas fa-eye"></i>
-										{{ article.total_views }}
-									</span>
-									<span style="color:#328CF2;padding-right:5px;"><i class="fa fa-calendar"></i>
-									{{ article.created|date:'Y-m-d' }}
-									</span>
-									<span style="color:#F23263;padding-right:5px;"><i class="fas fa-redo-alt"></i>
-									  {{ article.updated|date:'Y-m-d' }}
-									</span>
-									{% if article.category %}
-									<span>
-										<a href="{% url 'article:article-list' %}?category={{ article.category.id }}" name="category"
-										   						class="badge badge-primary
-										   							  {% if article.category.name == 'Django' %}
-																		  badge badge-dark
-																	  {% elif article.category.name == 'Java' %}
-																		  badge badge-danger
-																	  {% elif article.category.name == 'Html' %}
-																		  badge badge-warning
-																	  {% elif article.category.name == 'CSS' %}
-																		  badge badge-success
-																	  {% elif article.category.name == 'Python' %}
-																		  badge badge-info
-																	  {% endif %}">
-											{{ article.category.name }}
-										</a>
-									</span>
-									{% endif %}
-									<!-- 标签 -->
-									{% for tag in article.tags.all %}
+									<div class="">
+										<span style="color:#999999;padding-right:5px;"><i class="fas fa-eye"></i>
+												{{ article.total_views }}
+											</span>
+										<span style="color:#999999;padding-right:5px;"><i class="fa fa-calendar"></i>
+										{{ article.created|date:'Y-m-d' }}
+										</span>
+										{% if article.category %}
 										<span>
-											<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="badge badge-pill badge-secondary">
-												{{ tag }}
+											<a href="{% url 'article:article-list' %}?category={{ article.category.id }}" name="category"
+																	class="badge badge-warning">
+												{{ article.category.name }}
 											</a>
 										</span>
-									{% endfor %}
-									<hr style="width:100%;margin:0;">
+										{% endif %}
+										{% for tag in article.tags.all %}
+											<span>
+												<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag" class="badge badge-pill badge-secondary">
+													{{ tag }}
+												</a>
+											</span>
+										{% endfor %}
+									</div>
 									{% if article.summary %}
-										<p class="ff--default fs--14">{{ article.summary | convert_markdown | safe }}</p>
+									<p class="ff--default fs--14">{{ article.summary | convert_markdown | safe }}</p>
 									{% else %}
-										<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
+									<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
 									{% endif %}
 								</div>
 							</div>
-							<div class="card-footer form-control-borderless text-muted text-left">
-								<a class="read_more" href="{% url 'article:article-detail' article.id %}">Continue reading...<i class="read_more_arrow"></i></a>
+							<div>
+								<a class="read_more" href="{% url 'article:article-detail' article.id %}">
+									Continue reading...
+								</a>
 							</div>
 						</div>
 					</article>
+					<hr style="width:100%;margin:0;">
 					{% endfor %}
 
 					<!-- 翻页 start -->
@@ -134,15 +139,38 @@
 					<div class="screen"> : </div>
 					<div class="second screen"></div>
 				</div>
-				<div class="pt-3">
+				<div class="sidebar">
+					<div>
+						<h3> 声明 </h3>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="sidebar">
 					<div class="categories">
-					<h3> 分类 </h3>
+					<h3 class="active"> 分类 </h3>
 					{% if categories %}
 					<ul class="list-unstyled">
 						{% for c in categories %}
 							<li>
 								<a href="{% url 'article:article-list' %}?category={{ c.id }}" name="category">
-									<i class="fas fa-angle-double-right"></i>  {{ c.name }}
+									{{ c.name }}
+								</a>
+							</li>
+						{% endfor %}
+					</ul>
+					{% endif %}
+					</div>
+				</div>
+				<!-- 标签 -->
+				<div class="sidebar">
+					<div class="tags">
+					<h3 class="active"> 标签 </h3>
+					{% if tags %}
+					<ul class="list-unstyled">
+						{% for tag in tags %}
+							<li>
+								<a href="{% url 'article:article-list' %}?tag={{ tag }}" name="tag">
+									{{ tag }}
 								</a>
 							</li>
 						{% endfor %}
@@ -156,21 +184,94 @@
 	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 
 <style>
+
+	.sidebar {
+	  margin: 35px 0;
+	  padding: 0 15px;
+	  border: 1px solid #dddddd;
+	  border-radius: 5px;
+	}
+	.sidebar .active {
+	  position: relative;
+	}
+	.sidebar .categories .active:before,.sidebar .tags .active:before {
+	  content: " ";
+	  border-width: 0 0 3px 0;
+      border-color: #faad00;
+	  border-style: solid;
+	  width: 60px;
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	}
+	.categories ul,.tags ul{
+	  margin: 10px 0;
+	}
 	.categories{
 	  padding: 5px 0;
 	}
-	.categories ul li{
-	  margin: 5px 0;
+	.sidebar h3{
+	  border-bottom: 1px solid #ececec;
+	  color: #4e4e4e;
+	  letter-spacing: 1.5px;
+	  margin: 0;
+      padding: 10px 0;
+      font-weight: normal;
+	}
+	.categories ul li {
+	  border-bottom: 1px solid #ececec;
+	  font-family: 'Open Sans', sans-serif;
+	  font-size: 14px;
+	  color: #8b8b8b;
+	  text-transform: capitalize;
+	  font-weight: 300;
 	}
 	.categories ul li a{
-	  font-size: 18px;
+	  font-size: 16px;
 	  text-decoration: none;
+	  text-transform: uppercase;
+	  font-family: 'Roboto Condensed', sans-serif;
 	  display: block;
-	  font-weight: bold;
-	  color: gray;
+	  color: #999999;
+	  padding: 10px 0 10px 10px;
+	  letter-spacing: 1.5px;
 	}
-	.categories ul li a:hover{
+
+	.tags ul {
+	  padding: 19px 0;
+	}
+	.tags ul li {
+	  display: inline-block;
+	  margin: 10px 0;
+	}
+	.tags ul li a {
+	  background: transparent;
+	  margin-right: 5px;
+	  border: 1px solid #dddddd;
+	  font-family: 'Roboto Condensed', sans-serif;
+	  font-size: 13px;
+	  color: #999999;
+	  text-transform: uppercase;
+	  padding: 10px 12px;
+	}
+	.tags ul li a:hover, .categories ul li a:hover{
+	  background: #faad00;
 	  color: #000;
+	}
+	.post-date p {
+		background: #faad00;
+		padding: 20px 15px 15px;
+		font-family: 'Roboto Condensed', sans-serif;
+		color: #ffffff;
+		font-size: 20px;
+		text-align: center;
+		line-height: 20px;
+		text-transform: capitalize;
+	}
+	.post-date p span {
+		font-size: 38px;
+		line-height: 38px;
+		font-weight: bold;
 	}
 </style>
 {% endblock %}
