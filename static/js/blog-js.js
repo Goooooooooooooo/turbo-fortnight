@@ -73,7 +73,7 @@ $("#btn").click(function(){
             $("#nav-menu").css("display", "block");
         }
     }
-    //$("#nav-menu").toggle("normal");
+    $("#nav-menu").toggle("normal");
 });
 // 点击任意选项之后，隐藏菜单
 //$("#nav-menu > ul > li > a").click(function(){

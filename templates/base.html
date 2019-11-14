@@ -19,9 +19,10 @@
 <body>
 
     {% include 'header.html' %}
-
+    <div id="wrapper">
         {% block content %}{% endblock content %}
         {% block page %}{% endblock page %}
+    </div>
 
 
     {% include 'footer.html' %}

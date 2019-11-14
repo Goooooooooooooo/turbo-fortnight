@@ -12,7 +12,7 @@
 	<!-- Page Header -->
 	<header class="masthead">
 		<div class="overlay"></div>
-		<div class="container">
+		<div class="container" style="padding: 20% 0;">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-md-10">
 					<div class="site-heading">
@@ -24,7 +24,7 @@
 		</div>
 	</header>
 
-	<div class="container pt-3">
+	<div class="container py-5">
 		<div class="row">
 			<div class="col-md-8">
 				<section class="main wrapper">
@@ -40,18 +40,17 @@
 
 					{% for article in article_list %}
 					<article>
-						<div class="article_image">
-                            <div style="background-image: url(
-                                {% if article.avatar %}
-                                    {{ article.avatar.url }}
-                                {% else %}
-                                    {% static 'img/pic4.jpg' %}
-                                {% endif %} )">
-                            </div>
-						</div>
+				 		<div class="post-img" style="background-image: url({% if article.avatar %} {{ article.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )"></div>
+<!--						<div class="article-image">-->
+<!--							{% if article.avatar %}-->
+<!--								<img src="{{ article.avatar.url }}" alt="">-->
+<!--							{% else %}-->
+<!--								<img src="{% static 'img/home-bg-4.jpg' %}" alt="">-->
+<!--							{% endif %}-->
+<!--						</div>-->
 						<div class="post">
 							<div class="row">
-								<div class="col-sm-3 col-md-2 post-date">
+								<div class="col-xs-4 col-sm-4 col-md-3 post-date">
 									<p>
 										<span>
 										    {{ article.updated|date:'d' }}
@@ -60,11 +59,11 @@
 										{{ article.updated|date:'Y' }}
 									</p>
 								</div>
-								<div class="col-sm-9 col-md-10">
+								<div class="col-xs-8 col-sm-8 col-md-9">
 									<h1 class="title">
 										<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
 									</h1>
-									<div class="">
+									<div>
 										<span style="color:#999999;padding-right:5px;"><i class="fas fa-eye"></i>
 												{{ article.total_views }}
 											</span>
@@ -92,12 +91,12 @@
 									{% else %}
 									<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
 									{% endif %}
+									<div>
+										<a class="read_more" href="{% url 'article:article-detail' article.id %}">
+											continue reading...
+										</a>
+									</div>
 								</div>
-							</div>
-							<div>
-								<a class="read_more" href="{% url 'article:article-detail' article.id %}">
-									Continue reading...
-								</a>
 							</div>
 						</div>
 					</article>
@@ -131,7 +130,8 @@
 				</section>
 			</div>
 			<div class="col" style="margin-top:30px;">
-				<div class="clock">
+				<div class="sticky-top">
+					<div class="clock">
 					<div class="date date-screen"></div>
 					<div class="hour screen"></div>
 					<div class="screen"> : </div>
@@ -139,13 +139,13 @@
 					<div class="screen"> : </div>
 					<div class="second screen"></div>
 				</div>
-				<div class="sidebar">
+					<div class="sidebar">
 					<div>
 						<h3> 声明 </h3>
 					</div>
 				</div>
-				<!-- 分类 -->
-				<div class="sidebar">
+					<!-- 分类 -->
+					<div class="sidebar">
 					<div class="categories">
 					<h3 class="active"> 分类 </h3>
 					{% if categories %}
@@ -161,8 +161,8 @@
 					{% endif %}
 					</div>
 				</div>
-				<!-- 标签 -->
-				<div class="sidebar">
+					<!-- 标签 -->
+					<div class="sidebar">
 					<div class="tags">
 					<h3 class="active"> 标签 </h3>
 					{% if tags %}
@@ -178,9 +178,47 @@
 					{% endif %}
 					</div>
 				</div>
+				</div>
 			</div>
 		</div>
 	</div>
+	<section id="contact">
+		<div class="container">
+			<div class="row text-center clearfix">
+				<div class="col">
+					<div class="contact-heading">
+						<h2 class="title-one">Contact With Me</h2>
+						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="contact-details">
+				<div class="pattern"></div>
+				<div class="row text-center clearfix">
+					<div class="col">
+						<div id="contact-form-section">
+							<div class="status alert alert-success" style="display: none"></div>
+							<form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name"></div>
+									<div class="form-group">
+										<input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
+									</div>
+									<div class="form-group">
+										<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-primary">Send</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 
 <style>
@@ -269,9 +307,61 @@
 		text-transform: capitalize;
 	}
 	.post-date p span {
-		font-size: 38px;
+		font-size: 50px;
 		line-height: 38px;
 		font-weight: bold;
+	}
+
+	.post-img {
+	  margin-bottom: 30px;
+      width: 100%;
+      height: 350px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+	}
+	.title-one {
+		color: #666666;
+		display: inline-block;
+		font-size: 32px;
+		font-weight: 600;
+		padding-bottom: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		position: relative;
+	}
+	.title-one:before {
+		color: #fff;
+		content: "||";
+		left: -40px;
+		position: absolute;
+		top: 0;
+	}
+	.title-one:after {
+		color: #fff;
+		content: "||";
+		position: absolute;
+		right: -40px;
+		top: -2px;
+	}
+	#contact {
+		padding: 75px 0;
+		height: 100%;
+		width: 100%;
+		background-color: #faad00;
+		position: relative;
+		padding-bottom: 85px;
+		border-top: 2px solid #ddd;
+	}
+	#contact-form .name-field {
+		margin-right: 2%;
+		float: left;
+	}
+	#contact-form .name-field, #contact-form .mail-field {
+		width: 49%;
+	}
+	.contact-details {
+		padding-top: 75px;
 	}
 </style>
 {% endblock %}

@@ -58,8 +58,18 @@ class ArticlePost(models.Model):
             img = Image.open(self.avatar)
             # 原始图片大小，按比例缩放
             (x, y) = img.size
-            new_x = 400
-            new_y = int(new_x * (y / x))
+            rate = 1.0  # 压缩率
+
+            # 根据图像大小设置压缩率
+            if x >= 2000 or y >= 2000:
+                rate = 0.3
+            elif x >= 1000 or y >= 1000:
+                rate = 0.5
+            elif x >= 500 or y >= 500:
+                rate = 0.9
+
+            new_x = int(x * rate)
+            new_y = int(y * rate)
             resized_img = img.resize((new_x, new_y), Image.ANTIALIAS)
             # self.avatar.name: 文件名路径 .path: 完整路径
             resized_img.save(self.avatar.path)

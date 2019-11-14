@@ -5,7 +5,6 @@
 	<a class="nav-logo" href="{% url 'article:article-list' %}">博客</a>
 	<nav id="nav-menu">
 		<ul class="main-nav">
-			<li><a class="open-btn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
 			<li><a href="{% url 'article:article-list' %}">首页</a></li>
 			<li><a href="{% url 'article:article-create' %}">写文章</a></li>
 			{% if not user.is_authenticated %}
@@ -15,9 +14,10 @@
 			{% if user.is_authenticated %}
 			<li><a class="open-btn" onclick="openNav()"><i class="far fa-user"></i></a></li>
 			{% endif %}
+			<li><a class="open-btn" onclick="openSearch()"><i class="fa fa-search"></i></a></li>
 		</ul>
 	</nav>
-	<span class="open-nav-btn" id="btn"><i class="fas fa-bars"></i></span>
+	<span class="open-nav-btn" onclick="openNav()"><i class="fas fa-bars"></i></span>
 </div>
 	<div class="clearfix" style="margin-bottom:0px;"></div><!-- 清除浮动 -->
 <div id="searchOverlay" class="s-overlay">
