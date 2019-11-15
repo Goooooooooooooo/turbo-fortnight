@@ -41,13 +41,6 @@
 					{% for article in article_list %}
 					<article>
 				 		<div class="post-img" style="background-image: url({% if article.avatar %} {{ article.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )"></div>
-<!--						<div class="article-image">-->
-<!--							{% if article.avatar %}-->
-<!--								<img src="{{ article.avatar.url }}" alt="">-->
-<!--							{% else %}-->
-<!--								<img src="{% static 'img/home-bg-4.jpg' %}" alt="">-->
-<!--							{% endif %}-->
-<!--						</div>-->
 						<div class="post">
 							<div class="row">
 								<div class="col-xs-4 col-sm-4 col-md-3 post-date">
@@ -104,27 +97,38 @@
 					{% endfor %}
 
 					<!-- 翻页 start -->
-					<nav class="pagination">
-						<div class="row">
-							<div class="col">
-								{% if page_obj.has_previous %}
-									<a href="?page={{ page_obj.previous_page_number }}" class="previous"><i></i>Previous</a>
-								{% else %}
-			<!--						<a href="javascript:void(0);" title="first page" class="previous"><i></i>Previous</a>-->
-								{% endif %}
-							</div>
-							<div class="col text-center">
-								<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> -
-								<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>
-							</div>
-							<div class="col">
-								{% if page_obj.has_next %}
-									<a href="?page={{ page_obj.next_page_number }}" class="next">Next<i></i></a>
-								{% else %}
-			<!--						<a href="javascript:void(0);" title="Last Page" class="next">Next<i></i></a>-->
-								{% endif %}
-							</div>
-						</div>
+					<nav class="blog-pagination">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li>
+                                    <a href="?page={{ page_obj.previous_page_number }}"><span aria-hidden="true">← </span>Previous</a>
+                                </li>
+                            {% else %}
+        						<li>
+                                    <a href="javascript:void(0);" title="first page"><span aria-hidden="true">← </span>Previous</a>
+                                </li>
+                            {% endif %}
+
+                            {% for num in page_obj.paginator.page_range %}
+                                <li>
+                                    <a href="?page={{ num }}">{{ num }}</a>
+                                </li>
+                            {% endfor %}
+
+<!--							<div class="col text-center">-->
+<!--								<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> - -->
+<!--								<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>-->
+<!--							</div>-->
+                            {% if page_obj.has_next %}
+                                <li>
+                                   <a href="?page={{ page_obj.next_page_number }}">Next<span aria-hidden="true"> →</span></a>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <a href="javascript:void(0);" title="Last Page">Next<span aria-hidden="true"> →</span></a>
+                                </li>
+                            {% endif %}
+                        </ul>
 					</nav>
 					<!-- 翻页 end -->
 				</section>
@@ -140,27 +144,27 @@
 					<div class="second screen"></div>
 				</div>
 					<div class="sidebar">
-					<div>
-						<h3> 声明 </h3>
-					</div>
-				</div>
+					    <div>
+						    <h3> 声明 </h3>
+					    </div>
+				    </div>
 					<!-- 分类 -->
 					<div class="sidebar">
-					<div class="categories">
-					<h3 class="active"> 分类 </h3>
-					{% if categories %}
-					<ul class="list-unstyled">
-						{% for c in categories %}
-							<li>
-								<a href="{% url 'article:article-list' %}?category={{ c.id }}" name="category">
-									{{ c.name }}
-								</a>
-							</li>
-						{% endfor %}
-					</ul>
-					{% endif %}
-					</div>
-				</div>
+                        <div class="categories">
+                        <h3 class="active"> 分类 </h3>
+                        {% if category_list %}
+                        <ul class="list-unstyled">
+                            {% for c in category_list %}
+                                <li>
+                                    <a href="{% url 'article:article-list' %}?category={{ c.id }}" name="category">
+                                        {{ c.name }}<span class="pull-right">({{ c.num_posts }})</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        </div>
+				    </div>
 					<!-- 标签 -->
 					<div class="sidebar">
 					<div class="tags">
@@ -188,7 +192,7 @@
 				<div class="col">
 					<div class="contact-heading">
 						<h2 class="title-one">Contact With Me</h2>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+						<p>还没想好这里要写点啥</p>
 					</div>
 				</div>
 			</div>
@@ -197,7 +201,7 @@
 			<div class="contact-details">
 				<div class="pattern"></div>
 				<div class="row text-center clearfix">
-					<div class="col">
+					<div class="col-md-8 offset-md-2">
 						<div id="contact-form-section">
 							<div class="status alert alert-success" style="display: none"></div>
 							<form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
@@ -210,7 +214,7 @@
 										<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
 									</div>
 									<div class="form-group">
-										<button type="submit" class="btn btn-primary">Send</button>
+										<button type="submit" class="contact-btn">Send</button>
 									</div>
 								</form>
 							</div>
@@ -223,105 +227,10 @@
 
 <style>
 
-	.sidebar {
-	  margin: 35px 0;
-	  padding: 0 15px;
-	  border: 1px solid #dddddd;
-	  border-radius: 5px;
-	}
-	.sidebar .active {
-	  position: relative;
-	}
-	.sidebar .categories .active:before,.sidebar .tags .active:before {
-	  content: " ";
-	  border-width: 0 0 3px 0;
-      border-color: #faad00;
-	  border-style: solid;
-	  width: 60px;
-	  position: absolute;
-	  bottom: 0;
-	  left: 0;
-	}
-	.categories ul,.tags ul{
-	  margin: 10px 0;
-	}
-	.categories{
-	  padding: 5px 0;
-	}
-	.sidebar h3{
-	  border-bottom: 1px solid #ececec;
-	  color: #4e4e4e;
-	  letter-spacing: 1.5px;
-	  margin: 0;
-      padding: 10px 0;
-      font-weight: normal;
-	}
-	.categories ul li {
-	  border-bottom: 1px solid #ececec;
-	  font-family: 'Open Sans', sans-serif;
-	  font-size: 14px;
-	  color: #8b8b8b;
-	  text-transform: capitalize;
-	  font-weight: 300;
-	}
-	.categories ul li a{
-	  font-size: 16px;
-	  text-decoration: none;
-	  text-transform: uppercase;
-	  font-family: 'Roboto Condensed', sans-serif;
-	  display: block;
-	  color: #999999;
-	  padding: 10px 0 10px 10px;
-	  letter-spacing: 1.5px;
-	}
 
-	.tags ul {
-	  padding: 19px 0;
-	}
-	.tags ul li {
-	  display: inline-block;
-	  margin: 10px 0;
-	}
-	.tags ul li a {
-	  background: transparent;
-	  margin-right: 5px;
-	  border: 1px solid #dddddd;
-	  font-family: 'Roboto Condensed', sans-serif;
-	  font-size: 13px;
-	  color: #999999;
-	  text-transform: uppercase;
-	  padding: 10px 12px;
-	}
-	.tags ul li a:hover, .categories ul li a:hover{
-	  background: #faad00;
-	  color: #000;
-	}
-	.post-date p {
-		background: #faad00;
-		padding: 20px 15px 15px;
-		font-family: 'Roboto Condensed', sans-serif;
-		color: #ffffff;
-		font-size: 20px;
-		text-align: center;
-		line-height: 20px;
-		text-transform: capitalize;
-	}
-	.post-date p span {
-		font-size: 50px;
-		line-height: 38px;
-		font-weight: bold;
-	}
 
-	.post-img {
-	  margin-bottom: 30px;
-      width: 100%;
-      height: 350px;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-	}
 	.title-one {
-		color: #666666;
+		color: #000;
 		display: inline-block;
 		font-size: 32px;
 		font-weight: 600;
@@ -331,14 +240,14 @@
 		position: relative;
 	}
 	.title-one:before {
-		color: #fff;
+		color: #000;
 		content: "||";
 		left: -40px;
 		position: absolute;
 		top: 0;
 	}
 	.title-one:after {
-		color: #fff;
+		color: #000;
 		content: "||";
 		position: absolute;
 		right: -40px;
@@ -363,6 +272,48 @@
 	.contact-details {
 		padding-top: 75px;
 	}
+    .contact-heading p{
+      font-size: 16px;
+    }
+	.contact-btn{
+	  width: 20%;
+	  font-size: 20px;
+	  font-weight: 600;
+      color: #faad00;
+      font-family: 'Roboto Condensed', sans-serif;
+      letter-spacing: 1.5px;
+      background-color: #212529;
+      border-color: #212529;
+      border-radius: 5px;
+	}
+    .blog-pagination ul {
+        padding: 19px 0;
+        list-style-type: none;
+        text-align:center;
+    }
+    .pagination {
+        display: inline-block;
+        padding-left: 0;
+        margin: 20px 0;
+        border-radius: 4px;
+    }
+    .blog-pagination ul li {
+        display: inline-block;
+        margin: 10px 0;
+    }
+    .blog-pagination .pagination > li > a, .pagination > li > span {
+        padding: 9px 16px;
+        color: #6b6b6b;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 14px;
+        background: #e7e7e7;
+        border: none;
+        margin: 0 1px;
+    }
+    .blog-pagination .pagination > li > a:hover{
+      background-color: #faad00;
+      color: #000;
+    }
 </style>
 {% endblock %}
 

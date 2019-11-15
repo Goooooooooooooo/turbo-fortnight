@@ -30,7 +30,7 @@
 
 <div class="container">
     <div class="row pm-2">
-        <div class="col-10">
+        <div class="col-md-9">
             <article class="px-3">
                 <div class="py-4">
                     <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
@@ -69,41 +69,42 @@
         </div>
 
         <!-- 侧边栏 Tools -->
-        <div class="col pt-5 pl-3" id="sticky-sidebar" >
+        <div class="col-md-3 pt-5 pl-3" id="sticky-sidebar" >
             <div id="tools" class="sticky-top">
-                <h3 class="fs--30"> Tools </h3>
-                <div class="list-group p-2 text-center" id="list-group">
-                {% if user == article_detail.author %}
-                    <a href="{% url 'article:article-create' %}" class="list-group-item">
-                        <i class="far fa-plus-square"></i>
-                            新建
-                    </a>
-                    <a href="#" data-toggle="modal" data-target="#deleteModalCenter" class="list-group-item">
-                        <i class="far fa-trash-alt"></i>
-                            删除
-                    </a>
-                    <a href="{% url 'article:article-update' article_detail.id %}" class="list-group-item">
-                        <i class="far fa-edit"></i>
-                            编辑
-                    </a>
-                {% endif %}
-                    <a href="#" class="list-group-item" data-toggle="tooltip" data-placement="right" title="这个功能我还没做">
-                        <i class="far fa-thumbs-up"></i>
-                            点赞
-                    </a>
-                    <a id="move_comment" class="list-group-item" data-toggle="tooltip" data-placement="right" title="想吐槽作者就点我">
-                        <i class="far fa-comment-dots"></i>
-                            评论
-                    </a>
-            </div>
-                <div class="fs--30"><h3>Tags</h3></div>
-                <div class="p-3">
-                <ul class="list-unstyled list-inline blog-tags">
-                    {% for tag in article_detail.tags.all %}
-                    <li class="pb-2"><a href="#" class="text-secondary"><i class="fa fa-tags"></i>{{ tag }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+                <div class="sidebar">
+                    <div class="categories">
+                        <h3 class="active"> Tools </h3>
+                        <ul class="list-unstyled">
+                            {% if user == article_detail.author %}
+                            <li>
+                                <a href="{% url 'article:article-create' %}"><i class="far fa-plus-square"></i>新建</a>
+                            </li>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#deleteModalCenter"><i class="far fa-trash-alt"></i>删除</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'article:article-update' article_detail.id %}"><i class="far fa-edit"></i>编辑</a>
+                            </li>
+                            {% endif %}
+                            <li>
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="这个功能我还没做"><i class="far fa-thumbs-up"></i>点赞</a>
+                            </li>
+                            <li>
+                                <a id="move_comment" data-toggle="tooltip" data-placement="right" title="想吐槽作者就点我"><i class="far fa-comment-dots"></i>评论</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="tags">
+                        <h3 class="active">标签</h3>
+                        <ul class="list-unstyled">
+                            {% for tag in article_detail.tags.all %}
+                            <li class="pb-2"><a href="#" class="text-secondary">{{ tag }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
                 <hr>
                 <h4><strong></strong></h4>
                 <div id="contents" class="mt-4">

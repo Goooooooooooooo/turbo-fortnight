@@ -8,6 +8,7 @@ from django.utils import timezone
 from .forms import ArticlePostForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+from django.db.models.aggregates import Count
 from comment.models import Comment
 from comment.forms import CommentForm
 import markdown
@@ -154,8 +155,9 @@ class ArticleListView(generic.ListView):
         # paginator = context.get('paginator')  # paginator类
         context['now'] = timezone.now
         context['search'] = self.request.GET.get('search')
-        context['categories'] = Category.objects.all()
         context['tags'] = Tag.objects.all()
+        # Count 计算分类下的文章数，其接受的参数为需要计数的模型的名称
+        context['category_list'] = Category.objects.annotate(num_posts=Count('articlepost'))
         return context
 
 
