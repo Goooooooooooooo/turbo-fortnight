@@ -117,3 +117,17 @@ $("#signOutModal").on('show.bs.modal', function (event) {
         modal.find('.modal-body').append(content);
     }
 })
+
+// 向上滚动的函数
+$(function () {
+    $('#back-to-top').click(function () {
+        $('html,body').animate({scrollTop: 0}, 500);
+    });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('#back-to-top').fadeIn(300);
+        } else {
+            $('#back-to-top').stop().fadeOut(300);
+        }
+    }).scroll();
+});

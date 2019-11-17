@@ -12,11 +12,11 @@
 	<!-- Page Header -->
 	<header class="masthead">
 		<div class="overlay"></div>
-		<div class="container" style="padding: 20% 0;">
+		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-md-10">
 					<div class="site-heading">
-                        <h1><s></s>博 客</h1>
+                        <h1><s></s>学习笔记</h1>
 						<span class="subheading">A Blog</span>
 					</div>
 				</div>
@@ -111,14 +111,10 @@
 
                             {% for num in page_obj.paginator.page_range %}
                                 <li>
-                                    <a href="?page={{ num }}">{{ num }}</a>
+                                    <a href="?page={{ num }}" class="{% if page_obj.number == num %}page-active{% endif %}">{{ num }}</a>
                                 </li>
                             {% endfor %}
 
-<!--							<div class="col text-center">-->
-<!--								<span class="p_number" style="color: #328CF2;">{{ page_obj.number }}</span> - -->
-<!--								<span class="p_number" style="color: #F23B32;">{{ page_obj.paginator.num_pages }}</span>-->
-<!--							</div>-->
                             {% if page_obj.has_next %}
                                 <li>
                                    <a href="?page={{ page_obj.next_page_number }}">Next<span aria-hidden="true"> →</span></a>
@@ -186,134 +182,10 @@
 			</div>
 		</div>
 	</div>
-	<section id="contact">
-		<div class="container">
-			<div class="row text-center clearfix">
-				<div class="col">
-					<div class="contact-heading">
-						<h2 class="title-one">Contact With Me</h2>
-						<p>还没想好这里要写点啥</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="contact-details">
-				<div class="pattern"></div>
-				<div class="row text-center clearfix">
-					<div class="col-md-8 offset-md-2">
-						<div id="contact-form-section">
-							<div class="status alert alert-success" style="display: none"></div>
-							<form id="contact-form" class="contact" name="contact-form" method="post" action="send-mail.php">
-								<div class="form-group">
-									<input type="text" name="name" class="form-control name-field" required="required" placeholder="Your Name"></div>
-									<div class="form-group">
-										<input type="email" name="email" class="form-control mail-field" required="required" placeholder="Your Email">
-									</div>
-									<div class="form-group">
-										<textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Message"></textarea>
-									</div>
-									<div class="form-group">
-										<button type="submit" class="contact-btn">Send</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 
+	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 <style>
 
-
-
-	.title-one {
-		color: #000;
-		display: inline-block;
-		font-size: 32px;
-		font-weight: 600;
-		padding-bottom: 10px;
-		text-align: center;
-		text-transform: uppercase;
-		position: relative;
-	}
-	.title-one:before {
-		color: #000;
-		content: "||";
-		left: -40px;
-		position: absolute;
-		top: 0;
-	}
-	.title-one:after {
-		color: #000;
-		content: "||";
-		position: absolute;
-		right: -40px;
-		top: -2px;
-	}
-	#contact {
-		padding: 75px 0;
-		height: 100%;
-		width: 100%;
-		background-color: #faad00;
-		position: relative;
-		padding-bottom: 85px;
-		border-top: 2px solid #ddd;
-	}
-	#contact-form .name-field {
-		margin-right: 2%;
-		float: left;
-	}
-	#contact-form .name-field, #contact-form .mail-field {
-		width: 49%;
-	}
-	.contact-details {
-		padding-top: 75px;
-	}
-    .contact-heading p{
-      font-size: 16px;
-    }
-	.contact-btn{
-	  width: 20%;
-	  font-size: 20px;
-	  font-weight: 600;
-      color: #faad00;
-      font-family: 'Roboto Condensed', sans-serif;
-      letter-spacing: 1.5px;
-      background-color: #212529;
-      border-color: #212529;
-      border-radius: 5px;
-	}
-    .blog-pagination ul {
-        padding: 19px 0;
-        list-style-type: none;
-        text-align:center;
-    }
-    .pagination {
-        display: inline-block;
-        padding-left: 0;
-        margin: 20px 0;
-        border-radius: 4px;
-    }
-    .blog-pagination ul li {
-        display: inline-block;
-        margin: 10px 0;
-    }
-    .blog-pagination .pagination > li > a, .pagination > li > span {
-        padding: 9px 16px;
-        color: #6b6b6b;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 14px;
-        background: #e7e7e7;
-        border: none;
-        margin: 0 1px;
-    }
-    .blog-pagination .pagination > li > a:hover{
-      background-color: #faad00;
-      color: #000;
-    }
 </style>
 {% endblock %}
 

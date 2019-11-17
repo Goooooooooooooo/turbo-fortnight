@@ -132,7 +132,7 @@ class ArticleListView(generic.ListView):
     model = ArticlePost
     template_name = 'article/index.html'
     context_object_name = 'article_list'
-    paginate_by = 10
+    paginate_by = 5
 
     # 过滤数据
     def get_queryset(self):

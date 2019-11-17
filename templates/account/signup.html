@@ -1,17 +1,21 @@
-{% extends "account/base.html" %}
 
 {% load i18n %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
-
-{% block content %}
-<div class="container">
-    <div class="row" style="padding-top: 120px;">
-        <div class="col-md-6  border border-secondary offset-md-3 col-border-radius">
-            <h1 class="m-3">{% trans "Sign Up" %}</h1>
+</head>
+<body>
+<div class="container" style="padding: 100px 0;">
+    <div>
+        <div class="form-main">
+            <h1>{% trans "Sign Up" %}</h1>
             <hr>
-
-            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            <form id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                     {% if form.errors %}
 					    {% for field in form %}
@@ -29,28 +33,33 @@
 					{% endif %}
                 <div class="form-group">
                     <input type="email" name="email" placeholder="E-mail address" autofocus="autofocus" required
-                        id="id_email" class="form-control form-control-radius" />
+                        id="id_email" class="form-input" />
                 </div>
                 <div class="form-group">
                     <input type="text" name="username" placeholder="Username" autofocus="autofocus" required
-                        id="id_username" class="form-control form-control-radius" />
+                        id="id_username" class="form-input" />
                 </div>
                 <div class="form-group">
                     <input type="password" name="password1" placeholder="Password" autofocus="autofocus" required
-                        id="id_password1" class="form-control form-control-radius" />
+                        id="id_password1" class="form-input" />
                 </div>
                 <div class="form-group">
                     <input type="password" name="password2" placeholder="Password (again)" autofocus="autofocus" required
-                        id="id_password2" class="form-control form-control-radius" />
+                        id="id_password2" class="form-input" />
                 </div>
                 {% if redirect_field_value %}
                     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="primaryAction btn btn-danger form-control-radius" type="submit" id="submit_singin">{% trans "Sign Up" %}</button>
+                <button class="btn-black" type="submit" id="submit_singin">{% trans "Sign Up" %}</button>
             </form>
-            <p class="fs--18" style="padding-top:10px;">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+            <p style="padding-top:10px;">{% blocktrans %}Already have an account? Then please <a class="btn-black form-link" href="{{ login_url }}">sign in</a>{% endblocktrans %}</p>
         </div>
     </div>
 </div>
 
-{% endblock %}
+    <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/blog-js.js' %}" ></script>
+</body>
+</html>

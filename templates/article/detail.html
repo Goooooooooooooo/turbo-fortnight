@@ -34,11 +34,11 @@
             <article class="px-3">
                 <div class="py-4">
                     <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
-                        <ul class="nav pull-right nav-pills block-center">
-                            <li class="py-2 pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|timesince_zh }}</li>
-                            <li class="py-2 pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
-                            <li class="py-2 pr-4 fc--18"><i class="fa fa-comments"></i> {{ comments.count }} Comments</li>
-                            <li class="py-2 pr-4 fc--18"><i class="fas fa-eye"></i> {{ article_detail.total_views }}</li>
+                        <ul class="nav nav-pills block-center">
+                            <li class="pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|timesince_zh }}</li>
+                            <li class="pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
+                            <li class="pr-4 fc--18"><i class="fa fa-comments"></i> {{ comments.count }} Comments</li>
+                            <li class="pr-4 fc--18"><i class="fas fa-eye"></i> {{ article_detail.total_views }}</li>
                         </ul>
                     <hr style="width:100%">
                 </div>
@@ -53,18 +53,94 @@
             <!-- 上一篇 下一篇 -->
             <nav class="pagination">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12">
                         {% if pre_article %}
-                        <a href="{{ pre_article.get_absolute_url }}" class="previous" style="font-size: 16px;"><i></i>{{ pre_article.title }}</a>
+                        <a href="{{ pre_article.get_absolute_url }}" class="previous"><span aria-hidden="true">←上一篇 : </span>{{ pre_article.title }}</a>
                         {% endif %}
                     </div>
-                    <div class="col-6">
+                    <div class="col-12">
                         {% if next_article %}
-                        <a href="{{ next_article.get_absolute_url }}" class="next" style="font-size: 16px;">{{ next_article.title }}<i></i></a>
+                        <a href="{{ next_article.get_absolute_url }}" class="next"><span aria-hidden="true">→下一篇 : </span>{{ next_article.title }}</a>
                         {% endif %}
                     </div>
                 </div>
             </nav>
+
+                <!-- 评论框 -->
+            <div class="pb-3">
+                <div>
+                    {% if user.is_authenticated %}
+                    <div id="comment_form">
+                        {% csrf_token %}
+                        {{ comment_form.media }}
+                        {{ comment_form.body }}
+                    <div class="pt-3 pr-2" style="text-align:right;">
+                        <button type="button" class="btn btn-primary" onclick="confirm_submit({{ article_detail.id }})" >Submit</button>
+                    </div>
+                    </div>
+                    {% else %}
+                    <br>
+                    <h5 class="row justify-content-center">
+                        请<a href="{% url 'account_login' %}?next={% url 'article:article-detail' article_detail.id %}" style="color:Blue;">登录</a>后回复
+                    </h5>
+                    <br>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Comment Display -->
+            <div id="comment_display" class="pt-5" style="min-height:200px;">
+                <div>
+                    <div class="card" style="width:100%">
+                        <div class="card-header">
+                         {{ comments.count }} Comment
+                        </div>
+                        <div class="card-body">
+                            {% recursetree comments %}
+                                {% with comment=node %}
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <p><strong style="color: gray"> {{ comment.user }} </strong>
+                                            {% if comment.reply_to %}
+                                                <i class="fas fa-share" style="color:gray"></i>
+                                                <strong style="color: pink"> {{ comment.reply_to }} </strong>
+                                            {% endif %}
+                                            <span style="color: gray">{{ comment.created|date:"Y-m-d H:i" }}</span>
+                                            <span>
+                                            {% if user.is_authenticated %}
+                                            <a class="reply" href="" data-toggle="modal" data-target="#replyModal"
+                                                    data-whatever="{{ comment.user }},{{ article_detail.id }},{{ comment.id }}">回复
+                                            </a>
+                                            {% else %}
+                                            <a class="reply" style="" href="{% url 'userprofile:login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
+                                            </a>
+                                            {% endif %}
+                                            </span>
+                                        </p>
+                                        <br />
+                                        <div>{{ comment.body|safe }}</div><br />
+
+                                        {% if not comment.is_leaf_node %}
+                                            <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapse_{{ comment.id }}" role="button" aria-expanded="false"
+                                                aria-controls="collapseExample">
+                                                Read More
+                                            </a>
+                                            <div class="collapse" id="collapse_{{ comment.id }}">
+                                            <div class="card card-body">
+                                                <div class="children">
+                                                    {{ children }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endif %}
+                                    </li>
+                                </ul>
+                                {% endwith %}
+                            {% endrecursetree %}
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
@@ -117,82 +193,6 @@
 
     <!-- 占位Div -->
     <div style="width:100%;visibility:hidden;min-height:200px;"></div>
-
-    <!-- 评论框 -->
-    <div class="row pb-3">
-        <div class="col-10">
-            {% if user.is_authenticated %}
-            <div id="comment_form">
-                {% csrf_token %}
-                {{ comment_form.media }}
-                {{ comment_form.body }}
-            <div class="pt-3 pr-2" style="text-align:right;">
-                <button type="button" class="btn btn-primary" onclick="confirm_submit({{ article_detail.id }})" >Submit</button>
-            </div>
-            </div>
-            {% else %}
-            <br>
-            <h5 class="row justify-content-center">
-                请<a href="{% url 'account_login' %}?next={% url 'article:article-detail' article_detail.id %}" style="color:Blue;">登录</a>后回复
-            </h5>
-            <br>
-            {% endif %}
-        </div>
-    </div>
-
-    <!-- Comment Display -->
-    <div id="comment_display" class="row pt-5" style="min-height:200px;">
-        <div class="col-10">
-            <div class="card" style="width:100%">
-                <div class="card-header">
-                 {{ comments.count }} Comment
-                </div>
-                <div class="card-body">
-                    {% recursetree comments %}
-                        {% with comment=node %}
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">
-                                <p><strong style="color: gray"> {{ comment.user }} </strong>
-                                    {% if comment.reply_to %}
-                                        <i class="fas fa-share" style="color:gray"></i>
-                                        <strong style="color: pink"> {{ comment.reply_to }} </strong>
-                                    {% endif %}
-                                    <span style="color: gray">{{ comment.created|date:"Y-m-d H:i" }}</span>
-                                    <span>
-                                    {% if user.is_authenticated %}
-                                    <a class="reply" href="" data-toggle="modal" data-target="#replyModal"
-                                            data-whatever="{{ comment.user }},{{ article_detail.id }},{{ comment.id }}">回复
-                                    </a>
-                                    {% else %}
-                                    <a class="reply" style="" href="{% url 'userprofile:login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
-                                    </a>
-                                    {% endif %}
-                                    </span>
-                                </p>
-                                <br />
-                                <div>{{ comment.body|safe }}</div><br />
-
-                                {% if not comment.is_leaf_node %}
-                                    <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapse_{{ comment.id }}" role="button" aria-expanded="false"
-                                        aria-controls="collapseExample">
-                                        Read More
-                                    </a>
-                                    <div class="collapse" id="collapse_{{ comment.id }}">
-                                    <div class="card card-body">
-                                        <div class="children">
-                                            {{ children }}
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endif %}
-                            </li>
-                        </ul>
-                        {% endwith %}
-                    {% endrecursetree %}
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 
