@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     $("#header-nav > nav > ul.main-nav > li").each(function(){
         var ele = $(">a",this);
@@ -118,16 +119,14 @@ $("#signOutModal").on('show.bs.modal', function (event) {
     }
 })
 
-// 向上滚动的函数
+/////////////////////////////////////////////////////////////////////
+// 滚动函数
+// jQuery for page scrolling feature - requires jQuery Easing plugin
+/////////////////////////////////////////////////////////////////////
 $(function () {
-    $('#back-to-top').click(function () {
-        $('html,body').animate({scrollTop: 0}, 500);
+    var scroll_offset = $('#contact').offset();
+    $('#moveToContact').click(function () {
+        $('html,body').animate({scrollTop: scroll_offset.top}, 1500);
     });
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('#back-to-top').fadeIn(300);
-        } else {
-            $('#back-to-top').stop().fadeOut(300);
-        }
-    }).scroll();
 });
+

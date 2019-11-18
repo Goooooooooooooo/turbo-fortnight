@@ -22,10 +22,13 @@
                     {% include "socialaccount/snippets/login_extra.html" %}
 
                 {% endif %}
-                <div>
-                    <h1>Login</h1>
+                <div class="form-title">
+                    <h1>
+                        Login
+                        <a href="{% url 'article:article-list' %}">Go Home</a>
+                    </h1>
+                    <hr class="colorgraph">
                 </div>
-                <hr class="colorgraph">
                 <form class="login" id="login_form" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
                     {% if form.errors %}

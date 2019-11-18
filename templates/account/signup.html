@@ -13,8 +13,13 @@
 <div class="container" style="padding: 100px 0;">
     <div>
         <div class="form-main">
-            <h1>{% trans "Sign Up" %}</h1>
-            <hr>
+            <div class="form-title">
+                <h1>
+                    {% trans "Sign Up" %}
+                    <a href="{% url 'article:article-list' %}">Go Home</a>
+                </h1>
+                <hr>
+            </div>
             <form id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                     {% if form.errors %}

@@ -541,7 +541,6 @@ footer ul li a,
   font-size: 25px;
   cursor: pointer;
 }
-
 .s-overlay {
   height: 100%;
   width: 100%;
@@ -553,7 +552,6 @@ footer ul li a,
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0, 0.9);
 }
-
 .overlay-content {
   position: relative;
   top: 46%;
@@ -562,11 +560,13 @@ footer ul li a,
   margin-top: 30px;
   margin: auto;
 }
-
 #searchOverlay > div > form{
-  border-bottom: 4px solid #ff000d;
+  border-bottom: 4px solid #faad00;
 }
-
+#searchOverlay > div > form > button{
+  color: #faad00;
+  outline:0;
+}
 .s-overlay .close-btn {
   position: absolute;
   top: 20px;
@@ -575,11 +575,9 @@ footer ul li a,
   cursor: pointer;
   color: white;
 }
-
 .s-overlay .close-btn:hover {
   color: #ccc;
 }
-
 .s-overlay input[type=search] {
   padding: 15px;
   font-size: 25px;
@@ -589,7 +587,6 @@ footer ul li a,
   background: none;
   outline: 0;
   color: #fff;
-
 }
 .s-overlay
  input[type=search]:-webkit-autofill,
@@ -599,7 +596,6 @@ footer ul li a,
    transition: background-color 5000s ease-in-out 0s;
    -webkit-text-fill-color: white !important;
 }
-
 .s-overlay button {
   width: 10%;
   background: none;
@@ -608,11 +604,10 @@ footer ul li a,
   border: none;
   cursor: pointer;
 }
-
 #searchOverlay .search-tips{
   position: absolute;
   width: 100%;
-  color: #dc3545;
+  color: #faad00;
   font-size: 20px;
   margin: -100px auto;
 }
@@ -920,14 +915,24 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 /* login register css */
 .form-main {
   padding: 3em;
-  background: rgba(0, 0, 0, 0.5);
   border-top: 4px solid #000;
   width: 50%;
   margin: 4em auto;
   background-color: #faad00;
 }
-.form-main h1{
+.form-main .form-title h1,.form-main .form-title h1 a {
   color: #000;
+}
+.form-main .form-title h1 a {
+  font-size: 18px;
+  padding: 5px;
+  margin: 10px;
+  float: right !important;
+  border: 2px solid #000;
+}
+.form-title h1 a:hover {
+  color: #fff;
+  border: 2px solid #fff;
 }
 .form-link{
   font-size: 16px;
@@ -971,6 +976,7 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 .btn-black:hover{
   background-color: #212529;
   border-color: #212529;
+  color: #fff;
 }
 
 .btn-yellow{
