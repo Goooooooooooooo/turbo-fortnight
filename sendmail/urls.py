@@ -16,14 +16,8 @@ Including another URLconf
 from django.urls import path
 from . import views
 
-app_name = 'article'
+app_name = 'sendmail'
 
-# 类视图时候要加括号:as_view() 普通方法不加括号:views.方法
 urlpatterns = [
-    path('article-list/', views.ArticleListView.as_view(), name='article-list'),
-    path('article-detail/<int:pk>/', views.ArticleDetailView.as_view(), name='article-detail'),
-    path('article-delete/<int:pk>/', views.article_safe_delete, name='article-safe-delete'),
-    path('article-create/', views.ArticleCreateView.as_view(), name='article-create'),
-    path('article-portfolio/', views.portfolio, name='article-portfolio'),
-    path('article-update/<int:pk>/', views.ArticleUpdateView.as_view(), name='article-update'),
+    path('', views.ajax_sendmail, name='sendmail'),
 ]

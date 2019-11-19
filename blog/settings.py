@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     # 富文本编辑器
     'ckeditor',
     'ckeditor_uploader',
-
+    'sendmail',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -282,16 +282,16 @@ LOGIN_REDIRECT_URL = '/'
 
 
 # 邮箱配置
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # SMTP服务器
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'localhost'
 # 邮箱名！
-EMAIL_HOST_USER = 'yzok0223@gmail.com'
+EMAIL_HOST_USER = 'Jing.Wang@smflc.co.jp'
 # 邮箱密码
-EMAIL_HOST_PASSWORD = '693477ok'
+EMAIL_HOST_PASSWORD = '693477aaQ`'
 # 发送邮件的端口
 EMAIL_PORT = 587
 # 是否使用 TLS
 EMAIL_USE_TLS = True
 # 默认的发件人
-DEFAULT_FROM_EMAIL = 'yzok0223@gmail.com'
+DEFAULT_FROM_EMAIL = 'Jing.Wang@smflc.co.jp'

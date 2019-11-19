@@ -31,7 +31,8 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     # path('password-reset/', include('password_reset.urls')),
     path('comment/', include('comment.urls', namespace='comment')),
-    path('accounts/', include('allauth.urls'))
+    path('accounts/', include('allauth.urls')),
+    path('sendmail/', include('sendmail.urls', namespace='sendmail'))
 ]
 
 handler400 = "article.views.bad_request"

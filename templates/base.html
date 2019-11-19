@@ -5,13 +5,11 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <!-- 预留网站标题的位置 -->
+
     <title>{% block title %}{% endblock title %}</title>
-    <!-- 引入bootstrap的css文件 -->
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--     代码高亮样式 -->
     <link rel="stylesheet" href="{% static 'css/monokai.css' %}">
     <link rel="stylesheet" href="{% static 'css/simplemde.min.css' %}">
 
@@ -31,6 +29,7 @@
     <script src="{% static 'js/popper.min.js' %}"></script>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/blog-js.js' %}" ></script>
+    <script src="{% static 'js/typed.js' %}" ></script>
 
     {% include 'back_to_top.html' %}
 

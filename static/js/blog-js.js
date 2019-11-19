@@ -130,3 +130,75 @@ $(function () {
     });
 });
 
+/////////////////////////////////////////////////////////////////////
+// ajax 发送送信请求
+/////////////////////////////////////////////////////////////////////
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function ajax_sendmail(){
+
+    var csrftoken = getCookie('csrftoken');
+
+    var error = false;
+    var name = $('#name').val();
+    var email = $('#email').val();
+    var subject = $('#subject').val();
+    var message = $('#message').val();
+
+    if(email.length == 0 || email.indexOf('@') == '-1'){
+        var error = true;
+        // $('#email_error').fadeIn(500);
+        $('#email').addClass("validation");
+    }else{
+        $('#email').removeClass("validation");
+    }
+    if(subject.length == 0){
+        var error = true;
+        $('#subject').addClass("validation");
+    }else{
+        $('#subject').removeClass("validation");
+    }
+    if(message.length == 0){
+        var error = true;
+        $('#message').addClass("validation");
+    }else{
+        $('#message').removeClass("validation");
+    }
+    if(error == false){
+        var ajax_url;
+        ajax_url = '/sendmail/';
+
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: csrftoken },
+        });
+
+        $.ajax({
+            url: ajax_url,
+            type: 'POST',
+            data: {'name': name,
+                    'email': email,
+                    'subject': subject,
+                    'message': message
+            },
+            success: function(e){
+                    //parent.location.reload();
+                    $('#mail_fail').text(e);
+                    $('#mail_fail').fadeIn(500);
+            }
+        })
+    }
+}
