@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',  # allauth 启动必须项
     'django.contrib.staticfiles',
-    'password_reset',
     'article',
     # 标签
     'taggit',

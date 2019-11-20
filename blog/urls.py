@@ -25,11 +25,11 @@ urlpatterns = [
     # home
     path('', ArticleListView.as_view(), name='home'),
     # 直接返回视图，不渲染
-    path('404/',TemplateView.as_view(template_name='404.html'), name='page_404'),
+    path('404/',TemplateView.as_view(template_name='handler/404.html'), name='page_404'),
+    path('about/',TemplateView.as_view(template_name='about.html'), name='about'),
     path('article/', include('article.urls', namespace='article')),
     path('userprofile/', include('userprofile.urls', namespace='userprofile')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    # path('password-reset/', include('password_reset.urls')),
     path('comment/', include('comment.urls', namespace='comment')),
     path('accounts/', include('allauth.urls')),
     path('sendmail/', include('sendmail.urls', namespace='sendmail'))

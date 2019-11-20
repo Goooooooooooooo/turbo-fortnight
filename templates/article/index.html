@@ -15,13 +15,8 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-8 col-md-10">
-					<div class="site-heading">
-                        <div class="header-text btn">
-							<h1>
-								<span id="head-title"></span>
-								<span class="typed-cursor"></span>
-							</h1>
-						</div>
+					<div class="header-text btn">
+						<h1><span id="head-title"></span></h1>
 					</div>
 				</div>
 			</div>
@@ -189,6 +184,9 @@
 
 	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
 <style>
+#wrapper > header > div.container{
+	padding: 200px 0;
+}
 .header-text.btn {
     border: 1px solid #ffffff;
     border-radius: 0;
@@ -197,7 +195,9 @@
 }
 .header-text h1 {
     font-weight: 700;
-    font-size: 80px;
+    font-size: 46px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 span.typed-cursor {
     top: -5px;
@@ -218,7 +218,7 @@ span.typed-cursor {
 {% block script %}
 <script>
   $(function(){
-	  $("#head-title").typed({
+	  $("#head-").typed({
 		strings: ["We make websites^1000", "24/7 available for hire^1000" ,"Web design with diffence^1000"],
 		typeSpeed: 100,
 		loop: true,

@@ -27,7 +27,7 @@
                         Login
                         <a href="{% url 'article:article-list' %}">Go Home</a>
                     </h1>
-                    <hr class="colorgraph">
+                    <hr>
                 </div>
                 <form class="login" id="login_form" method="POST" action="{% url 'account_login' %}">
                     {% csrf_token %}
@@ -65,6 +65,9 @@
                             Remeber me
                         </label>
                     </div>
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
                     <button class="btn-black" type="submit" id="submit_login">Sign in</button>
                 </form>
                 <hr class="hr-text" data-content="OR">
