@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserLoginForm, UserRegisterForm , ProfileForm
 from django.contrib.auth.models import User
-from .models import Profile
+from article.models import ArticlePost
 
 
 '''
@@ -103,10 +103,16 @@ def user_edit_profile(request,pk):
             user.save()
             return redirect('userprofile:edit-profile', pk=pk)
         else:
-            return render(request, 'userprofilt/edit_profile.html',context={'form':profile_form})
+            return render(request, 'userprofile/edit_profile.html',context={'form':profile_form})
 
     elif request.method == 'GET':
         context={'form':ProfileForm(), 'user': user}
         return render(request, 'userprofile/edit_profile.html', context)
     else:
         return HttpResponse('请使用GET或POST请求数据')
+
+def user_about(request):
+    article_list = ArticlePost.objects.all().order_by('-updated')
+    if article_list.count() > 0:
+        article_list = article_list[:3]
+    return render(request, 'userprofile/about.html',context={'article_list':article_list})

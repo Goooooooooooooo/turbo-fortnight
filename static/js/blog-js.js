@@ -124,9 +124,15 @@ $("#signOutModal").on('show.bs.modal', function (event) {
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 /////////////////////////////////////////////////////////////////////
 $(function () {
-    var scroll_offset = $('#contact').offset();
-    $('#moveToContact').click(function () {
-        $('html,body').animate({scrollTop: scroll_offset.top}, 1500);
+    $('a.page-scroll').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = (target && target.length) ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+                $('html,body').animate({scrollTop: target.offset().top - 40}, 1000);
+                return false;
+            }
+        }
     });
 });
 

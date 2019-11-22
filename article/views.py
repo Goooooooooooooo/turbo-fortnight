@@ -110,12 +110,6 @@ def server_error(request, exception=None):
     return response
 
 
-# 单纯的迁移画面，不做额外的处理
-def portfolio(request):
-    return render(request, 'article/portfolio.html')
-
-
-
 @login_required(login_url='/account/login/')
 def article_safe_delete(request, pk):
     if request.method == 'POST':
