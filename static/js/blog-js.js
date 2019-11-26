@@ -23,6 +23,7 @@ function confirm_safe_delete() {
 }
 
 //detail.html 评论锚点定位
+/*
 var move = document.getElementById("move_comment");
 if(move){
     move.addEventListener('click', function(){
@@ -30,7 +31,7 @@ if(move){
         target.scrollIntoView(false);
     })
 }
-
+*/
 //detail.html 加载 iframe ckeditor
 $("#replyModal").on('show.bs.modal', function (event) {
     // Button that triggered the modal
@@ -88,15 +89,14 @@ function openSearch() {
 function closeSearch() {
     document.getElementById("searchOverlay").style.display = "none";
 }
-function initEvents() {
+$(function() {
     document.addEventListener('keyup', function(ev) {
         // escape key.
         if( ev.keyCode == 27 ) {
             closeSearch();
         }
     });
-}
-initEvents();
+});
 
 // 用户菜单弹出控制
 function openNav() {
@@ -124,18 +124,37 @@ $("#signOutModal").on('show.bs.modal', function (event) {
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 /////////////////////////////////////////////////////////////////////
 $(function () {
+
     $('a.page-scroll').click(function() {
+        var bool_animate = false;
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var target = $(this.hash);
             target = (target && target.length) ? target : $('[name=' + this.hash.slice(1) +']');
             if (target.length) {
-                $('html,body').animate({scrollTop: target.offset().top - 40}, 1000);
-                return false;
+                $('html,body').animate({scrollTop: target.offset().top}, 1000);
+                bool_animate = true;
+            }
+            if (bool_animate){
+                $('.animation-name',target).each(function(){
+                    $(this).addClass("zoomIn animated slower");
+                })
             }
         }
     });
 });
 
+$(function(){
+    $("#about,#skills,#my-blog,#my-work").each(function(){
+        var target = $('.animation-name',this);
+        var win = $(window);
+        win.on('scroll', function(){
+            var position = target.offset().top - win.height();
+            if (win.scrollTop() > position) {
+                target.addClass('zoomIn animated slower');
+            }
+        });
+    })
+});
 /////////////////////////////////////////////////////////////////////
 // ajax 发送送信请求
 /////////////////////////////////////////////////////////////////////

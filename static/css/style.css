@@ -132,9 +132,80 @@ body{
   width: 100%;
   bottom: 0;
 }
+/* button css */
+.btn-default {
+  outline: 0;
+  color: rgba(255,255,255,0.8);
+  background-color: transparent;
+  border: 2px solid rgba(255,255,255,0.5);
+  padding: 12px 20px;
+  margin: 0;
+  font-size: 15px;
+  border-radius: 0;
+  text-transform: uppercase;
+}
+.btn-default:hover{
+  color: #fff;
+  background: #000;
+  border: 2px solid #000;
+}
+.btn-black{
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px;
+  color: #faad00;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 1.5px;
+  background-color: #000;
+  border-color: #000;
+  outline: 0;
+  border: none;
+}
+.btn-black:hover{
+  background-color: #212529;
+  border-color: #212529;
+  color: #fff;
+}
+.btn-yellow{
+  color: #000;
+  background-color: #faad00;
+  border-color: #faad00;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 1.5px;
+  outline: 0;
+  border: none;
+}
+.btn-yellow:hover{
+  background-color: #d8990c;
+  border-color: #d8990c;
+}
+.btn-contact{
+  width: 30%;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 0;
+  color: #faad00;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 1.5px;
+  background-color: #212529;
+  border-color: #212529;
+  border-radius: 5px;
+  border: none;
+}
 
 .bg-gray{
-    background-color: #c7c7c7;
+  background-color: #f4f4f4;
+}
+.bg-gray-1{
+  background-color: #f6f6f6;
+}
+.bg-yellow{
+  background-color: #ffc907;
 }
 
 /* Index CSS */
@@ -762,19 +833,7 @@ header.masthead .post-heading .meta a {
 .contact-heading p{
   font-size: 16px;
 }
-.contact-btn{
-  width: 30%;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 5px 0;
-  color: #faad00;
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: 1.5px;
-  background-color: #212529;
-  border-color: #212529;
-  border-radius: 5px;
-  border: none;
-}
+
 #contact-form .success{
     background : #DFF0D8;
 }
@@ -970,44 +1029,6 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
    -webkit-text-fill-color: #000 !important;
 }
 
-.btn-black{
-  width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 5px;
-  color: #faad00;
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: 1.5px;
-  background-color: #000;
-  border-color: #000;
-  outline: 0;
-  border: none;
-}
-.btn-black:hover{
-  background-color: #212529;
-  border-color: #212529;
-  color: #fff;
-}
-
-.btn-yellow{
-  color: #000;
-  background-color: #faad00;
-  border-color: #faad00;
-  width: 100%;
-  font-size: 20px;
-  font-weight: 600;
-  padding: 5px;
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: 1.5px;
-  outline: 0;
-  border: none;
-}
-
-.btn-yellow:hover{
-  background-color: #d8990c;
-  border-color: #d8990c;
-}
-
 .form-control-radius{
     width: 100%;
     border-radius: 30px;
@@ -1090,10 +1111,9 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 .section-title.center {
   padding: 5px 0;
 }
-.intro {
+.he-intro {
   display: table;
   width: 100%;
-  height: auto;
   text-align: center;
   color: #fff;
   background: url(../img/slider-bg.jpg) no-repeat center center;
@@ -1107,7 +1127,7 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
   padding-top: 150px;
   padding-bottom: 150px;
 }
-.intro .overlay {
+.he-intro .overlay {
   padding: 150px 0;
 }
 #about {
@@ -1124,7 +1144,6 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 }
 
 #skills {
-  background: #ffc907;
   padding: 5em 0;
 }
 #skills h2 {
@@ -1146,12 +1165,10 @@ footer > div > div > div > ul > li > a:focus, footer > div > div > div > ul > li
 #my-blog {
   padding: 100px 0;
 }
-#portfolio {
+#my-work {
   padding: 100px 0;
-  background: #f6f6f6;
 }
 .cont {
-  background: #f4f4f4;
   padding: 5em 0;
 }
 h2 {
@@ -1177,56 +1194,43 @@ h2 {
   margin-bottom: 30px;
   border: 0;
 }
-.btn-default {
-  outline: 0;
-  color: rgba(255,255,255,0.8);
-  background-color: transparent;
-  border: 2px solid rgba(255,255,255,0.5);
-  padding: 12px 20px;
-  margin: 0;
-  font-size: 15px;
-  border-radius: 0;
-  text-transform: uppercase;
-}
-.btn-default:hover,.btn-about:hover{
-  color: #fff;
-  background: #000;
-  border: 2px solid #000;
-}
-.btn-about {
-  color: #4f4e4e;
-  background-color: transparent;
-  padding: 12px 20px;
-  border: 2px solid #4f4e4e;
-  margin: 0 auto;
-  border-radius: 0;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 400;
 
-}
 
 /* Media Queries */
 @media(min-width:768px) {
-.intro {
-	height: 100%;
-	padding: 0;
-	color: #fff;
+  .he-intro h1 {
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .he-intro .intro-text p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+  header .intro-text {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
 }
-.intro H1 {
-	font-size: 60px;
-	font-weight: 600;
-	text-transform: uppercase;
+@media screen and (max-width: 1280px) {
+  .he-intro,#about,#skills,#my-blog,#my-work {
+    min-height: auto;
+  }
 }
-.intro .intro-text p {
-	font-size: 20px;
-	margin-bottom: 40px;
-	margin-top: 20px;
-	letter-spacing: 2px;
+@media (max-width: 1600px){
+  .he-intro,#about,#skills,#my-blog,#my-work {
+    min-height: 789px;
+  }
+}
+@media (max-width: 1920px){
+  .he-intro,#about,#skills,#my-blog,#my-work {
+    min-height: 100vh;
+  }
+}
+.my-animated{
+  animation-duration: 2s; /* アニメーションの時間 */
 }
 
-header .intro-text {
-	padding-top: 150px;
-	padding-bottom: 150px;
-}
-}
+
