@@ -1,4 +1,4 @@
-
+/*
 $(document).ready(function() {
     $("#header-nav > nav > ul.main-nav > li").each(function(){
         var ele = $(">a",this);
@@ -11,7 +11,7 @@ $(document).ready(function() {
         }
     });
 });
-
+*/
 // 移除 ckeditor 元素，是 CKeditor 能够自适应大小
 $(function(){
     $(".django-ckeditor-widget").removeAttr('style');
@@ -63,12 +63,13 @@ function search_form_submit() {
 }
 
 // 画面小于 992px 时 菜单打开关闭控制
+/*
 $("#btn").click(function(){
-    /*if($("#nav-menu").css("display")=="none"){
+    if($("#nav-menu").css("display")=="none"){
         $("#nav-menu").css("display", "block");
     }else{
         $("#nav-menu").css("display", "none");
-    }*/
+    }
     window.onresize = function(){
         var w = document.documentElement.clientWidth;
         if(w >= 992){
@@ -76,7 +77,7 @@ $("#btn").click(function(){
         }
     }
     $("#nav-menu").toggle("normal");
-});
+});*/
 // 点击任意选项之后，隐藏菜单
 //$("#nav-menu > ul > li > a").click(function(){
 //    $("#nav-menu").toggle("normal");
@@ -97,7 +98,7 @@ $(function() {
         }
     });
 });
-
+/*
 // 用户菜单弹出控制
 function openNav() {
   document.getElementById("side-user-menu").style.width = "250px";
@@ -107,7 +108,7 @@ function closeNav() {
   document.getElementById("side-user-menu").style.width = "0";
   document.getElementById("wrapper").style.marginRight= "0";
 }
-
+*/
 //detail.html 加载 iframe ckeditor
 $("#signOutModal").on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget)
@@ -124,7 +125,6 @@ $("#signOutModal").on('show.bs.modal', function (event) {
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 /////////////////////////////////////////////////////////////////////
 $(function () {
-
     $('a.page-scroll').click(function() {
         var bool_animate = false;
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -142,9 +142,9 @@ $(function () {
         }
     });
 });
-
+/*
 $(function(){
-    $("#about,#skills,#my-blog,#my-work").each(function(){
+    $("#about").each(function(){
         var target = $('.animation-name',this);
         var win = $(window);
         win.on('scroll', function(){
@@ -154,7 +154,7 @@ $(function(){
             }
         });
     })
-});
+});*/
 /////////////////////////////////////////////////////////////////////
 // ajax 发送送信请求
 /////////////////////////////////////////////////////////////////////

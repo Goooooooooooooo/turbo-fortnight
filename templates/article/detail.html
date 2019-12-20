@@ -11,29 +11,12 @@
 
 {% block content %}
 
-<!-- Page Header -->
-<header class="masthead">
-<!--	<div class="overlay"></div>-->
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-lg-10 col-md-12">
-				<div class="site-heading">
-					<h1></h1>
-                    <br>
-					<span class="subheading"></span>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
-
-
 <div class="container">
     <div class="row pb-5">
         <div class="col-md-9">
             <article class="px-3">
                 <div class="py-4">
-                    <h1 class="fs--100" style="color: black;">{{ article_detail.title }}</h1>
+                    <h1 class="fs--50">{{ article_detail.title }}</h1>
                         <ul class="nav nav-pills block-center">
                             <li class="pr-4 fc--18"><i class="fa fa-calendar"></i> {{ article_detail.updated|timesince_zh }}</li>
                             <li class="pr-4 fc--18"><i class="fa fa-user"></i> {{ article_detail.author }}</li>
@@ -48,8 +31,6 @@
                     </div>
                 </div>
             </article>
-
-            <br>
             <!-- 上一篇 下一篇 -->
             <nav class="pagination">
                 <div class="row">
@@ -65,7 +46,7 @@
                     </div>
                 </div>
             </nav>
-
+            <hr>
                 <!-- 评论框 -->
             <div class="pb-3">
                 <div>
@@ -79,7 +60,6 @@
                     </div>
                     </div>
                     {% else %}
-                    <br>
                     <h5 class="row justify-content-center">
                         请<a href="{% url 'account_login' %}?next={% url 'article:article-detail' article_detail.id %}" style="color:Blue;">登录</a>后回复
                     </h5>
@@ -90,16 +70,13 @@
 
             <!-- Comment Display -->
             <div id="comment_display" class="pt-5" style="min-height:200px;">
-                <div class="card" style="width:100%">
-                    <div class="card-header">
-                     {{ comments.count }} Comment
-                    </div>
-                </div>
-
+                <div class="">
+                {{ comments.count }} Comment
+                <hr>
                 {% recursetree comments %}
                     {% with comment=node %}
-                    <div class="media pt-3">
-                        <img class="rounded-circle" style="width:50px;height:50px;" src="{% static 'img/pic1.jpg' %}" alt="Generic placeholder image">
+                    <div class="media p-3">
+                        <img class="rounded-circle" style="width:60px;height:60px;" src="{% static 'img/pic1.jpg' %}" alt="Generic placeholder image">
                         <div class="media-body" style="overflow:auto;">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
@@ -114,13 +91,12 @@
                                                     data-whatever="{{ comment.user }},{{ article_detail.id }},{{ comment.id }}">回复
                                             </a>
                                             {% else %}
-                                            <a class="reply" style="" href="{% url 'userprofile:login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
+                                            <a class="reply" style="" href="{% url 'account_login' %}?next={% url 'article:article-detail' article_detail.id %}">回复
                                             </a>
                                             {% endif %}
                                         </span>
                                     </p>
-                                    <br />
-                                    <div>{{ comment.body|safe }}</div><br />
+                                    <div>{{ comment.body|safe }}</div>
 
                                     {% if not comment.is_leaf_node %}
                                         <a class="btn btn-outline-secondary" data-toggle="collapse" href="#collapse_{{ comment.id }}" role="button" aria-expanded="false"
@@ -137,9 +113,10 @@
                             </ul>
                         </div>
                     </div>
-                    <hr>
+                    <hr style="margin:0;">
                 {% endwith %}
                 {% endrecursetree %}
+                </div>
             </div>
         </div>
 

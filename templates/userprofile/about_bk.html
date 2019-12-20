@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load extra_tags %}
+
+{% block title %}
+	首页
+{% endblock title %}
+{% block content %}
+
+<header>
+    <div class="he-intro text-center">
+        <div class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="intro-text">
+                    <h1>Marcus Hansen</h1>
+                    <p>UX Designer &amp; Front End Developer</p>
+                    <a href="#about" class="btn-default btn-lg page-scroll">Learn More</a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="about" class="d-flex h-100 align-items-center">
+    <div class="container">
+        <div class="section-title text-center animation-name">
+            <h2>About Me</h2>
+            <hr class="hr-color">
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 animation-name">
+                <img src="{% static 'img/pic2.jpg' %}" class="img-responsive" alt="">
+            </div>
+            <div class="col-12 col-md-6 animation-name">
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare.</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-btn fs--24">
+            <a href="#skills" class="page-scroll fadeInDown infinite animated slower"><i class="fas fa-angle-double-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<div id="skills" class="d-flex h-100 align-items-center bg-yellow">
+    <div class="container">
+        <div class="section-title text-center animation-name">
+            <h2>My skills</h2>
+            <hr class="hr-color">
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 animation-name">
+                <h4>html</h4>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+                            <span class="sr-only">40% Complete (success)</span>
+                        </div>
+                    </div>
+                <h4>css</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="sr-only">20% Complete</span>
+                    </div>
+                </div>
+                <h4>js</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        <span class="sr-only">30% Complete (warning)</span>
+                    </div>
+                </div>
+                <h4>php</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="sr-only">50% Complete (danger)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 animation-name">
+                <h4>java</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        <span class="sr-only">70% Complete (danger)</span>
+                    </div>
+                </div>
+                <h4>C#</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        <span class="sr-only">60% Complete (danger)</span>
+                    </div>
+                </div>
+                <h4>python</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                        <span class="sr-only">90% Complete (danger)</span>
+                    </div>
+                </div>
+                <h4>uipath</h4>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-bg-black" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                        <span class="sr-only">75% Complete (success)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-btn fs--24 text-center">
+            <a href="#my-blog" class="page-scroll fadeInDown infinite animated slower"><i class="fas fa-angle-double-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<div id="my-blog" class="d-flex h-100 align-items-center">
+    <div class="container">
+        <div class="section-title text-center animation-name">
+            <h2>blog</h2>
+            <hr class="hr-color">
+        </div>
+        <div class="text-center pb-4 animation-name"><a href="{% url 'article:article-list' %}" class="btn-yellow">All blog</a></div>
+        <div class="row">
+            {% for article in article_list %}
+            <div class="col-12 col-md-4 pb-3 animation-name">
+                <div class="card">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <img class="card-img-top embed-responsive-item" src="{% if article.avatar %} {{ article.avatar.url }} {% else %} {% static 'img/pic3.jpg' %}{% endif %}" alt="Card image cap">
+                    </div>
+                    <div class="blog-date-wrapper">
+                        <span><i class="fa fa-calendar"></i>{{ article.updated }}</span>
+                        <span><i class="fa fa-thumbs-o-up"></i> 30</span>
+                        <span><i class="fa fa-comments"></i> 25 </span>
+                        <span> &nbsp; </span>
+                    </div>
+                    <div class="card-body blog-container">
+                        <h2><a href="{% url 'article:article-detail' article.id %}">{{ article.title }}</a></h2>
+                        <p>{{ article.summary | slice:'100' | convert_markdown | safe }}</p>
+                        <a class="btn-yellow" href="{% url 'article:article-detail' article.id %}">read more <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="scroll-btn fs--24">
+            <a href="#my-work" class="page-scroll fadeInDown infinite animated slower"><i class="fas fa-angle-double-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<div id="my-work" class="d-flex h-100 align-items-center bg-gray">
+    <div class="container">
+        <div class="section-title text-center animation-name">
+            <h2>工作日常</h2>
+            <hr class="hr-color">
+        </div>
+        <div class="row py-3">
+            <div class="col-12 col-md-4 embed-responsive embed-responsive-4by3 animation-name">
+                <img class="embed-responsive-item" src="{% static 'img/pro1.jpg' %}" alt="Image">
+            </div>
+            <div class="col-12 col-md-4 embed-responsive embed-responsive-4by3 animation-name">
+                <img class="embed-responsive-item" src="{% static 'img/pro2.jpg' %}" alt="Image">
+            </div>
+            <div class="col-xs-12 col-md-4 embed-responsive embed-responsive-4by3 animation-name">
+                <img class="embed-responsive-item" src="{% static 'img/pro3.jpg' %}" alt="Image">
+            </div>
+        </div>
+        <div class="scroll-btn fs--24">
+            <a href="#contact" class="page-scroll fadeInDown infinite animated slower"><i class="fas fa-angle-double-down"></i></a>
+        </div>
+    </div>
+</div>
+
+<style>
+.progress-bar-bg-black{
+  background-color: #000;
+}
+.blog-date-wrapper {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    padding-top: 19px;
+}
+
+.blog-container,.blog-date-wrapper {
+    padding: 15px;
+    padding-bottom: 21px;
+}
+
+.blog-container h2 {
+    font-family: "Roboto Condensed",sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1.7px;
+    padding: 0 0 20px;
+    margin: 0;
+}
+/* 单行文本超出部分省略号 */
+.blog-container h2 {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/* 多行文本超出部分省略号 */
+.blog-container p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+#portfolio p {
+    color: #8d8b8b;
+    margin-bottom: 35px;
+}
+.custom-button {
+    padding: 8px 20px;
+    border-color: #d7d7d7;
+    border-style: solid;
+    border-width: 1px;
+    color: #929292;
+    font-size: 14px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+}
+
+.btn-yellow{
+  background: transparent;
+  margin-right: 5px;
+  border: 1px solid #dddddd;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #999999;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+}
+
+.btn-yellow:hover{
+  background: #faad00;
+  color: #000;
+}
+.card-img-top {
+    width: 100%;
+    object-fit: cover;
+}
+.scroll-btn {
+    width: 3rem;
+    height: 3rem;
+    margin: 100px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.scroll-btn a.page-scroll{
+  display: block;
+  color: #000;
+  width: 100%;
+  height: 100%;
+}
+</style>
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+    var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    console.log(w);
+    console.log(h);
+</script>
+{% endblock script %}

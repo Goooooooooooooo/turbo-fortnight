@@ -114,5 +114,5 @@ def user_edit_profile(request,pk):
 def user_about(request):
     article_list = ArticlePost.objects.all().order_by('-updated')
     if article_list.count() > 0:
-        article_list = article_list[:3]
+        article_list = article_list[:6]
     return render(request, 'userprofile/about.html',context={'article_list':article_list})

@@ -10,18 +10,7 @@
 {% block content %}
 
 	<!-- Page Header -->
-	<header class="masthead">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-8 col-md-10">
-					<div class="header-text btn">
-						<h1><span id="head-title"></span></h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+
 
 	<div class="container py-5">
 		<div class="row">
@@ -52,7 +41,7 @@
 									</p>
 								</div>
 								<div class="col-xs-8 col-sm-8 col-md-9">
-									<h1 class="title">
+									<h1 class="title fs--24 text-uppercase">
 										<a href="{% url 'article:article-detail' article.id %}">{{ article.title }}.</a>
 									</h1>
 									<div>
@@ -79,12 +68,12 @@
 										{% endfor %}
 									</div>
 									{% if article.summary %}
-									<p class="ff--default fs--14">{{ article.summary | convert_markdown | safe }}</p>
+									<div class="py-3">{{ article.summary | convert_markdown | safe }}</div>
 									{% else %}
-									<p class="ff--default fs--14">{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</p>
+									<div>{{ article.body  | cut:'<br>' | slice:'200' | convert_markdown | safe }}</div>
 									{% endif %}
 									<div>
-										<a class="read_more" href="{% url 'article:article-detail' article.id %}">
+										<a class="read_more text-capitalize display-inline-block" href="{% url 'article:article-detail' article.id %}">
 											continue reading...
 										</a>
 									</div>
@@ -130,14 +119,14 @@
 			</div>
 			<div class="col" style="margin-top:30px;">
 				<div class="sticky-top">
-					<div class="clock">
-					<div class="date date-screen"></div>
-					<div class="hour screen"></div>
-					<div class="screen"> : </div>
-					<div class="minute screen"></div>
-					<div class="screen"> : </div>
-					<div class="second screen"></div>
-				</div>
+<!--					<div class="clock">-->
+<!--						<div class="date date-screen"></div>-->
+<!--						<div class="hour screen"></div>-->
+<!--						<div class="screen"> : </div>-->
+<!--						<div class="minute screen"></div>-->
+<!--						<div class="screen"> : </div>-->
+<!--						<div class="second screen"></div>-->
+<!--					</div>-->
 					<div class="sidebar">
 					    <div>
 						    <h3> 声明 </h3>
@@ -182,51 +171,8 @@
 		</div>
 	</div>
 
-	<script  src="{% static 'js/time.js' %}" charset="gb2312"></script>
-<style>
-#wrapper > header > div.container{
-	padding: 200px 0;
-}
-.header-text.btn {
-    border: 1px solid #ffffff;
-    border-radius: 0;
-    padding: 10px 30px;
-    height: 100px;
-}
-.header-text h1 {
-    font-weight: 700;
-    font-size: 46px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-span.typed-cursor {
-    top: -5px;
-    position: relative;
-}
 
-.typed-cursor {
-    opacity: 1;
-    padding: 10px 2px;
-    background: #ffffff;
-    margin: 10px;
-    -webkit-animation: blink 0.5s linear infinite;
-    -moz-animation: blink 0.5s linear infinite;
-    animation: blink 0.5s linear infinite;
-}
+<style>
+
 </style>
 {% endblock %}
-{% block script %}
-<script>
-  $(function(){
-	  $("#head-").typed({
-		strings: ["We make websites^1000", "24/7 available for hire^1000" ,"Web design with diffence^1000"],
-		typeSpeed: 100,
-		loop: true,
-		startDelay: 100
-	  });
-  });
-</script>
-{% endblock script %}
-
-
-
