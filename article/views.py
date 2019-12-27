@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.utils.text import slugify
 from django.views import generic
 from .models import ArticlePost, Category
 from taggit.models import Tag
@@ -12,6 +13,7 @@ from django.db.models.aggregates import Count
 from comment.models import Comment
 from comment.forms import CommentForm
 import markdown
+from markdown.extensions.toc import TocExtension
 import logging
 
 logging.getLogger().setLevel(logging.INFO)
@@ -167,6 +169,14 @@ class ArticleDetailView(generic.DeleteView):
 
     def get_object(self, queryset=None):
         article = super(ArticleDetailView, self).get_object()
+        md = markdown.Markdown(extensions=[
+            'markdown.extensions.extra',
+            'markdown.extensions.codehilite',
+            # 美化点击目录时的url显示模块
+            TocExtension(slugify=slugify),
+        ])
+        article.body = md.convert(article.body)
+        article.toc = md.toc
         if self.request.user != article.author:
             article.total_views += 1
             # 只更新浏览数字段
@@ -177,16 +187,11 @@ class ArticleDetailView(generic.DeleteView):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
         pk = self.kwargs.get(self.pk_url_kwarg)
         comments = Comment.objects.filter(article=pk)
-        md = markdown.Markdown(extensions=['markdown.extensions.toc',])
-        context['toc'] = md.toc
         context['comments'] = comments
         context['comment_form'] = CommentForm()
         context['next_article'] = context['article_detail'].get_pre_article(pk=pk)
         context['pre_article'] = context['article_detail'].get_next_article(pk=pk)
         return context
-
-
-
 
 # 创建新文章
 class ArticleCreateView(LoginRequiredMixin, generic.CreateView):

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     # 标签
     'taggit',
     # user 扩展对象
-    'userprofile',
+    'profile',
     # 评论
     'comment',
     'mptt',

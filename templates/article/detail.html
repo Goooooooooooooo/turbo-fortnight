@@ -129,13 +129,7 @@
                         <ul class="list-unstyled">
                             {% if user == article_detail.author %}
                             <li>
-                                <a href="{% url 'article:article-create' %}"><i class="far fa-plus-square"></i>新建</a>
-                            </li>
-                            <li>
                                 <a href="#" data-toggle="modal" data-target="#deleteModalCenter"><i class="far fa-trash-alt"></i>删除</a>
-                            </li>
-                            <li>
-                                <a href="{% url 'article:article-update' article_detail.id %}"><i class="far fa-edit"></i>编辑</a>
                             </li>
                             {% endif %}
                             <li>
@@ -157,18 +151,17 @@
                         </ul>
                     </div>
                 </div>
-                <hr>
-                <h4><strong></strong></h4>
-                <div id="contents" class="mt-4">
-<!--                {{ toc | safe }}-->
+                <div class="sidebar mt-4">
+                    <div class="categories">
+                        <h3 class="active">目录</h3>
+                        <div>
+<!--                            {{ article_detail.toc | safe }}-->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <!-- 占位Div -->
-<!--    <div style="width:100%;visibility:hidden;min-height:200px;"></div>-->
 
 </div>
 
@@ -217,9 +210,6 @@
 <link rel="stylesheet" href="{% static 'prism/prism.css' %}">
 
 <style>
-    a.reply:link {color:#20c997;}
-    a.reply:visited {color:#20c997;}
-    a.reply:hover {color:#20c997;}
     header.masthead{
         min-height: 800px;
         background-image: url({% if article_detail.avatar %} {{ article_detail.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )

@@ -31,9 +31,9 @@
 				 		<div class="post-img" style="background-image: url({% if article.avatar %} {{ article.avatar.url }} {% else %} {% static 'img/pic4.jpg' %}{% endif %} )"></div>
 						<div class="post">
 							<div class="row">
-								<div class="col-xs-4 col-sm-4 col-md-3 post-date">
+								<div class="col-xs-4 col-sm-4 col-md-3 post-date ff--roboto">
 									<p>
-										<span>
+										<span class="fs--50">
 										    {{ article.updated|date:'d' }}
 										</span>
 										{{ article.updated|date:'b' }}
@@ -117,7 +117,7 @@
 					<!-- 翻页 end -->
 				</section>
 			</div>
-			<div class="col" style="margin-top:30px;">
+			<div class="col">
 				<div class="sticky-top">
 <!--					<div class="clock">-->
 <!--						<div class="date date-screen"></div>-->

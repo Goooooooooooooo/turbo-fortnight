@@ -6,7 +6,7 @@ from .models import Comment
 from .forms import CommentForm
 
 # 文章评论
-@login_required(login_url='/userprofile/login/')
+@login_required(login_url='/profile/login/')
 def post_comment(request, article_id, parent_comment_id=None):
     article = get_object_or_404(ArticlePost, id=article_id)
 

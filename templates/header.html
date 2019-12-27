@@ -13,10 +13,13 @@
 	<div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
 		<ul class="navbar-nav">
 			<li class="nav-item">
+				<a class="nav-link" href="#" onclick="openSearch()"><i class="fa fa-search"></i></a>
+			</li>
+			<li class="nav-item">
 				<a class="nav-link" href="{% url 'article:article-list' %}">Home</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{% url 'userprofile:about' %}">About</a>
+				<a class="nav-link" href="{% url 'profile:about' %}">About</a>
 			</li>
 			{% if not user.is_authenticated %}
 			<li class="nav-item">
@@ -30,20 +33,21 @@
 			<li class="nav-item">
 				<a class="nav-link" href="#" data-toggle="modal" data-target="#signOutModal">Logout</a>
 			</li>
+            <li class="nav-item">
+                <img class="rounded-circle nav-link" style="width:50px;height:50px;" src="{% static 'img/pic1.jpg' %}" alt="Generic placeholder image">
+            </li>
 			{% endif %}
-			<li class="nav-item">
-				<a class="nav-link" href="#" onclick="openSearch()"><i class="fa fa-search"></i></a>
-			</li>
+
 		</ul>
 	</div>
 </nav>
 
 	<header class="masthead">
 		<div class="overlay"></div>
-		<div class="container position-relative" style="min-height: 969px;">
+		<div class="container">
 			<div class="row position-absolute h-100 justify-content-center align-items-center">
 				<div class="col-md-12 col-sm-12 col-xs-12">
-					<span class="py-3 text-uppercase">Awesome creativity</span>
+					<span id="page-title" class="py-3 text-uppercase fs--50">Welcome to my Personal website.</span>
 					<div class="py-2 clock">
 						<div class="date screen"></div>
 						<div class="hour screen"></div>
@@ -108,19 +112,20 @@
     <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="signOutModalLabel"></h5>
+                <h5 class="modal-title" id="signOutModalLabel">退出登录</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
 				<form method="post" action="{% url 'account_logout' %}">
-				  {% csrf_token %}
-				  {% if redirect_field_value %}
-				  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-				  {{ redirect_field_name }}-{{ redirect_field_value }}
-				  {% endif %}
-				  <button type="submit">{% trans 'Sign Out' %}</button>
+				  	{% csrf_token %}
+				  	{% if redirect_field_value %}
+				  	<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+				  	{{ redirect_field_name }}-{{ redirect_field_value }}
+				  	{% endif %}
+				  	<button type="submit" class="btn btn-warning btn-medium">{% trans 'Sign Out' %}</button>
+					<button type="button" class="btn btn-default btn-medium border-black" data-dismiss="modal"> Cancle </button>
 				</form>
 			</div>
         </div>

@@ -10,7 +10,7 @@ from article.models import ArticlePost
     # 表单验证失败，返回错误信息
     error = user_login_form.errors
     context = {'error': error}
-    return render(request, 'userprofile/login.html', context)
+    return render(request, 'profile/login.html', context)
     # user_id 自动生成字段
     profile = Profile.objects.get(user_id=pk)
 '''
@@ -48,13 +48,13 @@ def user_login(request):
                 else:
                     return HttpResponseRedirect(next)
             else:
-                return render(request, 'userprofile/login.html', context={'form': user_login_form})
+                return render(request, 'profile/login.html', context={'form': user_login_form})
         else:
-            return render(request, 'userprofile/login.html', context={'form': user_login_form})
+            return render(request, 'profile/login.html', context={'form': user_login_form})
 
     elif request.method == 'GET':
         request.session['next'] = request.META.get('HTTP_REFERER', '/')
-        return render(request, 'userprofile/login.html', context = {'form': UserLoginForm()})
+        return render(request, 'profile/login.html', context = {'form': UserLoginForm()})
     else:
         return HttpResponse("请使用GET或POST请求数据")
 
@@ -72,10 +72,10 @@ def user_register(request):
             login(request, new_user)
             return redirect('article:article-list')
         else:
-            return render(request, 'userprofile/register.html', context={'form':user_register_form})
+            return render(request, 'profile/register.html', context={'form':user_register_form})
     elif request.method == 'GET':
         context={'form': UserRegisterForm()}
-        return render(request, 'userprofile/register.html', context)
+        return render(request, 'profile/register.html', context)
     else:
         return HttpResponse('请使用GET或POST请求数据')
 
@@ -101,13 +101,13 @@ def user_edit_profile(request,pk):
             if 'avatar' in request.FILES:
                 user.profile.avatar = cleaned_dt['avatar']
             user.save()
-            return redirect('userprofile:edit-profile', pk=pk)
+            return redirect('profile:edit-profile', pk=pk)
         else:
-            return render(request, 'userprofile/edit_profile.html',context={'form':profile_form})
+            return render(request, 'profile/edit_profile.html',context={'form':profile_form})
 
     elif request.method == 'GET':
         context={'form':ProfileForm(), 'user': user}
-        return render(request, 'userprofile/edit_profile.html', context)
+        return render(request, 'profile/edit_profile.html', context)
     else:
         return HttpResponse('请使用GET或POST请求数据')
 
@@ -115,4 +115,4 @@ def user_about(request):
     article_list = ArticlePost.objects.all().order_by('-updated')
     if article_list.count() > 0:
         article_list = article_list[:6]
-    return render(request, 'userprofile/about.html',context={'article_list':article_list})
+    return render(request, 'profile/about.html',context={'article_list':article_list})

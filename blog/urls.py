@@ -27,7 +27,7 @@ urlpatterns = [
     # 直接返回视图，不渲染
     path('404/',TemplateView.as_view(template_name='handler/404.html'), name='page_404'),
     path('article/', include('article.urls', namespace='article')),
-    path('userprofile/', include('userprofile.urls', namespace='userprofile')),
+    path('profile/', include('profile.urls', namespace='profile')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('comment/', include('comment.urls', namespace='comment')),
     path('accounts/', include('allauth.urls')),
